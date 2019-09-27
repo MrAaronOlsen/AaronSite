@@ -1,6 +1,6 @@
 rootProject.name = 'budgetmonster'
-include 'models'
-include 'database'
-include 'controllers'
-include 'utils'
 
+include 'controllers'
+include 'database'
+include 'models'
+include 'utils'
