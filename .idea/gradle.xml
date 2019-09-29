@@ -14,7 +14,9 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/controllers" />
             <option value="$PROJECT_DIR$/database" />
+            <option value="$PROJECT_DIR$/delete" />
             <option value="$PROJECT_DIR$/models" />
+            <option value="$PROJECT_DIR$/server" />
             <option value="$PROJECT_DIR$/utils" />
           </set>
         </option>

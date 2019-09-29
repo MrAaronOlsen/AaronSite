@@ -4,3 +4,6 @@ include 'controllers'
 include 'database'
 include 'models'
 include 'utils'
+include 'server'
+include 'delete'
+
