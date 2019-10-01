@@ -1,4 +1,6 @@
-package com.budgetmonster.utils;
+package com.budgetmonster.utils.enums;
+
+import com.budgetmonster.utils.constants.ConfigArgs;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

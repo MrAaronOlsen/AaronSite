@@ -1,4 +1,4 @@
-package com.budgetmonster.utils;
+package com.budgetmonster.utils.io;
 
 public class Logger {
   public enum Color {

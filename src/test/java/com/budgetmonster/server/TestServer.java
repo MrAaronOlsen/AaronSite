@@ -1,8 +1,8 @@
 package com.budgetmonster.server;
 
-import com.budgetmonster.utils.ConfigArg;
+import com.budgetmonster.utils.enums.ConfigArg;
 import com.budgetmonster.utils.ConfigProperties;
-import com.budgetmonster.utils.Logger;
+import com.budgetmonster.utils.io.Logger;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
