@@ -1,6 +1,7 @@
 package com.budgetmonster.database.operations;
 
 import com.budgetmonster.database.connection.DBConnection;
+import com.budgetmonster.models.Model;
 
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,6 +18,11 @@ public class DBInsert implements DBOperation {
 
   public DBInsert addRecord(DBRecord record) {
     this.record = record;
+    return this;
+  }
+
+  public DBInsert addRecord(Model model) {
+    this.record = model.buildRecord();
     return this;
   }
 
