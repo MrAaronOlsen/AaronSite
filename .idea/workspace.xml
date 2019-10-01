@@ -2,31 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/connection/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/metadata/ColumnMetadata.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/metadata/ResultMetadata.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/metadata/TableMetadata.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/query/DbTableQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/StartUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/ConfigArg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/ConfigArgs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/ConfigProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/query/DbTableQueryTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/server/TestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBDelete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBInsert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBOperation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBQueryBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/constants/Tables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/Table.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/DBInsertTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/testutils/ClearDatabaseTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/testutils/DBTruncateAll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/build/libs/controllers-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/out/test/classes/BasicTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/src/test/java/BasicTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/connection/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/connection/DBConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/query/DbTableQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/ConfigArg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/ConfigArgs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/ConfigProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/ConfigProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/Logger$Color.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/query/DbTableQueryTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/server/TestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/server/TestServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/connection/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/connection/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/query/DbTableQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DbQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/ConfigArg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/ConfigArg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/ConfigArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/constants/ConfigArgs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/ConfigProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/ConfigProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/io/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/query/DbTableQueryTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/server/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/server/TestServer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +66,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -98,7 +103,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DbTableQueryTests.simpleQuery">
+  <component name="RunManager" selected="JUnit.DBInsertTests.simpleInsert">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -111,30 +116,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="budgetmonster [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="BasicTest.aBasicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="budgetmonster.database.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BasicTest" />
-      <option name="METHOD_NAME" value="aBasicTest" />
+    <configuration name="ClearDatabaseTests.getAllTables" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="budgetmonster.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.budgetmonster.testutils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.budgetmonster.testutils" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.testutils.ClearDatabaseTests" />
+      <option name="METHOD_NAME" value="getAllTables" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
       <option name="PARAMETERS" value="" />
@@ -143,11 +135,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasicTest.basicTableQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="budgetmonster.database.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BasicTest" />
-      <option name="METHOD_NAME" value="basicTableQuery" />
+    <configuration name="DBInsertTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="budgetmonster.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.budgetmonster.database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.budgetmonster.database" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.DBInsertTests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBInsertTests.simpleInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="budgetmonster.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.budgetmonster.database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.budgetmonster.database" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.DBInsertTests" />
+      <option name="METHOD_NAME" value="simpleInsert" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBInsertTests.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="budgetmonster.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.budgetmonster.database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.budgetmonster.database" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.DBInsertTests" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
       <option name="PARAMETERS" value="" />
@@ -160,7 +196,7 @@
       <module name="budgetmonster.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.budgetmonster.database.query.*" />
+          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -205,17 +241,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.budgetmonster [build]" />
-      <item itemvalue="JUnit.BasicTest.aBasicTest" />
-      <item itemvalue="JUnit.BasicTest.basicTableQuery" />
       <item itemvalue="JUnit.DbTableQueryTests.simpleQuery" />
+      <item itemvalue="JUnit.ClearDatabaseTests.getAllTables" />
+      <item itemvalue="JUnit.DBInsertTests.simpleInsert" />
+      <item itemvalue="JUnit.DBInsertTests.test" />
+      <item itemvalue="JUnit.DBInsertTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DBInsertTests.simpleInsert" />
+        <item itemvalue="JUnit.DBInsertTests" />
+        <item itemvalue="JUnit.DBInsertTests.test" />
+        <item itemvalue="JUnit.ClearDatabaseTests.getAllTables" />
         <item itemvalue="JUnit.DbTableQueryTests.simpleQuery" />
-        <item itemvalue="JUnit.BasicTest.basicTableQuery" />
-        <item itemvalue="JUnit.BasicTest.aBasicTest" />
-        <item itemvalue="Gradle.budgetmonster [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -244,5 +282,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/budgetmonster/testutils/ClearDatabaseTests.java</url>
+          <line>16</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

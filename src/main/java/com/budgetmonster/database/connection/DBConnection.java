@@ -1,6 +1,6 @@
 package com.budgetmonster.database.connection;
 
-import com.budgetmonster.utils.ConfigArg;
+import com.budgetmonster.utils.enums.ConfigArg;
 import com.budgetmonster.utils.ConfigProperties;
 
 import java.sql.Connection;
@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DBConnection implements AutoCloseable {
+  private static final String SCHEMA = ConfigProperties.getValue(ConfigArg.DB_SCHEMA);
   private Connection conn;
 
   public DBConnection() throws SQLException {
@@ -25,6 +26,10 @@ public class DBConnection implements AutoCloseable {
 
   public DatabaseMetaData getDbMetadata() throws SQLException {
     return conn.getMetaData();
+  }
+
+  public String getSchema() {
+    return SCHEMA;
   }
 
   @Override

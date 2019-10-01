@@ -1,4 +1,4 @@
-package com.budgetmonster.utils;
+package com.budgetmonster.utils.constants;
 
 public class ConfigArgs {
   public static final String DB_URL = "DB_URL";
