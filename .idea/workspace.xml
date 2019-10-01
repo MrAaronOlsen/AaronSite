@@ -2,35 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBDelete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBInsert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBQueryBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/constants/Tables.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/Table.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/DBInsertTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/testutils/ClearDatabaseTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/testutils/DBTruncateAll.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Budget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/System.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBInsertTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/connection/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/connection/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/query/DbTableQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/ConfigArg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/ConfigArgs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/ConfigProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/ConfigProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/Logger$Color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/Logger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/query/DbTableQueryTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/server/TestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/server/TestServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/connection/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/connection/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/query/DbTableQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DbQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/ConfigArg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/ConfigArg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/ConfigArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/constants/ConfigArgs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/ConfigProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/ConfigProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/io/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/query/DbTableQueryTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/server/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/server/TestServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBInsert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/DBInsertTests.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,8 +44,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -139,12 +117,12 @@
       <module name="budgetmonster.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.budgetmonster.database.*" />
+          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.budgetmonster.database" />
-      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.DBInsertTests" />
+      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBInsertTests" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
@@ -158,12 +136,12 @@
       <module name="budgetmonster.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.budgetmonster.database.*" />
+          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.budgetmonster.database" />
-      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.DBInsertTests" />
+      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBInsertTests" />
       <option name="METHOD_NAME" value="simpleInsert" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
@@ -177,12 +155,12 @@
       <module name="budgetmonster.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.budgetmonster.database.*" />
+          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.budgetmonster.database" />
-      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.DBInsertTests" />
+      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBInsertTests" />
       <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
