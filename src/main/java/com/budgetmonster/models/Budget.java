@@ -14,7 +14,7 @@ public class Budget extends System implements Model {
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
-        .add(NAME, name);
+        .add(NAME, safeValue(name));
   }
 
   public static class Builder {
