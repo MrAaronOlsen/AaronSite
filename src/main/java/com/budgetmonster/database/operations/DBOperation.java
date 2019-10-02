@@ -1,7 +1,7 @@
 package com.budgetmonster.database.operations;
 
-import java.sql.SQLException;
+import com.budgetmonster.utils.exceptions.DBException;
 
 public interface DBOperation {
-  DBResult execute() throws SQLException;
+  DBResult execute() throws DBException;
 }

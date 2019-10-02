@@ -1,9 +1,7 @@
 package com.budgetmonster.database.operations;
 
 import com.budgetmonster.database.connection.DBConnection;
-
-import java.sql.SQLException;
-import java.sql.Statement;
+import com.budgetmonster.utils.exceptions.DBException;
 
 public class DBDelete implements DBOperation {
   private DBConnection dbConn;
@@ -21,12 +19,12 @@ public class DBDelete implements DBOperation {
   }
 
   @Override
-  public DBResult execute() throws SQLException {
+  public DBResult execute() throws DBException {
     String sqlStmt = buildSqlStmt();
-    Statement stmt = dbConn.getStmt();
+    DBStatement stmt = dbConn.getDbStmt();
     stmt.execute(sqlStmt);
 
-    return new DBResult(stmt.getResultSet());
+    return stmt.getResult();
   }
 
   private String buildSqlStmt() {

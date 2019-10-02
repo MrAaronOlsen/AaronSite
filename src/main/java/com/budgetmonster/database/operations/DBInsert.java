@@ -2,9 +2,7 @@ package com.budgetmonster.database.operations;
 
 import com.budgetmonster.database.connection.DBConnection;
 import com.budgetmonster.models.Model;
-
-import java.sql.SQLException;
-import java.sql.Statement;
+import com.budgetmonster.utils.exceptions.DBException;
 
 public class DBInsert implements DBOperation {
   private String table;
@@ -27,12 +25,12 @@ public class DBInsert implements DBOperation {
   }
 
   @Override
-  public DBResult execute() throws SQLException {
+  public DBResult execute() throws DBException {
     String sqlStmt = buildSqlStmt();
-    Statement stmt = dbConn.getStmt();
-    stmt.execute(sqlStmt);
+    DBStatement dbStmt = dbConn.getDbStmt();
+    dbStmt.execute(sqlStmt);
 
-    return new DBResult(stmt.getResultSet());
+    return dbStmt.getResult();
   }
 
   private String buildSqlStmt() {
