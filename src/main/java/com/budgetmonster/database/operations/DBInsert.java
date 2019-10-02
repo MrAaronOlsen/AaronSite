@@ -2,14 +2,15 @@ package com.budgetmonster.database.operations;
 
 import com.budgetmonster.database.connection.DBConnection;
 import com.budgetmonster.models.Model;
+import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.DBException;
 
 public class DBInsert implements DBOperation {
-  private String table;
+  private Table table;
   private DBConnection dbConn;
   private DBRecord record;
 
-  public DBInsert(DBConnection dbConn, String table) {
+  public DBInsert(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
     this.table = table;
   }
@@ -39,7 +40,7 @@ public class DBInsert implements DBOperation {
     String columns = record.getSqlColumns();
     String values = record.getSqlValues();
 
-    stmt += " " + columns + " " + values + " RETURNING id;";
+    stmt += " " + columns + " " + values + " RETURNING *;";
 
     return stmt;
   }

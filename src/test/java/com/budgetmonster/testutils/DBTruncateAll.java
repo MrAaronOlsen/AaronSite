@@ -5,13 +5,11 @@ import com.budgetmonster.database.operations.DBStatement;
 import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.DBException;
 
-import java.util.Arrays;
-
 public class DBTruncateAll {
 
   public static void execute() throws DBException {
     try(DBConnection dbConn = new DBConnection()) {
-      String tables = Arrays.stream(Table.values()).map(t -> dbConn.getSchema() + "." + t.getName())
+      String tables = Table.getActiveTables().stream().map(t -> dbConn.getSchema() + "." + t.getName())
           .reduce((table, acu) -> table + ", " + acu).get();
 
       DBStatement dbStmt = dbConn.getDbStmt();

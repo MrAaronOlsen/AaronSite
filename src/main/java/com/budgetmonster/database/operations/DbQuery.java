@@ -1,14 +1,15 @@
 package com.budgetmonster.database.operations;
 
 import com.budgetmonster.database.connection.DBConnection;
+import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.DBException;
 
 public class DbQuery implements DBOperation {
-  private String table;
+  private Table table;
   private DBConnection dbConn;
   private DBQueryBuilder query;
 
-  public DbQuery(DBConnection dbConn, String table) {
+  public DbQuery(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
     this.table = table;
   }
