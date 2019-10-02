@@ -4,21 +4,15 @@ import com.budgetmonster.database.connection.DBConnection;
 import com.budgetmonster.models.Budget;
 import com.budgetmonster.models.Model;
 import com.budgetmonster.server.TestServer;
-import com.budgetmonster.testutils.DBTruncateAll;
+import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.DBException;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static com.budgetmonster.utils.constants.Tables.BUDGETS;
 import static com.budgetmonster.utils.exceptions.DBException.Code.TABLE_DOES_NOT_EXIST;
 import static com.budgetmonster.utils.exceptions.DBException.Code.UNKNOWN_COLUMN;
 
 class DBInsertTests extends TestServer {
-  @BeforeEach
-  void truncate() throws DBException {
-    DBTruncateAll.execute();
-  }
 
   @Test
   void insertingValidRecordReturnsId() throws DBException {
@@ -26,7 +20,7 @@ class DBInsertTests extends TestServer {
       Model budget = new Budget.Builder()
           .setName("Test").build();
 
-      DBInsert insert = new DBInsert(conn, BUDGETS)
+      DBInsert insert = new DBInsert(conn, Table.BUDGET)
           .addRecord(budget);
 
       DBResult insertResult = insert.execute();
@@ -46,7 +40,7 @@ class DBInsertTests extends TestServer {
       Model budget = new Budget.Builder()
           .setName("Test").build();
 
-      DBInsert insert = new DBInsert(conn, "BadTable")
+      DBInsert insert = new DBInsert(conn, Table.INVALID_TABLE)
           .addRecord(budget);
 
       try {
@@ -64,7 +58,7 @@ class DBInsertTests extends TestServer {
       DBRecord record = new DBRecord()
           .add("bad", "'even worse'");
 
-      DBInsert insert = new DBInsert(conn, BUDGETS)
+      DBInsert insert = new DBInsert(conn, Table.BUDGET)
           .addRecord(record);
 
       try {

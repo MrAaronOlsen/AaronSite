@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.budgetmonster.models.System.ID;
 import static com.budgetmonster.utils.exceptions.DBException.Code.FAILED_TO_BUILD_RESULT_DATA;
 
 public class DBRecord {
@@ -36,6 +37,10 @@ public class DBRecord {
 
   public String get(String column) {
     return record.get(column);
+  }
+
+  public String getId() {
+    return record.get(ID);
   }
 
   public boolean has(String column) {

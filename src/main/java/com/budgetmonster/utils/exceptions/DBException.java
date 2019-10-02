@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.sql.SQLException;
 
-public class DBException extends Exception {
+public class DBException extends ABException {
   public enum Code {
     // Initializer errors
     FAILED_TO_MAKE_CONNECTION("Failed to make connection."),
