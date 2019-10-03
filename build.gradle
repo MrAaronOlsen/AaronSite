@@ -1,26 +1,24 @@
-allprojects {
-    version '1.0'
+version '1.0'
 
-    apply plugin: 'java'
-    apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'idea'
 
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
-        compile group: 'org.postgresql', name: 'postgresql', version: '42.2.8'
-
-        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
-        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
-    }
-
-    test {
-        useJUnitPlatform()
-    }
+repositories {
+    mavenCentral()
 }
 
+dependencies {
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.8'
+
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.2'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.2'
+    testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.5.2'
+}
+
+test {
+    useJUnitPlatform()
+}
 
 sourceCompatibility = 11
 targetCompatibility = 11

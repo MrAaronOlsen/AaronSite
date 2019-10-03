@@ -2,16 +2,14 @@ package com.budgetmonster.utils.enums;
 
 import com.budgetmonster.utils.constants.Tables;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 public enum Table {
-  INVALID_TABLE("Invalid Table", false),
+  INVALID_TABLE("InvalidTable", false),
   BUDGET(Tables.BUDGETS),
   TRANSACTION(Tables.TRANSACTIONS),
   PERIOD(Tables.PERIODS),

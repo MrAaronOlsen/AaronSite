@@ -13,8 +13,9 @@ import static com.budgetmonster.utils.exceptions.DBException.Code.UNKNOWN_COLUMN
 import static com.budgetmonster.utils.exceptions.DBException.Code.UNKNOWN_SQL_ERROR;
 
 public class DBStatement {
-  Statement stmt;
-  String sql;
+  private DBOperation operation;
+  private Statement stmt;
+  private String sql;
 
   public DBStatement(Connection conn) throws DBException {
     try {
@@ -24,14 +25,17 @@ public class DBStatement {
     }
   }
 
-  public void execute(String sql) throws DBException {
-    this.sql = sql;
+  public DBStatement execute(DBOperation operation) throws DBException {
+    this.operation = operation;
+    this.sql = operation.toString();
 
     try {
       stmt.execute(sql);
     } catch (SQLException e) {
       throwDBException(e);
     }
+
+    return this;
   }
 
   public DBResult getResult() throws DBException {

@@ -1,29 +1,41 @@
 package com.budgetmonster.server;
 
+import com.budgetmonster.database.connection.DBConnection;
 import com.budgetmonster.database.operations.DBRecord;
+import com.budgetmonster.database.operations.DBTruncate;
 import com.budgetmonster.models.Model;
-import com.budgetmonster.testutils.DBTruncateAll;
 import com.budgetmonster.testutils.SeedDataHandler;
 import com.budgetmonster.utils.enums.ConfigArg;
 import com.budgetmonster.utils.ConfigProperties;
+import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.ABException;
 import com.budgetmonster.utils.exceptions.DBException;
 import com.budgetmonster.utils.io.Logger;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 
 public abstract class TestServer {
-  private SeedDataHandler seedDataHandler = new SeedDataHandler();
+  private static SeedDataHandler seedDataHandler = new SeedDataHandler();
+  private static AtomicInteger testIncrement = new AtomicInteger();
 
   @BeforeEach
   void truncate() throws DBException {
-    DBTruncateAll.execute();
+    try (DBConnection dbConn = new DBConnection()) {
+      DBTruncate dbTruncate = new DBTruncate(dbConn, Table.getActiveTables());
+      dbTruncate.execute();
+    }
   }
 
   @BeforeAll
   public static void startUp() {
+    int testNumber = testIncrement.incrementAndGet();
+    if (testNumber > 1) {
+      return;
+    }
+
     Logger.out("Starting Test Server...", Logger.Color.ANSI_CYAN);
     StartUp.main(
         ConfigProperties.getSysArg(ConfigArg.DB_URL),
@@ -31,11 +43,7 @@ public abstract class TestServer {
         ConfigProperties.getSysArg(ConfigArg.DB_PW),
         ConfigProperties.getSysArg(ConfigArg.DB_SCHEMA)
     );
-  }
 
-  @AfterAll
-  public static void shutDown() {
-    Logger.out("Shutting Down Test Server...", Logger.Color.ANSI_CYAN);
   }
 
   protected String unique(String value) {

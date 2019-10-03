@@ -27,14 +27,14 @@ public class DBInsert implements DBOperation {
 
   @Override
   public DBResult execute() throws DBException {
-    String sqlStmt = buildSqlStmt();
-    DBStatement dbStmt = dbConn.getDbStmt();
-    dbStmt.execute(sqlStmt);
+    DBStatement dbStmt = dbConn.getDbStmt()
+        .execute(this);
 
     return dbStmt.getResult();
   }
 
-  private String buildSqlStmt() {
+  @Override
+  public String toString() {
     String stmt = "INSERT INTO " + dbConn.getSchema() + "." + table;
 
     String columns = record.getSqlColumns();

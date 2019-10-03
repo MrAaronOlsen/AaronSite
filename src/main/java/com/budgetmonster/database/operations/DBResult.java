@@ -13,8 +13,10 @@ public class DBResult {
   private ResultMetadata resultMetadata;
 
   DBResult(ResultSet result) throws DBException {
-    this.result = result;
-    this.resultMetadata = new ResultMetadata(result);
+    if (result != null) {
+      this.result = result;
+      this.resultMetadata = new ResultMetadata(result);
+    }
   }
 
   public boolean hasNext() throws DBException {
