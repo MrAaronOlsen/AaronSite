@@ -1,20 +1,23 @@
 package com.budgetmonster.database.operations;
 
 import com.budgetmonster.database.connection.DBConnection;
+import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.DBException;
+
+import static com.budgetmonster.models.System.ID;
 
 public class DBDelete implements DBOperation {
   private DBConnection dbConn;
-  private String table;
-  private String id;
+  private Table table;
+  private DBQueryBuilder query;
 
-  public DBDelete(DBConnection dbConn, String table) {
+  public DBDelete(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
     this.table = table;
   }
 
   public DBDelete setId(String id) {
-    this.id = id;
+    this.query = new DBQueryBuilder().add(ID, id);
     return this;
   }
 
@@ -28,6 +31,6 @@ public class DBDelete implements DBOperation {
   }
 
   private String buildSqlStmt() {
-    return "DELETE from " + dbConn.getSchema() + "." + table + " WHERE id=" + id + " RETURNING id;";
+    return "DELETE from " + dbConn.getSchema() + "." + table + " " + query + " RETURNING id;";
   }
 }

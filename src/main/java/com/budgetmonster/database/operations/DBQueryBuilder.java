@@ -11,7 +11,9 @@ public class DBQueryBuilder {
     return this;
   }
 
-  String buildSqlStmt() {
-    return queryMap.entrySet().stream().map(set -> set.getKey() + "='" + set.getValue() + "'").reduce((con, acu) -> con + " AND " + acu).get();
+  @Override
+  public String toString() {
+    return "WHERE " + queryMap.entrySet().stream()
+        .map(set -> set.getKey() + "='" + set.getValue() + "'").reduce((con, acu) -> con + " AND " + acu).get();
   }
 }

@@ -37,7 +37,7 @@ public class DbQuery implements DBOperation {
     String stmt = "SELECT * FROM " + dbConn.getSchema() + "." + table;
 
     if (query != null) {
-      stmt += " WHERE " + query.buildSqlStmt();
+      stmt += " " + query;
     }
 
     return stmt;
