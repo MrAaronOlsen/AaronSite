@@ -54,7 +54,7 @@ class DBInsertTests extends TestServer {
   void insertsWithInvalidColumnThrowsException() throws DBException {
     try (DBConnection conn = new DBConnection()) {
       DBRecord record = new DBRecord()
-          .add("bad", "'even worse'");
+          .add("bad", "even worse");
 
       DBInsert insert = new DBInsert(conn, Table.BUDGET)
           .addRecord(record);
