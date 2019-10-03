@@ -31,7 +31,7 @@ public class DBRecord {
   }
 
   public DBRecord add(String column, String value) {
-    record.put(column, value);
+    record.put(column, safeValue(value));
     return this;
   }
 
@@ -53,5 +53,9 @@ public class DBRecord {
 
   String getSqlUpdate() {
     return "SET " + record.entrySet().stream().map((e) -> e.getKey() + "=" + e.getValue()).reduce((e, a) -> e + ", " + a).get();
+  }
+
+  String safeValue(String value) {
+    return "'" + value + "'";
   }
 }
