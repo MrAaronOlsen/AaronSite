@@ -12,7 +12,7 @@ class DBDeleteTests extends TestServer {
 
   @Test
   void deletingSingleRecordByValidIdReturnsResult() throws ABException {
-    Budget insertRecord = new Budget(insertRecord(new Budget.Builder().setName(unique("test")).build()));
+    Budget insertRecord = new Budget(insertRecord(new Budget().setName(unique("test"))));
 
     try (DBConnection dbConn = new DBConnection()) {
       DBDelete dbDelete = new DBDelete(dbConn, Table.BUDGET).setId(insertRecord.getId());

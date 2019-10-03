@@ -14,7 +14,7 @@ class DBQueryTests extends TestServer {
 
   @Test
   void queryByIdReturnsSingleRecord() throws ABException {
-    Budget budgetInsert = new Budget(insertRecord(new Budget.Builder().setName(unique("test")).build()));
+    Budget budgetInsert = new Budget(insertRecord(new Budget().setName(unique("test"))));
 
     try (DBConnection dbConn = new DBConnection()) {
       DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGET).setIdQuery(budgetInsert.getId());
@@ -34,8 +34,7 @@ class DBQueryTests extends TestServer {
   @Test
   void queryByValueReturnsSingleRecord() throws ABException {
     String objectName = unique("test");
-
-    Budget budgetInsert = new Budget(insertRecord(new Budget.Builder().setName(objectName).build()));
+    Budget budgetInsert = new Budget(insertRecord(new Budget().setName(objectName)));
 
     try (DBConnection dbConn = new DBConnection()) {
       DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGET).setQuery(new DBQueryBuilder().add(NAME, objectName));
@@ -56,8 +55,8 @@ class DBQueryTests extends TestServer {
   void queryByValueReturnsMultipleRecords() throws ABException {
     String objectName = unique("test");
 
-    insertRecord(new Budget.Builder().setName(objectName).build());
-    insertRecord(new Budget.Builder().setName(objectName).build());
+    insertRecord(new Budget().setName(objectName));
+    insertRecord(new Budget().setName(objectName));
 
     try (DBConnection dbConn = new DBConnection()) {
       DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGET).setQuery(new DBQueryBuilder().add(NAME, objectName));

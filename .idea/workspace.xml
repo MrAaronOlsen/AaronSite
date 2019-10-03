@@ -2,29 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBTruncate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/AllTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBUpdate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBUpdateTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBDelete.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBDelete.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBInsert.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBInsert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DbQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DbQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/enums/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/enums/Table.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Budget$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Budget.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Budget.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBDeleteTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBDeleteTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBInsertTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBInsertTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBQueryTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBQueryTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/server/TestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/server/TestServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/testutils/DBTruncateAll.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBDelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/testutils/ClearDatabaseTests.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBInsert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DbQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DbQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Budget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Budget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBDeleteTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBDeleteTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBInsertTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBInsertTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBQueryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBQueryTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/server/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/server/TestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/testutils/DBTruncateAll.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +96,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AllTests">
+  <component name="RunManager" selected="JUnit.DBUpdateTests.simpleUpdateOneColumn">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -151,25 +147,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBDeleteTests.deletingSingleRecordByValidIdReturnsResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="budgetmonster.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
-      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBDeleteTests" />
-      <option name="METHOD_NAME" value="deletingSingleRecordByValidIdReturnsResult" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DBInsertTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="budgetmonster.test" />
       <extension name="coverage">
@@ -189,7 +166,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBInsertTests.insertsIntoInvalidTableThrowsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBInsertTests.insertingValidRecordReturnsId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="budgetmonster.test" />
       <extension name="coverage">
         <pattern>
@@ -199,7 +176,26 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
       <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBInsertTests" />
-      <option name="METHOD_NAME" value="insertsIntoInvalidTableThrowsException" />
+      <option name="METHOD_NAME" value="insertingValidRecordReturnsId" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBUpdateTests.simpleUpdateOneColumn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="budgetmonster.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBUpdateTests" />
+      <option name="METHOD_NAME" value="simpleUpdateOneColumn" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
       <option name="PARAMETERS" value="" />
@@ -238,19 +234,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.DBDeleteTests.deletingSingleRecordByValidIdReturnsResult" />
       <item itemvalue="JUnit.AllTests" />
       <item itemvalue="JUnit.AllTests (1)" />
-      <item itemvalue="JUnit.DBInsertTests.insertsIntoInvalidTableThrowsException" />
       <item itemvalue="JUnit.DBInsertTests" />
+      <item itemvalue="JUnit.DBInsertTests.insertingValidRecordReturnsId" />
+      <item itemvalue="JUnit.DBUpdateTests.simpleUpdateOneColumn" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DBUpdateTests.simpleUpdateOneColumn" />
+        <item itemvalue="JUnit.DBInsertTests.insertingValidRecordReturnsId" />
+        <item itemvalue="JUnit.DBInsertTests" />
         <item itemvalue="JUnit.AllTests" />
         <item itemvalue="JUnit.AllTests (1)" />
-        <item itemvalue="JUnit.DBInsertTests" />
-        <item itemvalue="JUnit.DBInsertTests.insertsIntoInvalidTableThrowsException" />
-        <item itemvalue="JUnit.DBDeleteTests.deletingSingleRecordByValidIdReturnsResult" />
       </list>
     </recent_temporary>
   </component>
@@ -285,7 +281,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBInsertTests.java</url>
-          <line>67</line>
+          <line>65</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
