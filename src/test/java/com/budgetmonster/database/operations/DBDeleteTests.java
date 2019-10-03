@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 class DBDeleteTests extends TestServer {
 
   @Test
-  void deleteRecordById() throws ABException {
+  void deletingSingleRecordByValidIdReturnsResult() throws ABException {
     Budget insertRecord = new Budget(insertRecord(new Budget.Builder().setName(unique("test")).build()));
 
     try (DBConnection dbConn = new DBConnection()) {
@@ -30,7 +30,18 @@ class DBDeleteTests extends TestServer {
       } else {
         Assertions.fail("Delete should have returned a record.");
       }
+    }
+  }
 
+  @Test
+  void deletingSingleRecordByInvalidIdReturnsNoResult() throws ABException {
+    try (DBConnection dbConn = new DBConnection()) {
+      DBDelete dbDelete = new DBDelete(dbConn, Table.BUDGET).setId("0");
+      DBResult deleteResult = dbDelete.execute();
+
+      if (deleteResult.hasNext()) {
+        Assertions.fail("Delete should not have returned any records.");
+      }
     }
   }
 }

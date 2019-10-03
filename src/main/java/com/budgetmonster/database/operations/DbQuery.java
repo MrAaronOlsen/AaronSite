@@ -16,9 +16,8 @@ public class DbQuery implements DBOperation {
 
   @Override
   public DBResult execute() throws DBException {
-    String sqlStmt = buildSqlStmt();
-    DBStatement dbStmt = dbConn.getDbStmt();
-    dbStmt.execute(sqlStmt);
+    DBStatement dbStmt = dbConn.getDbStmt()
+        .execute(this);
 
     return dbStmt.getResult();
   }
@@ -33,7 +32,8 @@ public class DbQuery implements DBOperation {
     return this;
   }
 
-  private String buildSqlStmt() {
+  @Override
+  public String toString() {
     String stmt = "SELECT * FROM " + dbConn.getSchema() + "." + table;
 
     if (query != null) {

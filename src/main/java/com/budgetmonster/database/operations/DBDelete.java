@@ -23,14 +23,14 @@ public class DBDelete implements DBOperation {
 
   @Override
   public DBResult execute() throws DBException {
-    String sqlStmt = buildSqlStmt();
-    DBStatement stmt = dbConn.getDbStmt();
-    stmt.execute(sqlStmt);
+    DBStatement stmt = dbConn.getDbStmt()
+        .execute(this);
 
     return stmt.getResult();
   }
 
-  private String buildSqlStmt() {
+  @Override
+  public String toString() {
     return "DELETE from " + dbConn.getSchema() + "." + table + " " + query + " RETURNING id;";
   }
 }

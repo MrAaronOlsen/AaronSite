@@ -2,5 +2,19 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Eclipse" />
+    <bytecodeTargetLevel>
+      <module name="budgetmonster.controllers.main" target="1.8" />
+      <module name="budgetmonster.controllers.test" target="1.8" />
+      <module name="budgetmonster.database.main" target="11" />
+      <module name="budgetmonster.database.test" target="11" />
+      <module name="budgetmonster.delete.main" target="1.8" />
+      <module name="budgetmonster.delete.test" target="1.8" />
+      <module name="budgetmonster.models.main" target="11" />
+      <module name="budgetmonster.models.test" target="11" />
+      <module name="budgetmonster.server.main" target="11" />
+      <module name="budgetmonster.server.test" target="11" />
+      <module name="budgetmonster.utils.main" target="11" />
+      <module name="budgetmonster.utils.test" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
