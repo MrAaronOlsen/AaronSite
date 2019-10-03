@@ -14,20 +14,11 @@ class DBUpdateTests extends TestServer {
   void simpleUpdateOneColumn() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
       Budget insertRecord = new Budget(insertRecord(new Budget().setName("Test")));
-
-      DbQuery query = new DbQuery(dbConn, Table.BUDGET).setIdQuery(insertRecord.getId());
-      DBResult queryResultOne = query.execute();
-
-      if (!queryResultOne.hasNext()) {
-        Assertions.fail("Query One should have returned a record.");
-      }
-
-      Budget updateRecord = new Budget(queryResultOne.getNext());
-      updateRecord.setName("Testing 123");
+      insertRecord.setName("Testing 123");
 
       DBUpdate update = new DBUpdate(dbConn, Table.BUDGET)
-          .addId(updateRecord.getId())
-          .addRecord(updateRecord);
+          .addId(insertRecord.getId())
+          .addRecord(insertRecord);
 
       DBResult updateResult = update.execute();
 
@@ -38,13 +29,14 @@ class DBUpdateTests extends TestServer {
       Budget updatedRecordOne = new Budget(updateResult.getNext());
       Assertions.assertEquals("Testing 123", updatedRecordOne.getName());
 
-      DBResult queryResultTwo = query.execute();
+      DbQuery query = new DbQuery(dbConn, Table.BUDGET);
+      DBResult queryResult = query.execute();
 
-      if (!queryResultTwo.hasNext()) {
+      if (!queryResult.hasNext()) {
         Assertions.fail("Query Two should have returned a record.");
       }
 
-      Budget updatedRecordTwo = new Budget(queryResultTwo.getNext());
+      Budget updatedRecordTwo = new Budget(queryResult.getNext());
       Assertions.assertEquals("Testing 123", updatedRecordTwo.getName());
     }
   }
