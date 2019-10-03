@@ -10,13 +10,18 @@ public class Budget extends System implements Model {
 
   private String name;
 
-  private Budget(Builder builder) {
-    this.name = builder.name;
+  public Budget() {
+    // Default Constructor
   }
 
   public Budget(DBRecord record) {
     this.id = record.getId();
     this.name = record.get(NAME);
+  }
+
+  public Budget setName(String name) {
+    this.name = name;
+    return this;
   }
 
   public String getName() {
@@ -37,18 +42,5 @@ public class Budget extends System implements Model {
   @Override
   public String toString() {
     return "Table: " + getTable() + "\n" + NAME + ": " + name;
-  }
-
-  public static class Builder {
-    private String name;
-
-    public Builder setName(String name) {
-      this.name = name;
-      return this;
-    }
-
-    public Budget build() {
-      return new Budget(this);
-    }
   }
 }

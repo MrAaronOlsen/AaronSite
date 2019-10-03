@@ -11,6 +11,7 @@ import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.ABException;
 import com.budgetmonster.utils.exceptions.DBException;
 import com.budgetmonster.utils.io.Logger;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -43,7 +44,14 @@ public abstract class TestServer {
         ConfigProperties.getSysArg(ConfigArg.DB_PW),
         ConfigProperties.getSysArg(ConfigArg.DB_SCHEMA)
     );
+  }
 
+  @AfterAll
+  public static void shutDown() throws DBException {
+    try (DBConnection dbConn = new DBConnection()) {
+      DBTruncate dbTruncate = new DBTruncate(dbConn, Table.getActiveTables());
+      dbTruncate.execute();
+    }
   }
 
   protected String unique(String value) {

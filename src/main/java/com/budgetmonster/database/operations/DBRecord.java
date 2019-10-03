@@ -6,14 +6,14 @@ import com.budgetmonster.utils.exceptions.DBException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static com.budgetmonster.models.System.ID;
 import static com.budgetmonster.utils.exceptions.DBException.Code.FAILED_TO_BUILD_RESULT_DATA;
 
 public class DBRecord {
-  private Map<String, String> record = new HashMap<>();
+  private Map<String, String> record = new LinkedHashMap<>();
 
   public DBRecord() {
     // default public constructor
@@ -47,12 +47,11 @@ public class DBRecord {
     return record.containsKey(column);
   }
 
-  String getSqlColumns() {
-    return "(" + String.join(", ", record.keySet()) + ")";
-
+  String getSqlInsert() {
+     return "(" + String.join(", ", record.keySet()) + ") VALUES(" + String.join(", ", record.values()) + ")";
   }
 
-  String getSqlValues() {
-    return  "VALUES(" + String.join(", ", record.values()) + ")";
+  String getSqlUpdate() {
+    return "SET " + record.entrySet().stream().map((e) -> e.getKey() + "=" + e.getValue()).reduce((e, a) -> e + ", " + a).get();
   }
 }

@@ -17,8 +17,7 @@ class DBInsertTests extends TestServer {
   @Test
   void insertingValidRecordReturnsId() throws DBException {
     try (DBConnection conn = new DBConnection()) {
-      Model budget = new Budget.Builder()
-          .setName("Test").build();
+      Model budget = new Budget().setName("Test");
 
       DBInsert insert = new DBInsert(conn, Table.BUDGET)
           .addRecord(budget);
@@ -37,8 +36,7 @@ class DBInsertTests extends TestServer {
   @Test
   void insertsIntoInvalidTableThrowsException() throws DBException {
     try (DBConnection conn = new DBConnection()) {
-      Model budget = new Budget.Builder()
-          .setName("Test").build();
+      Model budget = new Budget().setName("Test");
 
       DBInsert insert = new DBInsert(conn, Table.INVALID_TABLE)
           .addRecord(budget);

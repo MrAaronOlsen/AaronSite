@@ -5,22 +5,35 @@ import com.budgetmonster.models.Model;
 import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.DBException;
 
-public class DBInsert implements DBOperation {
+import static com.budgetmonster.models.System.ID;
+
+public class DBUpdate implements DBOperation {
   private Table table;
   private DBConnection dbConn;
   private DBRecord record;
+  private DBQueryBuilder query;
 
-  public DBInsert(DBConnection dbConn, Table table) {
+  public DBUpdate(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
     this.table = table;
   }
 
-  public DBInsert addRecord(DBRecord record) {
+  public DBUpdate addQuery(DBQueryBuilder query) {
+    this.query = query;
+    return this;
+  }
+
+  public DBUpdate addId(String id) {
+    this.query = new DBQueryBuilder().add(ID, id);
+    return this;
+  }
+
+  public DBUpdate addRecord(DBRecord record) {
     this.record = record;
     return this;
   }
 
-  public DBInsert addRecord(Model model) {
+  public DBUpdate addRecord(Model model) {
     this.record = model.buildRecord();
     return this;
   }
@@ -35,6 +48,6 @@ public class DBInsert implements DBOperation {
 
   @Override
   public String toString() {
-    return  "INSERT INTO " + dbConn.getSchema() + "." + table + " " + record.getSqlInsert() + " RETURNING *;";
+    return "UPDATE " + dbConn.getSchema() + "." + table + " " + record.getSqlUpdate() + " " + query + " RETURNING *;";
   }
 }
