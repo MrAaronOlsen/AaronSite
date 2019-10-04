@@ -71,4 +71,30 @@ class DBQueryTests extends TestServer {
       Assertions.assertEquals(2, count);
     }
   }
+
+  @Test
+  void queryOnNonExistingIdReturnsNoResults() throws ABException {
+    try (DBConnection dbConn = new DBConnection()) {
+      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGET).setIdQuery("0");
+
+      DBResult result = dbQuery.execute();
+
+      if (result.hasNext()) {
+        Assertions.fail("Query should not have returned any results.");
+      }
+    }
+  }
+
+  @Test
+  void queryOnNonExistingValueReturnsNoResults() throws ABException {
+    try (DBConnection dbConn = new DBConnection()) {
+      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGET).setQuery(new DBQueryBuilder().add("name", "bad"));
+
+      DBResult result = dbQuery.execute();
+
+      if (result.hasNext()) {
+        Assertions.fail("Query should not have returned any results.");
+      }
+    }
+  }
 }

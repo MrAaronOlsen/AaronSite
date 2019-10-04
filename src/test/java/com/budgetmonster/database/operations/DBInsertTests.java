@@ -15,7 +15,7 @@ import static com.budgetmonster.utils.exceptions.DBException.Code.UNKNOWN_COLUMN
 class DBInsertTests extends TestServer {
 
   @Test
-  void insertingValidRecordReturnsId() throws DBException {
+  void insertingRecordReturnsResultWithRecord() throws DBException {
     try (DBConnection conn = new DBConnection()) {
       Model budget = new Budget().setName("Test");
 
@@ -34,7 +34,7 @@ class DBInsertTests extends TestServer {
   }
 
   @Test
-  void insertsIntoInvalidTableThrowsException() throws DBException {
+  void insertingIntoInvalidTableThrowsException() throws DBException {
     try (DBConnection conn = new DBConnection()) {
       Model budget = new Budget().setName("Test");
 
@@ -51,7 +51,7 @@ class DBInsertTests extends TestServer {
   }
 
   @Test
-  void insertsWithInvalidColumnThrowsException() throws DBException {
+  void insertingWithInvalidColumnThrowsException() throws DBException {
     try (DBConnection conn = new DBConnection()) {
       DBRecord record = new DBRecord()
           .add("bad", "even worse");
