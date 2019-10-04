@@ -23,7 +23,7 @@ public class DBUpdate implements DBOperation {
     return this;
   }
 
-  public DBUpdate addId(String id) {
+  public DBUpdate addQueryId(String id) {
     this.query = new DBQueryBuilder().add(ID, id);
     return this;
   }

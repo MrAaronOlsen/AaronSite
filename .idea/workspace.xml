@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Budget.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Budget.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/System.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/System.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBUpdate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBInsertTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBInsertTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBQueryTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBQueryTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBInsertTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBInsertTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBQueryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBQueryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBUpdateTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBUpdateTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,25 +103,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="budgetmonster.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
-      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.AllTests" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="budgetmonster.test" />
       <extension name="coverage">
@@ -138,45 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBInsertTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="budgetmonster.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
-      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBInsertTests" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DBInsertTests.insertingValidRecordReturnsId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="budgetmonster.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
-      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBInsertTests" />
-      <option name="METHOD_NAME" value="insertingValidRecordReturnsId" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DBUpdateTests.simpleUpdateOneColumn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBUpdateTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="budgetmonster.test" />
       <extension name="coverage">
         <pattern>
@@ -186,7 +132,64 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
       <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBUpdateTests" />
-      <option name="METHOD_NAME" value="simpleUpdateOneColumn" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBUpdateTests.updateShouldReturnAResultOnPositiveIdQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="budgetmonster.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBUpdateTests" />
+      <option name="METHOD_NAME" value="updateShouldReturnAResultOnPositiveIdQuery" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBUpdateTests.updateShouldReturnAResultOnPositiveValueQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="budgetmonster.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBUpdateTests" />
+      <option name="METHOD_NAME" value="updateShouldReturnAResultOnPositiveValueQuery" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBUpdateTests.updateShouldReturnNoResultsOnBadQueryByValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="budgetmonster.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBUpdateTests" />
+      <option name="METHOD_NAME" value="updateShouldReturnNoResultsOnBadQueryByValue" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
       <option name="PARAMETERS" value="" />
@@ -225,19 +228,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.DBUpdateTests.updateShouldReturnAResultOnPositiveIdQuery" />
+      <item itemvalue="JUnit.DBUpdateTests.updateShouldReturnAResultOnPositiveValueQuery" />
+      <item itemvalue="JUnit.DBUpdateTests" />
+      <item itemvalue="JUnit.DBUpdateTests.updateShouldReturnNoResultsOnBadQueryByValue" />
       <item itemvalue="JUnit.AllTests" />
-      <item itemvalue="JUnit.AllTests (1)" />
-      <item itemvalue="JUnit.DBInsertTests" />
-      <item itemvalue="JUnit.DBInsertTests.insertingValidRecordReturnsId" />
-      <item itemvalue="JUnit.DBUpdateTests.simpleUpdateOneColumn" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AllTests" />
-        <item itemvalue="JUnit.DBInsertTests" />
-        <item itemvalue="JUnit.DBUpdateTests.simpleUpdateOneColumn" />
-        <item itemvalue="JUnit.DBInsertTests.insertingValidRecordReturnsId" />
-        <item itemvalue="JUnit.AllTests (1)" />
+        <item itemvalue="JUnit.DBUpdateTests" />
+        <item itemvalue="JUnit.DBUpdateTests.updateShouldReturnNoResultsOnBadQueryByValue" />
+        <item itemvalue="JUnit.DBUpdateTests.updateShouldReturnAResultOnPositiveValueQuery" />
+        <item itemvalue="JUnit.DBUpdateTests.updateShouldReturnAResultOnPositiveIdQuery" />
       </list>
     </recent_temporary>
   </component>
