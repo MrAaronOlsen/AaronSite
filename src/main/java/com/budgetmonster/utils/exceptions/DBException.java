@@ -55,11 +55,6 @@ public class DBException extends ABException {
     return this;
   }
 
-  public void setCode(Code code, String... args) {
-    this.code = code;
-    this.args = args;
-  }
-
   public Code getCode() {
     return code;
   }

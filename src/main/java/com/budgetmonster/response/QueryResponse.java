@@ -9,15 +9,15 @@ import com.budgetmonster.models.Model;
 import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.ABException;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-public class ResponseFactory {
+public class QueryResponse {
 
-  public static List<Data> build(Table table, Map<String, String> params) throws ABException {
-    List<Data> results = new ArrayList<>();
+  public static Response build(Table table, Map<String, String> params) throws ABException {
+    List<Data> results = new LinkedList<>();
     Function<DBRecord, Data> modelBuilder = Model.getModel(table);
 
     try (DBConnection dbConn = new DBConnection()) {
@@ -31,6 +31,6 @@ public class ResponseFactory {
       }
     }
 
-    return results;
+    return new Response(results);
   }
 }
