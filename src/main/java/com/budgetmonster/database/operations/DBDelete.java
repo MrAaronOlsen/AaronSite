@@ -2,7 +2,7 @@ package com.budgetmonster.database.operations;
 
 import com.budgetmonster.database.connection.DBConnection;
 import com.budgetmonster.utils.enums.Table;
-import com.budgetmonster.utils.exceptions.DBException;
+import com.budgetmonster.utils.exceptions.DatabaseException;
 
 import static com.budgetmonster.models.System.ID;
 
@@ -22,7 +22,7 @@ public class DBDelete implements DBOperation {
   }
 
   @Override
-  public DBResult execute() throws DBException {
+  public DBResult execute() throws DatabaseException {
     DBStatement stmt = dbConn.getDbStmt()
         .execute(this);
 

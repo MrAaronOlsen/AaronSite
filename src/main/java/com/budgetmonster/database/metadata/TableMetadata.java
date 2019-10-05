@@ -1,7 +1,7 @@
 package com.budgetmonster.database.metadata;
 
 import com.budgetmonster.database.connection.DBConnection;
-import com.budgetmonster.utils.exceptions.DBException;
+import com.budgetmonster.utils.exceptions.DatabaseException;
 
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static com.budgetmonster.utils.exceptions.DBException.Code.FAILED_TO_GET_TABLE_METADATA;
+import static com.budgetmonster.utils.exceptions.DatabaseException.Code.FAILED_TO_GET_TABLE_METADATA;
 
 public class TableMetadata {
   private static final Map<String, TableMetadata> tableCache = new ConcurrentHashMap<>();
@@ -18,7 +18,7 @@ public class TableMetadata {
   private String table;
   private Map<String, ColumnMetadata> columns = new HashMap<>();
 
-  public static TableMetadata getTableMetadata(DBConnection dbConn, String table) throws DBException {
+  public static TableMetadata getTableMetadata(DBConnection dbConn, String table) throws DatabaseException {
     if (tableCache.containsKey(table)) {
       return tableCache.get(table);
     }
@@ -29,7 +29,7 @@ public class TableMetadata {
     return tableMetadata;
   }
 
-  private TableMetadata(DBConnection dbConn, String table) throws DBException {
+  private TableMetadata(DBConnection dbConn, String table) throws DatabaseException {
     this.dbConn = dbConn;
     this.table = table;
 
@@ -40,7 +40,7 @@ public class TableMetadata {
     return columns;
   }
 
-  private void build() throws DBException {
+  private void build() throws DatabaseException {
     try {
       ResultSetMetaData metaData = dbConn.getDbMetadata().getTables(null, null, table, null).getMetaData();
 
@@ -53,7 +53,7 @@ public class TableMetadata {
         columns.put(columnMetaData.getName(), columnMetaData);
       }
     } catch (SQLException e) {
-      throw new DBException(FAILED_TO_GET_TABLE_METADATA).sqlEx(e);
+      throw new DatabaseException(FAILED_TO_GET_TABLE_METADATA).sqlEx(e);
     }
   }
 }
