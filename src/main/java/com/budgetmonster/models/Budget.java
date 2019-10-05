@@ -3,6 +3,7 @@ package com.budgetmonster.models;
 import com.budgetmonster.database.operations.DBRecord;
 import com.budgetmonster.response.Data;
 import com.budgetmonster.utils.enums.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import static com.budgetmonster.utils.enums.Table.BUDGET;
 
@@ -36,6 +37,7 @@ public class Budget extends System implements Model, Data {
   }
 
   @Override
+  @JsonIgnore
   public Table getTable() {
     return BUDGET;
   }
