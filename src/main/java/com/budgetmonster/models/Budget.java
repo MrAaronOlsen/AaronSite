@@ -1,11 +1,12 @@
 package com.budgetmonster.models;
 
 import com.budgetmonster.database.operations.DBRecord;
+import com.budgetmonster.response.Data;
 import com.budgetmonster.utils.enums.Table;
 
 import static com.budgetmonster.utils.enums.Table.BUDGET;
 
-public class Budget extends System implements Model {
+public class Budget extends System implements Model, Data {
   public static final String NAME = "name";
 
   private String name;
