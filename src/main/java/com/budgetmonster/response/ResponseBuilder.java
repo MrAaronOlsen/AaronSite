@@ -4,7 +4,6 @@ import com.budgetmonster.utils.enums.RequestType;
 import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.ABException;
 import com.budgetmonster.utils.exceptions.ResponseException;
-import com.budgetmonster.utils.exceptions.SimpleMessageException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +24,8 @@ public class ResponseBuilder {
   public ResponseBuilder setTable(String tableIn) throws ABException {
     Table table = Table.get(tableIn);
 
-    if (table == Table.INVALID_TABLE) {
-      throw new SimpleMessageException(String.format("Invalid table %s for response.", tableIn));
+    if (table.isNotSupported()) {
+      throw new ResponseException(ResponseException.Code.INVALID_RESPONSE_TABLE, tableIn);
     }
 
     this.table = table;

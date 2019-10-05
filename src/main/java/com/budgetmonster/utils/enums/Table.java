@@ -48,6 +48,10 @@ public enum Table {
     return Arrays.stream(Table.values()).filter(table -> table.active).collect(Collectors.toList());
   }
 
+  public boolean isNotSupported() {
+    return this == INVALID_TABLE;
+  }
+
   @Override
   public String toString() {
     return name;
