@@ -34,4 +34,20 @@ public class QueryController extends MasterController {
       return ResponseBuilder.handleError(e);
     }
   }
+
+  @GetMapping("/{table}/{id}")
+  public Response queryOnTableById(
+      @RequestHeader Map<String, String> headers,
+      @PathVariable(value = "table") String table,
+      @PathVariable(value = "id") String id) {
+
+    try {
+      return new ResponseBuilder(RequestType.QUERY_BY_ID)
+          .setTable(table)
+          .setId(id).build();
+
+    } catch (Throwable e) {
+      return ResponseBuilder.handleError(e);
+    }
+  }
 }

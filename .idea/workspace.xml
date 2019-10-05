@@ -2,33 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/InsertResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/InsertController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/MasterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ResponseUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/connection/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/connection/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/metadata/ResultMetadata.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/metadata/ResultMetadata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/metadata/TableMetadata.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/metadata/TableMetadata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBDelete.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBDelete.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBInsert.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBInsert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBOperation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBQueryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBQueryBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBTruncate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBTruncate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBUpdate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBQueryBuilder.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DbQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DbQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/InsertResponse$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/InsertResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/QueryResponse.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/ResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/ResponseBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/server/controllers/QueryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/server/controllers/QueryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/enums/RequestType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/enums/RequestType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/exceptions/DBException$Code.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/exceptions/DBException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBQueryBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBQueryBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Budget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Budget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DbQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DbQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/InsertResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/InsertResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/QueryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/QueryResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ResponseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ResponseBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/QueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/QueryController.java" afterDir="false" />

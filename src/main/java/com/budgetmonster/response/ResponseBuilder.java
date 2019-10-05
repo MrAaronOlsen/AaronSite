@@ -14,6 +14,7 @@ public class ResponseBuilder {
   private Table table;
   private Map<String , String> header;
   private Map<String, String> params;
+  private String id;
   private String body;
   private RequestType requestType;
 
@@ -42,6 +43,11 @@ public class ResponseBuilder {
     return this;
   }
 
+  public ResponseBuilder setId(String id) {
+    this.id = id;
+    return this;
+  }
+
   public ResponseBuilder setBody(String body) {
     this.body = body;
     return this;
@@ -51,6 +57,8 @@ public class ResponseBuilder {
     switch (requestType) {
       case QUERY:
         return QueryResponse.build(table, params);
+      case QUERY_BY_ID:
+        return QueryResponse.build(table, id);
       case INSERT:
         return InsertResponse.build(table, body);
       default:
