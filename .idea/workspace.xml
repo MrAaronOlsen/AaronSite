@@ -2,29 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/Data.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/Error.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ResponseFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/TableEndpoints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/gc.properties" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/QueryResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/RequestType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/exceptions/ResponseException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBQueryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBQueryBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Budget.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Budget.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/server/StartUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/server/StartUp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/enums/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/enums/Table.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBQueryBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBQueryBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Budget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Budget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/StartUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/StartUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/ErrorResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/ResponseFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/server/controllers/TableEndpoints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ResponseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ResponseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/TableEndpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/QueryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/exceptions/DBException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/exceptions/DBException.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +50,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -279,31 +269,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ResponseFactory.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/TableEndpoints.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DbQuery.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBQueryBuilder.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
