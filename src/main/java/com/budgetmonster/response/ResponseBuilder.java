@@ -61,6 +61,8 @@ public class ResponseBuilder {
         return QueryResponse.build(table, id);
       case INSERT:
         return InsertResponse.build(table, body);
+      case DELETE_BY_ID:
+        return DeleteResponse.build(table, id);
       default:
         throw new ResponseException(ResponseException.Code.INVALID_REQUEST_TYPE, requestType.name());
     }

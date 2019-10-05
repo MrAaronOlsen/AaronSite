@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ResponseUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/DeleteResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/DeleteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DBQueryBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DbQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/database/operations/DbQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/InsertResponse$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/InsertResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/QueryResponse.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/ResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/ResponseBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/server/controllers/QueryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/server/controllers/QueryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/enums/RequestType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/enums/RequestType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBQueryBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DBQueryBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DbQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/database/operations/DbQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/InsertResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/InsertResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/QueryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/QueryResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ResponseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ResponseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/InsertController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/QueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/QueryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/RequestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/RequestType.java" afterDir="false" />
     </list>
@@ -81,6 +74,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.budgetmonster.response" />
+      <recent name="com.budgetmonster.server.controllers" />
       <recent name="com.budgetmonster.database.operations" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
