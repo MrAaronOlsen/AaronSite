@@ -14,15 +14,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-public class QueryResponse {
+class QueryResponse {
 
-  public static Response build(Table table, Map<String, String> params) throws ABException {
+  static Response build(Table table, Map<String, String> params) throws ABException {
     List<Data> results = new LinkedList<>();
-    Function<DBRecord, Data> modelBuilder = Model.getModel(table);
+    Function<DBRecord, Data> modelBuilder = Model.getModelData(table);
 
     try (DBConnection dbConn = new DBConnection()) {
       DbQuery query = new DbQuery(dbConn, table)
-          .setQuery(new DBQueryBuilder().addAll(params));
+          .setQuery(new DBQueryBuilder(params));
 
       DBResult result = query.execute();
 

@@ -19,6 +19,10 @@ public class DBRecord {
     // default public constructor
   }
 
+  public DBRecord(Map<String, String> body) {
+    this.record.putAll(body);
+  }
+
   DBRecord(ResultMetadata resultMetadata, ResultSet result) throws DatabaseException {
     try {
       for (ColumnMetadata column : resultMetadata.getColumns()) {

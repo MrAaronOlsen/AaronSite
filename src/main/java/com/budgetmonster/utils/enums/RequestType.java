@@ -1,5 +1,8 @@
 package com.budgetmonster.utils.enums;
 
 public enum RequestType {
-  QUERY;
+  QUERY,
+  INSERT,
+  UPDATE,
+  DELETE;
 }

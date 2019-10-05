@@ -4,21 +4,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DBQueryBuilder {
-  private Map<String, String> queryMap = new HashMap<>();
+  private Map<String, String> queryMap;
+
+  public DBQueryBuilder() {
+    queryMap = new HashMap<>();
+  }
+
+  public DBQueryBuilder(Map<String, String> params) {
+    queryMap = params;
+  }
 
   public DBQueryBuilder add(String name, String value) {
     queryMap.put(name, value);
     return this;
   }
 
-  public DBQueryBuilder addAll(Map<String, String> params) {
-    queryMap.putAll(params);
-    return this;
-  }
-
   @Override
   public String toString() {
-    if (queryMap.isEmpty()) {
+    if (queryMap == null || queryMap.isEmpty()) {
       return "";
     }
 
