@@ -11,8 +11,17 @@ public class DBQueryBuilder {
     return this;
   }
 
+  public DBQueryBuilder addAll(Map<String, String> params) {
+    queryMap.putAll(params);
+    return this;
+  }
+
   @Override
   public String toString() {
+    if (queryMap.isEmpty()) {
+      return "";
+    }
+
     return "WHERE " + queryMap.entrySet().stream()
         .map(set -> set.getKey() + "='" + set.getValue() + "'").reduce((con, acu) -> con + " AND " + acu).get();
   }

@@ -36,7 +36,7 @@ public enum Table {
     this.active = true;
   }
 
-  public Table get(String table) {
+  public static Table get(String table) {
     return nameMap.getOrDefault(table, INVALID_TABLE);
   }
 
