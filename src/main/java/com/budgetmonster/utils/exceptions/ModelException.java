@@ -1,10 +1,8 @@
 package com.budgetmonster.utils.exceptions;
 
-public class ResponseException extends ABException {
+public class ModelException extends ABException {
   public enum Code {
-    INVALID_RESPONSE_TABLE("Table %s is not supported in a request."),
-    INVALID_REQUEST_TYPE("Invalid request type %s."),
-    MALFORMED_REQUEST_BODY("Request body could not be converted to a valid record. ERROR: %s");
+    INVALID_MODEL_TABLE("No model exists for table %s.");
 
     private String message;
 
@@ -17,10 +15,10 @@ public class ResponseException extends ABException {
     }
   }
 
-  private ResponseException.Code code;
+  private ModelException.Code code;
   private String[] args;
 
-  public ResponseException(ResponseException.Code code, String... args) {
+  public ModelException(ModelException.Code code, String... args) {
     this.code = code;
     this.args = args;
   }

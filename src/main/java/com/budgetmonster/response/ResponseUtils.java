@@ -4,12 +4,14 @@ import com.budgetmonster.database.operations.DBRecord;
 import com.budgetmonster.models.Model;
 import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.ABException;
-import com.budgetmonster.utils.exceptions.SimpleMessageException;
+import com.budgetmonster.utils.exceptions.ResponseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.util.Map;
+
+import static com.budgetmonster.utils.exceptions.ResponseException.Code.MALFORMED_REQUEST_BODY;
 
 class ResponseUtils {
 
@@ -23,7 +25,7 @@ class ResponseUtils {
       ObjectMapper mapper = new ObjectMapper();
       return mapper.readValue(body, new TypeReference<Map<String, String>>() {});
     } catch (IOException e) {
-      throw new SimpleMessageException("Failed to convert body to valid record. ERROR: " + e.getMessage());
+      throw new ResponseException(MALFORMED_REQUEST_BODY, e.getMessage());
     }
   }
 
