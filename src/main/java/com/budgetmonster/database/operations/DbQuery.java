@@ -4,6 +4,8 @@ import com.budgetmonster.database.connection.DBConnection;
 import com.budgetmonster.utils.enums.Table;
 import com.budgetmonster.utils.exceptions.DatabaseException;
 
+import static com.budgetmonster.models.System.ID;
+
 public class DbQuery implements DBOperation {
   private Table table;
   private DBConnection dbConn;
@@ -28,7 +30,7 @@ public class DbQuery implements DBOperation {
   }
 
   public DbQuery setIdQuery(String id) {
-    this.query = new DBQueryBuilder().add("id", id);
+    this.query = new DBQueryBuilder().add(ID, id);
     return this;
   }
 

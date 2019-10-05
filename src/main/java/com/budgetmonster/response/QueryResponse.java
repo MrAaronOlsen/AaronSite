@@ -17,12 +17,20 @@ import java.util.function.Function;
 class QueryResponse {
 
   static Response build(Table table, Map<String, String> params) throws ABException {
+    return new Response(executeQuery(table, new DBQueryBuilder(params)));
+  }
+
+  static Response build(Table table, String id) throws ABException {
+    return new Response(executeQuery(table, new DBQueryBuilder(id)));
+  }
+
+  private static List<Data> executeQuery(Table table, DBQueryBuilder queryBuilder) throws ABException {
     List<Data> results = new LinkedList<>();
     Function<DBRecord, Data> modelBuilder = Model.getModelData(table);
 
     try (DBConnection dbConn = new DBConnection()) {
       DbQuery query = new DbQuery(dbConn, table)
-          .setQuery(new DBQueryBuilder(params));
+          .setQuery(queryBuilder);
 
       DBResult result = query.execute();
 
@@ -31,6 +39,6 @@ class QueryResponse {
       }
     }
 
-    return new Response(results);
+    return results;
   }
 }
