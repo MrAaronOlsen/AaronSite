@@ -3,7 +3,7 @@ package com.budgetmonster.database.operations;
 import com.budgetmonster.database.connection.DBConnection;
 import com.budgetmonster.models.Model;
 import com.budgetmonster.utils.enums.Table;
-import com.budgetmonster.utils.exceptions.DBException;
+import com.budgetmonster.utils.exceptions.DatabaseException;
 
 public class DBInsert implements DBOperation {
   private Table table;
@@ -26,7 +26,7 @@ public class DBInsert implements DBOperation {
   }
 
   @Override
-  public DBResult execute() throws DBException {
+  public DBResult execute() throws DatabaseException {
     DBStatement dbStmt = dbConn.getDbStmt()
         .execute(this);
 

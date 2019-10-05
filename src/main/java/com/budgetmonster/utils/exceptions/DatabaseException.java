@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.sql.SQLException;
 
-public class DBException extends ABException {
+public class DatabaseException extends ABException {
   public enum Code {
     // Initializer errors
     FAILED_TO_MAKE_CONNECTION("Failed to make connection."),
@@ -40,17 +40,17 @@ public class DBException extends ABException {
   private String sqlStmt;
   private SQLException sqlEx;
 
-  public DBException(Code code, String... args) {
+  public DatabaseException(Code code, String... args) {
     this.code = code;
     this.args = args;
   }
 
-  public DBException sqlStmt(String sqlStm) {
+  public DatabaseException sqlStmt(String sqlStm) {
     this.sqlStmt = sqlStm;
     return this;
   }
 
-  public DBException sqlEx(SQLException sqlEx) {
+  public DatabaseException sqlEx(SQLException sqlEx) {
     this.sqlEx = sqlEx;
     return this;
   }

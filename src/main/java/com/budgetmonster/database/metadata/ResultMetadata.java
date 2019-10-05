@@ -1,18 +1,18 @@
 package com.budgetmonster.database.metadata;
 
-import com.budgetmonster.utils.exceptions.DBException;
+import com.budgetmonster.utils.exceptions.DatabaseException;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-import static com.budgetmonster.utils.exceptions.DBException.Code.FAILED_TO_BUILD_RESULT_METADATA;
+import static com.budgetmonster.utils.exceptions.DatabaseException.Code.FAILED_TO_BUILD_RESULT_METADATA;
 
 public class ResultMetadata {
   private ResultSet resultSet;
   private ColumnMetadata[] columns;
 
-  public ResultMetadata(ResultSet resultSet) throws DBException {
+  public ResultMetadata(ResultSet resultSet) throws DatabaseException {
     this.resultSet = resultSet;
 
     build();
@@ -22,7 +22,7 @@ public class ResultMetadata {
     return columns;
   }
 
-  private void build() throws DBException {
+  private void build() throws DatabaseException {
     try {
       ResultSetMetaData metaData = resultSet.getMetaData();
       int columnCount = metaData.getColumnCount();
@@ -37,7 +37,7 @@ public class ResultMetadata {
         columns[i] = column;
       }
     } catch (SQLException e) {
-      throw new DBException(FAILED_TO_BUILD_RESULT_METADATA).sqlEx(e);
+      throw new DatabaseException(FAILED_TO_BUILD_RESULT_METADATA).sqlEx(e);
     }
   }
 }

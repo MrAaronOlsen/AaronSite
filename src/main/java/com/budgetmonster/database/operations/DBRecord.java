@@ -2,7 +2,7 @@ package com.budgetmonster.database.operations;
 
 import com.budgetmonster.database.metadata.ColumnMetadata;
 import com.budgetmonster.database.metadata.ResultMetadata;
-import com.budgetmonster.utils.exceptions.DBException;
+import com.budgetmonster.utils.exceptions.DatabaseException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static com.budgetmonster.models.System.ID;
-import static com.budgetmonster.utils.exceptions.DBException.Code.FAILED_TO_BUILD_RESULT_DATA;
+import static com.budgetmonster.utils.exceptions.DatabaseException.Code.FAILED_TO_BUILD_RESULT_DATA;
 
 public class DBRecord {
   private Map<String, String> record = new LinkedHashMap<>();
@@ -19,14 +19,14 @@ public class DBRecord {
     // default public constructor
   }
 
-  DBRecord(ResultMetadata resultMetadata, ResultSet result) throws DBException {
+  DBRecord(ResultMetadata resultMetadata, ResultSet result) throws DatabaseException {
     try {
       for (ColumnMetadata column : resultMetadata.getColumns()) {
         String value = result.getString(column.getName());
         record.put(column.getName(), value);
       }
     } catch (SQLException e) {
-      throw new DBException(FAILED_TO_BUILD_RESULT_DATA).sqlEx(e);
+      throw new DatabaseException(FAILED_TO_BUILD_RESULT_DATA).sqlEx(e);
     }
   }
 

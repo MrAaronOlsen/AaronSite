@@ -5,17 +5,17 @@ import com.budgetmonster.models.Budget;
 import com.budgetmonster.models.Model;
 import com.budgetmonster.server.TestServer;
 import com.budgetmonster.utils.enums.Table;
-import com.budgetmonster.utils.exceptions.DBException;
+import com.budgetmonster.utils.exceptions.DatabaseException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.budgetmonster.utils.exceptions.DBException.Code.TABLE_DOES_NOT_EXIST;
-import static com.budgetmonster.utils.exceptions.DBException.Code.UNKNOWN_COLUMN;
+import static com.budgetmonster.utils.exceptions.DatabaseException.Code.TABLE_DOES_NOT_EXIST;
+import static com.budgetmonster.utils.exceptions.DatabaseException.Code.UNKNOWN_COLUMN;
 
 class DBInsertTests extends TestServer {
 
   @Test
-  void insertingRecordReturnsResultWithRecord() throws DBException {
+  void insertingRecordReturnsResultWithRecord() throws DatabaseException {
     try (DBConnection conn = new DBConnection()) {
       Model budget = new Budget().setName("Test");
 
@@ -34,7 +34,7 @@ class DBInsertTests extends TestServer {
   }
 
   @Test
-  void insertingIntoInvalidTableThrowsException() throws DBException {
+  void insertingIntoInvalidTableThrowsException() throws DatabaseException {
     try (DBConnection conn = new DBConnection()) {
       Model budget = new Budget().setName("Test");
 
@@ -44,14 +44,14 @@ class DBInsertTests extends TestServer {
       try {
         insert.execute();
         Assertions.fail("Should have failed insert because table does not exist.");
-      } catch (DBException e) {
+      } catch (DatabaseException e) {
         Assertions.assertEquals(TABLE_DOES_NOT_EXIST, e.getCode());
       }
     }
   }
 
   @Test
-  void insertingWithInvalidColumnThrowsException() throws DBException {
+  void insertingWithInvalidColumnThrowsException() throws DatabaseException {
     try (DBConnection conn = new DBConnection()) {
       DBRecord record = new DBRecord()
           .add("bad", "even worse");
@@ -62,7 +62,7 @@ class DBInsertTests extends TestServer {
       try {
         insert.execute();
         Assertions.fail("Should have failed insert because column does not exist.");
-      } catch (DBException e) {
+      } catch (DatabaseException e) {
         Assertions.assertEquals(UNKNOWN_COLUMN, e.getCode());
       }
     }
