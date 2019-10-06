@@ -43,6 +43,8 @@ public class Budget extends System implements Model {
 
   @Override
   public String toString() {
-    return "Table: " + getTable() + "\n" + NAME + ": " + name;
+    return "Table: " + getTable() + "\n"
+        + ID + ": " + id + "\n"
+        + NAME + ": " + name;
   }
 }

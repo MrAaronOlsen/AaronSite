@@ -38,7 +38,8 @@ public abstract class TestServer {
     }
 
     Logger.out("Starting Test Server...", Logger.Color.ANSI_CYAN);
-    StartUp.main(
+
+    ConfigProperties.set(
         ConfigProperties.getSysArg(ConfigArg.DB_URL),
         ConfigProperties.getSysArg(ConfigArg.DB_USER),
         ConfigProperties.getSysArg(ConfigArg.DB_PW),
