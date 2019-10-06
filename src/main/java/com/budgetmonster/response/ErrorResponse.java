@@ -7,7 +7,7 @@ public class ErrorResponse implements ResponseData {
     this.error = e;
   }
 
-  public Throwable getError() {
-    return error;
+  public String getError() {
+    return error.getMessage();
   }
 }
