@@ -39,21 +39,6 @@ public class Month extends System implements Model {
     return number;
   }
 
-  public Month setShortName(String shortName) {
-    this.shortName = shortName;
-    return this;
-  }
-
-  public Month setLongName(String longName) {
-    this.longName = longName;
-    return this;
-  }
-
-  public Month setNumber(String number) {
-    this.number = number;
-    return this;
-  }
-
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()

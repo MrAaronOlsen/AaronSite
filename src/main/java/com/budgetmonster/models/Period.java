@@ -31,16 +31,6 @@ public class Period extends System implements Model {
     return monthNumber;
   }
 
-  public Period setYear(String year) {
-    this.year = year;
-    return this;
-  }
-
-  public Period setMonthNumber(String monthNumber) {
-    this.monthNumber = monthNumber;
-    return this;
-  }
-
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()

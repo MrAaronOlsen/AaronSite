@@ -17,6 +17,9 @@ public interface Model extends ResponseData {
       case BUDGET: return Budget::new;
       case TRANSACTION: return Transaction::new;
       case MONTH: return Month::new;
+      case PERIOD: return Period::new;
+      case BUDGET_PERIODS: return BudgetPeriod::new;
+      case BUDGET_PERIOD_TRANSACTION: return BudgetPeriodTransaction::new;
       default:
         throw new ModelException(INVALID_MODEL_TABLE, table.getName());
     }
