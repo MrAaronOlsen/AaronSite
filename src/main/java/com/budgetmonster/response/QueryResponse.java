@@ -24,9 +24,9 @@ class QueryResponse {
     return new Response(executeQuery(table, new DBQueryBuilder(id)));
   }
 
-  private static List<Data> executeQuery(Table table, DBQueryBuilder queryBuilder) throws ABException {
-    List<Data> results = new LinkedList<>();
-    Function<DBRecord, Data> modelBuilder = Model.getModelData(table);
+  private static List<ResponseData> executeQuery(Table table, DBQueryBuilder queryBuilder) throws ABException {
+    List<ResponseData> results = new LinkedList<>();
+    Function<DBRecord, Model> modelBuilder = Model.getModel(table);
 
     try (DBConnection dbConn = new DBConnection()) {
       DbQuery query = new DbQuery(dbConn, table)

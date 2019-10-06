@@ -1,7 +1,6 @@
 package com.budgetmonster.response;
 
 import com.budgetmonster.database.connection.DBConnection;
-import com.budgetmonster.database.operations.DBInsert;
 import com.budgetmonster.database.operations.DBRecord;
 import com.budgetmonster.database.operations.DBResult;
 import com.budgetmonster.database.operations.DBUpdate;
@@ -19,9 +18,9 @@ class UpdateResponse {
     return new Response(executeUpdate(table, id, ResponseUtils.convertBodyToModel(table, body)));
   }
 
-  private static List<Data> executeUpdate(Table table, String id, Model model) throws ABException {
-    List<Data> results = new LinkedList<>();
-    Function<DBRecord, Data> dataBuilder = Model.getModelData(table);
+  private static List<ResponseData> executeUpdate(Table table, String id, Model model) throws ABException {
+    List<ResponseData> results = new LinkedList<>();
+    Function<DBRecord, Model> dataBuilder = Model.getModel(table);
 
     try (DBConnection dbConn = new DBConnection()) {
       DBUpdate update = new DBUpdate(dbConn, table)

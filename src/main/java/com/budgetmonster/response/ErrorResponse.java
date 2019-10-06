@@ -1,9 +1,9 @@
 package com.budgetmonster.response;
 
-public class Error implements Data {
+public class ErrorResponse implements ResponseData {
   private Throwable error;
 
-  public Error(Throwable e) {
+  public ErrorResponse(Throwable e) {
     this.error = e;
   }
 
