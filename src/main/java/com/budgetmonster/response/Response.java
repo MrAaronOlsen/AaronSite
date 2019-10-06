@@ -4,13 +4,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Response {
-  private List<Data> data = new LinkedList<>();
+  private List<ResponseData> data = new LinkedList<>();
 
-  public Response(List<Data> data) {
+  public Response(List<ResponseData> data) {
     this.data.addAll(data);
   }
 
-  public List<Data> getData() {
+  public List<ResponseData> getData() {
     return data;
   }
 }

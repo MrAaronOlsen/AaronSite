@@ -70,8 +70,8 @@ public class ResponseBuilder {
   }
 
   public static Response handleError(Throwable e) {
-    List<Data> errors = new ArrayList<>();
-    errors.add(new Error(e));
+    List<ResponseData> errors = new ArrayList<>();
+    errors.add(new ErrorResponse(e));
 
     return new Response(errors);
   }

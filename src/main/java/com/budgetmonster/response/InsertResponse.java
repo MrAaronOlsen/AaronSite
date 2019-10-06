@@ -19,9 +19,9 @@ class InsertResponse {
     return new Response(executeInsert(table, ResponseUtils.convertBodyToModel(table, body)));
   }
 
-  private static List<Data> executeInsert(Table table, Model model) throws ABException {
-    List<Data> results = new LinkedList<>();
-    Function<DBRecord, Data> dataBuilder = Model.getModelData(table);
+  private static List<ResponseData> executeInsert(Table table, Model model) throws ABException {
+    List<ResponseData> results = new LinkedList<>();
+    Function<DBRecord, Model> dataBuilder = Model.getModel(table);
 
     try (DBConnection dbConn = new DBConnection()) {
       DBInsert insert = new DBInsert(dbConn, table).addRecord(model);
