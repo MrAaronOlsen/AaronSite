@@ -4,7 +4,7 @@ import com.budgetmonster.database.operations.DBRecord;
 import com.budgetmonster.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import static com.budgetmonster.utils.enums.Table.TRANSACTION;
+import static com.budgetmonster.utils.enums.Table.TRANSACTIONS;
 
 public class Transaction extends System implements Model {
   public static final String AMOUNT = "amount";
@@ -38,6 +38,21 @@ public class Transaction extends System implements Model {
     return date;
   }
 
+  public Transaction setAmount(String amount) {
+    this.amount = amount;
+    return this;
+  }
+
+  public Transaction setVendor(String vendor) {
+    this.vendor = vendor;
+    return this;
+  }
+
+  public Transaction setDate(String date) {
+    this.date = date;
+    return this;
+  }
+
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
@@ -49,7 +64,7 @@ public class Transaction extends System implements Model {
   @Override
   @JsonIgnore
   public Table getTable() {
-    return TRANSACTION;
+    return TRANSACTIONS;
   }
 
   @Override

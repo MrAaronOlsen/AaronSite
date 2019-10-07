@@ -16,7 +16,7 @@ class DBUpdateTests extends TestServer {
       Budget insertRecord = new Budget(insertRecord(new Budget().setName("Test")));
       insertRecord.setName("Testing 123");
 
-      DBUpdate update = new DBUpdate(dbConn, Table.BUDGET)
+      DBUpdate update = new DBUpdate(dbConn, Table.BUDGETS)
           .addQueryId(insertRecord.getId())
           .addRecord(insertRecord);
 
@@ -29,7 +29,7 @@ class DBUpdateTests extends TestServer {
       Budget updatedRecordOne = new Budget(updateResult.getNext());
       Assertions.assertEquals("Testing 123", updatedRecordOne.getName());
 
-      DbQuery query = new DbQuery(dbConn, Table.BUDGET).setIdQuery(insertRecord.getId());
+      DbQuery query = new DbQuery(dbConn, Table.BUDGETS).setIdQuery(insertRecord.getId());
       DBResult queryResult = query.execute();
 
       if (!queryResult.hasNext()) {
@@ -47,7 +47,7 @@ class DBUpdateTests extends TestServer {
       Budget insertRecord = new Budget(insertRecord(new Budget().setName("Test")));
       insertRecord.setName("Testing 123");
 
-      DBUpdate update = new DBUpdate(dbConn, Table.BUDGET)
+      DBUpdate update = new DBUpdate(dbConn, Table.BUDGETS)
           .addQuery(new DBQueryBuilder().add("name", "Test"))
           .addRecord(insertRecord);
 
@@ -60,7 +60,7 @@ class DBUpdateTests extends TestServer {
       Budget updatedRecordOne = new Budget(updateResult.getNext());
       Assertions.assertEquals("Testing 123", updatedRecordOne.getName());
 
-      DbQuery query = new DbQuery(dbConn, Table.BUDGET).setIdQuery(insertRecord.getId());
+      DbQuery query = new DbQuery(dbConn, Table.BUDGETS).setIdQuery(insertRecord.getId());
       DBResult queryResult = query.execute();
 
       if (!queryResult.hasNext()) {
@@ -75,7 +75,7 @@ class DBUpdateTests extends TestServer {
   @Test
   void updateShouldReturnNoResultsOnBadQueryById() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
-      DBUpdate update = new DBUpdate(dbConn, Table.BUDGET)
+      DBUpdate update = new DBUpdate(dbConn, Table.BUDGETS)
           .addQueryId("0")
           .addRecord(new Budget().setName("testing"));
 
@@ -90,7 +90,7 @@ class DBUpdateTests extends TestServer {
   @Test
   void updateShouldReturnNoResultsOnBadQueryByValue() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
-      DBUpdate update = new DBUpdate(dbConn, Table.BUDGET)
+      DBUpdate update = new DBUpdate(dbConn, Table.BUDGETS)
           .addQuery(new DBQueryBuilder().add("name", "bad"))
           .addRecord(new Budget().setName("testing"));
 

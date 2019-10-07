@@ -17,7 +17,7 @@ class DBQueryTests extends TestServer {
     Budget budgetInsert = new Budget(insertRecord(new Budget().setName(unique("test"))));
 
     try (DBConnection dbConn = new DBConnection()) {
-      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGET).setIdQuery(budgetInsert.getId());
+      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGETS).setIdQuery(budgetInsert.getId());
 
       DBResult result = dbQuery.execute();
       if (result.hasNext()) {
@@ -37,7 +37,7 @@ class DBQueryTests extends TestServer {
     Budget budgetInsert = new Budget(insertRecord(new Budget().setName(objectName)));
 
     try (DBConnection dbConn = new DBConnection()) {
-      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGET).setQuery(new DBQueryBuilder().add(NAME, objectName));
+      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGETS).setQuery(new DBQueryBuilder().add(NAME, objectName));
 
       DBResult result = dbQuery.execute();
       if (result.hasNext()) {
@@ -59,7 +59,7 @@ class DBQueryTests extends TestServer {
     insertRecord(new Budget().setName(objectName));
 
     try (DBConnection dbConn = new DBConnection()) {
-      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGET).setQuery(new DBQueryBuilder().add(NAME, objectName));
+      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGETS).setQuery(new DBQueryBuilder().add(NAME, objectName));
 
       DBResult result = dbQuery.execute();
 
@@ -75,7 +75,7 @@ class DBQueryTests extends TestServer {
   @Test
   void queryOnNonExistingIdReturnsNoResults() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
-      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGET).setIdQuery("0");
+      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGETS).setIdQuery("0");
 
       DBResult result = dbQuery.execute();
 
@@ -88,7 +88,7 @@ class DBQueryTests extends TestServer {
   @Test
   void queryOnNonExistingValueReturnsNoResults() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
-      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGET).setQuery(new DBQueryBuilder().add("name", "bad"));
+      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGETS).setQuery(new DBQueryBuilder().add("name", "bad"));
 
       DBResult result = dbQuery.execute();
 

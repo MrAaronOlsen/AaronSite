@@ -15,13 +15,13 @@ class DBDeleteTests extends TestServer {
     Budget insertRecord = new Budget(insertRecord(new Budget().setName(unique("test"))));
 
     try (DBConnection dbConn = new DBConnection()) {
-      DBDelete dbDelete = new DBDelete(dbConn, Table.BUDGET).setId(insertRecord.getId());
+      DBDelete dbDelete = new DBDelete(dbConn, Table.BUDGETS).setId(insertRecord.getId());
       DBResult deleteResult = dbDelete.execute();
 
       if (deleteResult.hasNext()) {
         DBRecord record = deleteResult.getNext();
 
-        DbQuery query = new DbQuery(dbConn,Table.BUDGET).setIdQuery(record.getId());
+        DbQuery query = new DbQuery(dbConn,Table.BUDGETS).setIdQuery(record.getId());
         DBResult queryResult = query.execute();
 
         if (queryResult.hasNext()) {
@@ -36,7 +36,7 @@ class DBDeleteTests extends TestServer {
   @Test
   void deletingSingleRecordByInvalidIdReturnsNoResult() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
-      DBDelete dbDelete = new DBDelete(dbConn, Table.BUDGET).setId("0");
+      DBDelete dbDelete = new DBDelete(dbConn, Table.BUDGETS).setId("0");
       DBResult deleteResult = dbDelete.execute();
 
       if (deleteResult.hasNext()) {

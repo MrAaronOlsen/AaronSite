@@ -10,12 +10,12 @@ import java.util.stream.Collectors;
 
 public enum Table {
   INVALID_TABLE("InvalidTable", false),
-  BUDGET(Tables.BUDGETS),
-  TRANSACTION(Tables.TRANSACTIONS),
-  MONTH(Tables.MONTHS),
-  PERIOD(Tables.PERIODS),
+  BUDGETS(Tables.BUDGETS),
+  TRANSACTIONS(Tables.TRANSACTIONS),
+  MONTHS(Tables.MONTHS),
+  PERIODS(Tables.PERIODS),
   BUDGET_PERIODS(Tables.BUDGET_PERIODS),
-  BUDGET_PERIOD_TRANSACTION(Tables.BUDGET_PERIOD_TRANSACTIONS);
+  BUDGET_PERIOD_TRANSACTIONS(Tables.BUDGET_PERIOD_TRANSACTIONS);
 
   private String name;
   private boolean active;

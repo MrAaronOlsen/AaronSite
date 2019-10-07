@@ -14,12 +14,12 @@ public interface Model extends ResponseData {
 
   static Function<DBRecord, Model> getModel(Table table) throws ABException {
     switch (table) {
-      case BUDGET: return Budget::new;
-      case TRANSACTION: return Transaction::new;
-      case MONTH: return Month::new;
-      case PERIOD: return Period::new;
+      case BUDGETS: return Budget::new;
+      case TRANSACTIONS: return Transaction::new;
+      case MONTHS: return Month::new;
+      case PERIODS: return Period::new;
       case BUDGET_PERIODS: return BudgetPeriod::new;
-      case BUDGET_PERIOD_TRANSACTION: return BudgetPeriodTransaction::new;
+      case BUDGET_PERIOD_TRANSACTIONS: return BudgetPeriodTransaction::new;
       default:
         throw new ModelException(INVALID_MODEL_TABLE, table.getName());
     }

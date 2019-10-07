@@ -4,7 +4,8 @@ import com.budgetmonster.database.operations.DBRecord;
 import com.budgetmonster.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import static com.budgetmonster.utils.enums.Table.BUDGET;
+import static com.budgetmonster.utils.enums.Table.BUDGETS;
+import static com.budgetmonster.utils.enums.Table.PERIODS;
 
 public class Period extends System implements Model {
   public static final String YEAR = "year";
@@ -31,6 +32,16 @@ public class Period extends System implements Model {
     return monthNumber;
   }
 
+  public Period setYear(String year) {
+    this.year = year;
+    return this;
+  }
+
+  public Period setMonthNumber(String monthNumber) {
+    this.monthNumber = monthNumber;
+    return this;
+  }
+
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
@@ -41,7 +52,7 @@ public class Period extends System implements Model {
   @Override
   @JsonIgnore
   public Table getTable() {
-    return BUDGET;
+    return PERIODS;
   }
 
   @Override

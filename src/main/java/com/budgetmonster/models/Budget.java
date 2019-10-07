@@ -4,7 +4,7 @@ import com.budgetmonster.database.operations.DBRecord;
 import com.budgetmonster.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import static com.budgetmonster.utils.enums.Table.BUDGET;
+import static com.budgetmonster.utils.enums.Table.BUDGETS;
 
 public class Budget extends System implements Model {
   public static final String NAME = "name";
@@ -38,7 +38,7 @@ public class Budget extends System implements Model {
   @Override
   @JsonIgnore
   public Table getTable() {
-    return BUDGET;
+    return BUDGETS;
   }
 
   @Override
