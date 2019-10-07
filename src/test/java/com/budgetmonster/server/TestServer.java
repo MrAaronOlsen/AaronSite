@@ -4,7 +4,7 @@ import com.budgetmonster.database.connection.DBConnection;
 import com.budgetmonster.database.operations.DBRecord;
 import com.budgetmonster.database.operations.DBTruncate;
 import com.budgetmonster.models.Model;
-import com.budgetmonster.testutils.SeedDataHandler;
+import com.budgetmonster.testutils.dataseeder.SeedDataHandler;
 import com.budgetmonster.utils.enums.ConfigArg;
 import com.budgetmonster.utils.ConfigProperties;
 import com.budgetmonster.utils.enums.Table;

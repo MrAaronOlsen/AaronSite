@@ -14,7 +14,7 @@ class DBQueryTests extends TestServer {
 
   @Test
   void queryByIdReturnsSingleRecord() throws ABException {
-    Budget budgetInsert = new Budget(insertRecord(new Budget().setName(unique("test"))));
+    Budget budgetInsert = new Budget(insertRecord(new Budget().setName("test")));
 
     try (DBConnection dbConn = new DBConnection()) {
       DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGETS).setIdQuery(budgetInsert.getId());
@@ -33,11 +33,10 @@ class DBQueryTests extends TestServer {
 
   @Test
   void queryByValueReturnsSingleRecord() throws ABException {
-    String objectName = unique("test");
-    Budget budgetInsert = new Budget(insertRecord(new Budget().setName(objectName)));
+    Budget budgetInsert = new Budget(insertRecord(new Budget().setName("test")));
 
     try (DBConnection dbConn = new DBConnection()) {
-      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGETS).setQuery(new DBQueryBuilder().add(NAME, objectName));
+      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGETS).setQuery(new DBQueryBuilder().add(NAME, "test"));
 
       DBResult result = dbQuery.execute();
       if (result.hasNext()) {
@@ -53,13 +52,11 @@ class DBQueryTests extends TestServer {
 
   @Test
   void queryByValueReturnsMultipleRecords() throws ABException {
-    String objectName = unique("test");
-
-    insertRecord(new Budget().setName(objectName));
-    insertRecord(new Budget().setName(objectName));
+    insertRecord(new Budget().setName("test"));
+    insertRecord(new Budget().setName("test"));
 
     try (DBConnection dbConn = new DBConnection()) {
-      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGETS).setQuery(new DBQueryBuilder().add(NAME, objectName));
+      DbQuery dbQuery = new DbQuery(dbConn, Table.BUDGETS).setQuery(new DBQueryBuilder().add(NAME, "test"));
 
       DBResult result = dbQuery.execute();
 
