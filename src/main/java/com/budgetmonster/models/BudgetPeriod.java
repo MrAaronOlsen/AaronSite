@@ -1,18 +1,28 @@
 package com.budgetmonster.models;
 
 import com.budgetmonster.database.operations.DBRecord;
+import com.budgetmonster.utils.annotations.Column;
 import com.budgetmonster.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import static com.budgetmonster.utils.enums.Table.BUDGET;
+import static com.budgetmonster.utils.enums.ColumnType.CURRENCY;
+import static com.budgetmonster.utils.enums.ColumnType.TABLE_LOOKUP;
+import static com.budgetmonster.utils.enums.Table.BUDGETS;
+import static com.budgetmonster.utils.enums.Table.BUDGET_PERIODS;
+import static com.budgetmonster.utils.enums.Table.PERIODS;
 
 public class BudgetPeriod extends System implements Model {
   public static final String BUDGET_ID = "budget_id";
   public static final String PERIOD_ID = "period_id";
   public static final String AMOUNT = "amount";
 
+  @Column(type = TABLE_LOOKUP, table = BUDGETS)
   private String budgetId;
+
+  @Column(type = TABLE_LOOKUP, table = PERIODS)
   private String periodId;
+
+  @Column(type = CURRENCY)
   private String amount;
 
   public BudgetPeriod() {
@@ -38,6 +48,21 @@ public class BudgetPeriod extends System implements Model {
     return periodId;
   }
 
+  public BudgetPeriod setAmount(String amount) {
+    this.amount = amount;
+    return this;
+  }
+
+  public BudgetPeriod setBudgetId(String budgetId) {
+    this.budgetId = budgetId;
+    return this;
+  }
+
+  public BudgetPeriod setPeriodId(String periodId) {
+    this.periodId = periodId;
+    return this;
+  }
+
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
@@ -49,7 +74,7 @@ public class BudgetPeriod extends System implements Model {
   @Override
   @JsonIgnore
   public Table getTable() {
-    return BUDGET;
+    return BUDGET_PERIODS;
   }
 
   @Override

@@ -4,7 +4,8 @@ import com.budgetmonster.database.operations.DBRecord;
 import com.budgetmonster.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import static com.budgetmonster.utils.enums.Table.BUDGET;
+import static com.budgetmonster.utils.enums.Table.BUDGETS;
+import static com.budgetmonster.utils.enums.Table.MONTHS;
 
 public class Month extends System implements Model {
   public static final String SHORT_NAME = "name_short";
@@ -39,6 +40,21 @@ public class Month extends System implements Model {
     return number;
   }
 
+  public Month setShortName(String shortName) {
+    this.shortName = shortName;
+    return this;
+  }
+
+  public Month setLongName(String longName) {
+    this.longName = longName;
+    return this;
+  }
+
+  public Month setNumber(String number) {
+    this.number = number;
+    return this;
+  }
+
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
@@ -50,7 +66,7 @@ public class Month extends System implements Model {
   @Override
   @JsonIgnore
   public Table getTable() {
-    return BUDGET;
+    return MONTHS;
   }
 
   @Override

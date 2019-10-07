@@ -2,16 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/BudgetPeriod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/BudgetPeriodTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/ModelBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/annotations/Column.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/ColumnType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/models/ModelScrubberTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Budget.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Budget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/BudgetPeriod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/BudgetPeriod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/BudgetPeriodTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/BudgetPeriodTransaction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/ErrorResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/response/ErrorResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Month.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Month.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Period.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Period.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Transaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/enums/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/utils/enums/Table.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBDeleteTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBDeleteTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBInsertTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBInsertTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBQueryTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBQueryTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBUpdateTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBUpdateTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Budget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Budget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/BudgetPeriod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/BudgetPeriod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/BudgetPeriodTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/BudgetPeriodTransaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Month.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Month.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Period.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Period.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/models/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/response/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/utils/enums/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBDeleteTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBDeleteTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBInsertTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBInsertTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBQueryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBQueryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBUpdateTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/budgetmonster/database/operations/DBUpdateTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +68,7 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -97,7 +117,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StartUp">
+  <component name="RunManager" selected="JUnit.ModelScrubberTests.doTheThing">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -181,17 +201,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBUpdateTests.updateShouldReturnNoResultsOnBadQueryByValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModelScrubberTests.doTheThing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="budgetmonster.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.budgetmonster.database.operations.*" />
+          <option name="PATTERN" value="com.budgetmonster.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.budgetmonster.database.operations" />
-      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.database.operations.DBUpdateTests" />
-      <option name="METHOD_NAME" value="updateShouldReturnNoResultsOnBadQueryByValue" />
+      <option name="PACKAGE_NAME" value="com.budgetmonster.models" />
+      <option name="MAIN_CLASS_NAME" value="com.budgetmonster.models.ModelScrubberTests" />
+      <option name="METHOD_NAME" value="doTheThing" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/budgetmonster -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
       <option name="PARAMETERS" value="" />
@@ -232,17 +252,17 @@
     <list>
       <item itemvalue="Application.StartUp" />
       <item itemvalue="JUnit.DBUpdateTests" />
-      <item itemvalue="JUnit.DBUpdateTests.updateShouldReturnNoResultsOnBadQueryByValue" />
       <item itemvalue="JUnit.AllTests" />
       <item itemvalue="JUnit.DBInsertTests" />
+      <item itemvalue="JUnit.ModelScrubberTests.doTheThing" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ModelScrubberTests.doTheThing" />
         <item itemvalue="Application.StartUp" />
         <item itemvalue="JUnit.AllTests" />
         <item itemvalue="JUnit.DBInsertTests" />
         <item itemvalue="JUnit.DBUpdateTests" />
-        <item itemvalue="JUnit.DBUpdateTests.updateShouldReturnNoResultsOnBadQueryByValue" />
       </list>
     </recent_temporary>
   </component>

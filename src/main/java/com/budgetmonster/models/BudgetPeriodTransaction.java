@@ -4,7 +4,8 @@ import com.budgetmonster.database.operations.DBRecord;
 import com.budgetmonster.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import static com.budgetmonster.utils.enums.Table.BUDGET;
+import static com.budgetmonster.utils.enums.Table.BUDGETS;
+import static com.budgetmonster.utils.enums.Table.BUDGET_PERIOD_TRANSACTIONS;
 
 public class BudgetPeriodTransaction extends System implements Model {
   public static final String BUDGET_PERIOD_ID = "budget_period_id";
@@ -38,6 +39,21 @@ public class BudgetPeriodTransaction extends System implements Model {
     return transactionId;
   }
 
+  public BudgetPeriodTransaction setAmount(String amount) {
+    this.amount = amount;
+    return this;
+  }
+
+  public BudgetPeriodTransaction setBudgetPeriodId(String budgetPeriodId) {
+    this.budgetPeriodId = budgetPeriodId;
+    return this;
+  }
+
+  public BudgetPeriodTransaction setTransactionId(String transactionId) {
+    this.transactionId = transactionId;
+    return this;
+  }
+
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
@@ -49,7 +65,7 @@ public class BudgetPeriodTransaction extends System implements Model {
   @Override
   @JsonIgnore
   public Table getTable() {
-    return BUDGET;
+    return BUDGET_PERIOD_TRANSACTIONS;
   }
 
   @Override

@@ -19,7 +19,7 @@ class DBInsertTests extends TestServer {
     try (DBConnection conn = new DBConnection()) {
       Model budget = new Budget().setName("Test");
 
-      DBInsert insert = new DBInsert(conn, Table.BUDGET)
+      DBInsert insert = new DBInsert(conn, Table.BUDGETS)
           .addRecord(budget);
 
       DBResult insertResult = insert.execute();
@@ -56,7 +56,7 @@ class DBInsertTests extends TestServer {
       DBRecord record = new DBRecord()
           .add("bad", "even worse");
 
-      DBInsert insert = new DBInsert(conn, Table.BUDGET)
+      DBInsert insert = new DBInsert(conn, Table.BUDGETS)
           .addRecord(record);
 
       try {
