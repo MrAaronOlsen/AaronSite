@@ -14,7 +14,7 @@ class ModelScrubberTests extends TestServer {
 
   @Test
   void doTheThing() throws ABException {
-    seed();
+    seedTest();
 
     try (DBConnection dbConn = new DBConnection()) {
       DbQuery query = new DbQuery(dbConn, Table.BUDGET_PERIOD_TRANSACTIONS);
@@ -27,18 +27,31 @@ class ModelScrubberTests extends TestServer {
     }
   }
 
-  private void seed() throws ABException {
+  private void seedTest() throws ABException {
     Month month = new Month()
         .setShortName("Jan")
         .setLongName("January")
         .setNumber("1");
 
+    insertRecord(month);
+
     Period period = new Period()
         .setYear("2019")
         .setMonthNumber("1");
 
+    DBRecord periodR = insertRecord(period);
+
     Budget budget = new Budget()
         .setName("Groceries");
+
+    DBRecord budgetR = insertRecord(budget);
+
+    BudgetPeriod budgetPeriod = new BudgetPeriod()
+        .setAmount("40000")
+        .setBudgetId(budgetR.getId())
+        .setPeriodId(periodR.getId());
+
+    DBRecord budgetPeriodR = insertRecord(budgetPeriod);
 
     Transaction transOne = new Transaction()
         .setAmount("5000")
@@ -49,17 +62,6 @@ class ModelScrubberTests extends TestServer {
         .setAmount("14055")
         .setDate("2019-01-14")
         .setVendor("Costco");
-
-    insertRecord(month);
-    DBRecord periodR = insertRecord(period);
-    DBRecord budgetR = insertRecord(budget);
-
-    BudgetPeriod budgetPeriod = new BudgetPeriod()
-        .setAmount("40000")
-        .setBudgetId(budgetR.getId())
-        .setPeriodId(periodR.getId());
-
-    DBRecord budgetPeriodR = insertRecord(budgetPeriod);
 
     DBRecord transOneR = insertRecord(transOne);
     DBRecord transTwoR = insertRecord(transTwo);
