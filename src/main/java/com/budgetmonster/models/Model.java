@@ -25,6 +25,7 @@ public interface Model extends ResponseData {
     }
   }
 
+  String getId();
   DBRecord buildRecord();
   Table getTable();
   String toString();

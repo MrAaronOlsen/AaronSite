@@ -1,0 +1,22 @@
+{
+  "budgets": [
+    {
+      "name": "Groceries"
+    },
+    {
+      "name": "Household"
+    },
+    {
+      "name": "Gas"
+    },
+    {
+      "name": "Internet"
+    },
+    {
+      "name": "Pet"
+    },
+    {
+      "name": "Baby"
+    }
+  ]
+}

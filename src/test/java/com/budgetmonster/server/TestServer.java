@@ -4,7 +4,7 @@ import com.budgetmonster.database.connection.DBConnection;
 import com.budgetmonster.database.operations.DBRecord;
 import com.budgetmonster.database.operations.DBTruncate;
 import com.budgetmonster.models.Model;
-import com.budgetmonster.testutils.dataseeder.SeedDataHandler;
+import com.budgetmonster.testutils.dataseeder.BudgetPeriodSeeder;
 import com.budgetmonster.utils.enums.ConfigArg;
 import com.budgetmonster.utils.ConfigProperties;
 import com.budgetmonster.utils.enums.Table;
@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 public abstract class TestServer {
-  private static SeedDataHandler seedDataHandler = new SeedDataHandler();
+  private static BudgetPeriodSeeder seedDataHandler = new BudgetPeriodSeeder();
   private static AtomicInteger testIncrement = new AtomicInteger();
 
   @BeforeEach
@@ -53,10 +53,6 @@ public abstract class TestServer {
       DBTruncate dbTruncate = new DBTruncate(dbConn, Table.getActiveTables());
       dbTruncate.execute();
     }
-  }
-
-  protected String unique(String value) {
-    return value + seedDataHandler.getNextString();
   }
 
   protected DBRecord insertRecord(Model model) throws ABException {
