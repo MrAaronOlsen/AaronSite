@@ -3,10 +3,14 @@ package com.budgetmonster.database.operations;
 import com.budgetmonster.database.metadata.ColumnMetadata;
 import com.budgetmonster.database.metadata.ResultMetadata;
 import com.budgetmonster.utils.exceptions.DatabaseException;
+import org.apache.commons.lang3.StringUtils;
+import org.bson.Document;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import static com.budgetmonster.models.System.ID;
@@ -21,6 +25,13 @@ public class DBRecord {
 
   public DBRecord(Map<String, String> body) {
     this.record.putAll(body);
+  }
+
+  public DBRecord(Document body) {
+    for (Map.Entry<String, Object> entry : body.entrySet()) {
+      String field = entry.getKey();
+      this.record.put(field, body.getString(field));
+    }
   }
 
   DBRecord(ResultMetadata resultMetadata, ResultSet result) throws DatabaseException {
@@ -61,5 +72,40 @@ public class DBRecord {
 
   String safeValue(String value) {
     return "'" + value + "'";
+  }
+
+  public String toJson() {
+    List<String> elements = new ArrayList<>();
+    String json = "{";
+
+    for (Map.Entry<String, String> entry : record.entrySet()) {
+      elements.add("\"" + entry.getKey() + "\": \"" + entry.getValue() + "\"");
+    }
+
+    json += StringUtils.join(elements, ", ");
+    json += "}";
+
+    return json;
+  }
+
+  public Document toDocument() {
+    Document doc = new Document();
+
+    for (Map.Entry<String, String> entry : record.entrySet()) {
+      doc.put(entry.getKey(), entry.getValue());
+    }
+
+    return doc;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder string = new StringBuilder();
+
+    for (Map.Entry<String, String> entry : record.entrySet()) {
+      string.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+    }
+
+    return string.toString();
   }
 }

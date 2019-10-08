@@ -1,0 +1,28 @@
+{
+  "budget_periods": [
+    {
+      "budget": "Groceries",
+      "amount": "40000"
+    },
+    {
+      "budget": "Household",
+      "amount": "20000"
+    },
+    {
+      "budget": "Gas",
+      "amount": "20000"
+    },
+    {
+      "budget": "Internet",
+      "amount": "5000"
+    },
+    {
+      "budget": "Pet",
+      "amount": "6000"
+    },
+    {
+      "budget": "Baby",
+      "amount": "20000"
+    }
+  ]
+}
