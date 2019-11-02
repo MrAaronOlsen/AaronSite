@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/OAuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/budgetmonster/models/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/AllTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/OneOffs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBDeleteTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBInsertTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBQueryTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/database/operations/DBUpdateTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/server/TestServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/testutils/dataseeder/DataSeedOne.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/budgetmonster/testutils/dataseeder/DataSeeder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/resources/budget_periods.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/resources/budgets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/resources/months.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/resources/periods.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/budgetmonster/OneOffs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/OAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/OAuthController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -286,7 +270,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/budgetmonster/server/controllers/OAuthController.java</url>
-          <line>26</line>
+          <line>24</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
