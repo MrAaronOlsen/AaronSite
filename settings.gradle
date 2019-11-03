@@ -1,4 +1,4 @@
-rootProject.name = 'budgetmonster'
+rootProject.name = 'aaronsite'
 
 include 'controllers'
 include 'database'
