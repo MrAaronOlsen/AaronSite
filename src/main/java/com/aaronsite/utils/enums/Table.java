@@ -7,8 +7,12 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 public enum Table {
-  INVALID_TABLE("InvalidTable", false),
-  TEST_SIMPLE("test_simple");
+  // Production Tables
+  POSTS("posts"),
+
+  // Test Tables
+  TEST_SIMPLE("test_simple"),
+  INVALID_TABLE("InvalidTable", false);
 
   private String name;
   private boolean active;
@@ -44,6 +48,10 @@ public enum Table {
 
   public boolean isNotSupported() {
     return this == INVALID_TABLE;
+  }
+
+  public boolean isNotActive() {
+    return !active;
   }
 
   @Override
