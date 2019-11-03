@@ -8,10 +8,9 @@ import org.bson.Document;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static com.aaronsite.models.System.ID;
 import static com.aaronsite.utils.exceptions.DatabaseException.Code.FAILED_TO_BUILD_RESULT_DATA;
@@ -46,7 +45,7 @@ public class DBRecord {
   }
 
   public DBRecord add(String column, String value) {
-    record.put(column, safeValue(value));
+    record.put(column, value);
     return this;
   }
 
@@ -67,10 +66,13 @@ public class DBRecord {
   }
 
   String getSqlUpdate() {
-    return "SET " + record.entrySet().stream().map((e) -> e.getKey() + "=" + e.getValue()).reduce((e, a) -> e + ", " + a).get();
+    return "SET " + record.entrySet().stream()
+        .filter(e -> e.getValue() != null)
+        .map((e) -> e.getKey() + "=" + safeValue(e.getValue()))
+        .reduce((e, a) -> e + ", " + a).orElse("");
   }
 
-  String safeValue(String value) {
+  private String safeValue(String value) {
     return "'" + value + "'";
   }
 

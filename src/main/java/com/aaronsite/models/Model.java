@@ -14,6 +14,7 @@ public interface Model extends ResponseData {
 
   static Function<DBRecord, Model> getModel(Table table) throws ABException {
     switch (table) {
+      case POSTS: return Post::new;
       default:
         throw new ModelException(INVALID_MODEL_TABLE, table.getName());
     }

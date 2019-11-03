@@ -28,6 +28,10 @@ public class ResponseBuilder {
       throw new ResponseException(ResponseException.Code.INVALID_RESPONSE_TABLE, tableIn);
     }
 
+    if (table.isNotActive()) {
+      throw new ResponseException(ResponseException.Code.INACTIVE_TABLE, tableIn);
+    }
+
     this.table = table;
     return this;
   }
@@ -61,6 +65,8 @@ public class ResponseBuilder {
       case INSERT:
         return InsertResponse.build(table, body);
       case UPDATE_BY_ID:
+        return UpdateResponse.build(table, id, body);
+      case PATCH_BY_ID:
         return UpdateResponse.build(table, id, body);
       case DELETE_BY_ID:
         return DeleteResponse.build(table, id);
