@@ -28,10 +28,6 @@ public class ResponseBuilder {
       throw new ResponseException(ResponseException.Code.INVALID_RESPONSE_TABLE, tableIn);
     }
 
-    if (table.isNotActive()) {
-      throw new ResponseException(ResponseException.Code.INACTIVE_TABLE, tableIn);
-    }
-
     this.table = table;
     return this;
   }

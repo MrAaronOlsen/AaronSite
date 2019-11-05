@@ -3,7 +3,6 @@ package com.aaronsite.utils.exceptions;
 public class ResponseException extends ABException {
   public enum Code {
     INVALID_RESPONSE_TABLE("Table [%s] does not exist or is not supported."),
-    INACTIVE_TABLE("Table [%s] is not currently active."),
     INVALID_REQUEST_TYPE("Invalid request type %s."),
     MALFORMED_REQUEST_BODY("Request body could not be converted to a valid record. ERROR: %s");
 

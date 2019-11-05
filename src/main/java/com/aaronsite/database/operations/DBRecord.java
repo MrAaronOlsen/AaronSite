@@ -62,7 +62,7 @@ public class DBRecord {
   }
 
   String getSqlInsert() {
-     return "(" + String.join(", ", record.keySet()) + ") VALUES(" + String.join(", ", record.values()) + ")";
+     return "(" + String.join(", ", record.keySet()) + ") VALUES(" + String.join(", ", safeValues(record.values())) + ")";
   }
 
   String getSqlUpdate() {
@@ -72,6 +72,9 @@ public class DBRecord {
         .reduce((e, a) -> e + ", " + a).orElse("");
   }
 
+  private Collection<String> safeValues(Collection<String> values) {
+    return values.stream().map(this::safeValue).collect(Collectors.toList());
+  }
   private String safeValue(String value) {
     return "'" + value + "'";
   }

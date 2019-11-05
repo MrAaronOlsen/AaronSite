@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBTruncate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBTruncate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ResponseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ResponseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/server/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/server/TestServer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,23 +91,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StartUp">
+  <component name="RunManager" selected="JUnit.AllTests">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StartUp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.server.StartUp" />
-      <module name="aaronsite.main" />
-      <option name="PROGRAM_PARAMETERS" value="DB_URL=jdbc:postgresql://localhost:5432/aaron_site_dev DB_USER=wolverine DB_PASSWORD=Cuntmouth1021@ DB_SCHEMA=dev" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.aaronsite.server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -115,7 +105,7 @@
       </method>
     </configuration>
     <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="aaronsite.test" />
+      <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.aaronsite.*" />
@@ -126,6 +116,25 @@
       <option name="MAIN_CLASS_NAME" value="com.aaronsite.AllTests" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBInsertTests.insertingRecordReturnsResultWithRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aaronsiteapi.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aaronsite.database.operations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aaronsite.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.operations.DBInsertTests" />
+      <option name="METHOD_NAME" value="insertingRecordReturnsResultWithRecord" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -162,14 +171,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.StartUp" />
-      <item itemvalue="JUnit.AllTests" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StartUp" />
         <item itemvalue="JUnit.AllTests" />
+        <item itemvalue="JUnit.DBInsertTests.insertingRecordReturnsResultWithRecord" />
       </list>
     </recent_temporary>
   </component>
@@ -206,6 +211,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/OAuthController.java</url>
           <line>24</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBInsertTests.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

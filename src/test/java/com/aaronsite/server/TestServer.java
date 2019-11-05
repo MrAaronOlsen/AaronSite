@@ -19,13 +19,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 public abstract class TestServer {
-  private static DataSeeder seedDataHandler = new DataSeeder();
   private static AtomicInteger testIncrement = new AtomicInteger();
 
   @BeforeEach
   void truncate() throws DatabaseException {
     try (DBConnection dbConn = new DBConnection()) {
-      DBTruncate dbTruncate = new DBTruncate(dbConn, Table.getActiveTables());
+      DBTruncate dbTruncate = new DBTruncate(dbConn, Table.getTestTables());
       dbTruncate.execute();
     }
   }
@@ -50,12 +49,12 @@ public abstract class TestServer {
   @AfterAll
   public static void shutDown() throws DatabaseException {
     try (DBConnection dbConn = new DBConnection()) {
-      DBTruncate dbTruncate = new DBTruncate(dbConn, Table.getActiveTables());
+      DBTruncate dbTruncate = new DBTruncate(dbConn, Table.getTestTables());
       dbTruncate.execute();
     }
   }
 
   protected DBRecord insertRecord(Model model) throws ABException {
-    return seedDataHandler.insertRecord(model);
+    return DataSeeder.insertRecord(model);
   }
 }
