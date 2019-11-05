@@ -26,7 +26,7 @@ public class DBTruncate implements DBOperation {
   @Override
   public String toString() {
     String tableS = tables.stream().map(t -> dbConn.getSchema() + "." + t.getName())
-        .reduce((table, acu) -> table + ", " + acu).get();
+        .reduce((table, acu) -> table + ", " + acu).orElse("");
 
     return "TRUNCATE " + tableS;
   }

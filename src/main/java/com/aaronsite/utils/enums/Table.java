@@ -11,11 +11,13 @@ public enum Table {
   POSTS("posts"),
 
   // Test Tables
-  TEST_SIMPLE("test_simple"),
-  INVALID_TABLE("InvalidTable", false);
+  TEST_SIMPLE("test_simple", true),
+
+  // Default
+  INVALID_TABLE("InvalidTable");
 
   private String name;
-  private boolean active;
+  private boolean test;
 
   private static final Map<String, Table> nameMap = new ConcurrentHashMap<>();
   static {
@@ -24,14 +26,14 @@ public enum Table {
     }
   }
 
-  Table(String name, boolean active) {
+  Table(String name, boolean test) {
     this.name = name;
-    this.active = active;
+    this.test = test;
   }
 
   Table(String name) {
     this.name = name;
-    this.active = true;
+    this.test = false;
   }
 
   public static Table get(String table) {
@@ -42,16 +44,16 @@ public enum Table {
     return name;
   }
 
-  public static List<Table> getActiveTables() {
-    return Arrays.stream(Table.values()).filter(table -> table.active).collect(Collectors.toList());
+  public static List<Table> getTestTables() {
+    return Arrays.stream(Table.values()).filter(Table::isTest).collect(Collectors.toList());
   }
 
   public boolean isNotSupported() {
     return this == INVALID_TABLE;
   }
 
-  public boolean isNotActive() {
-    return !active;
+  public boolean isTest() {
+    return test;
   }
 
   @Override
