@@ -1,4 +1,4 @@
-rootProject.name = 'aaronsite'
+rootProject.name = 'aaronsiteapi'
 
 include 'controllers'
 include 'database'

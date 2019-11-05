@@ -3,7 +3,9 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Eclipse" />
     <bytecodeTargetLevel>
+      <module name="aaronsite.main" target="11" />
       <module name="AaronSite.main" target="1.8" />
+      <module name="aaronsite.test" target="11" />
       <module name="AaronSite.test" target="1.8" />
       <module name="budgetmonster.controllers.main" target="1.8" />
       <module name="budgetmonster.controllers.test" target="1.8" />
