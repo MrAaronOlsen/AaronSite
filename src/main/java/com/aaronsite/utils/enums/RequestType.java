@@ -5,6 +5,5 @@ public enum RequestType {
   QUERY_BY_ID,
   INSERT,
   UPDATE_BY_ID,
-  PATCH_BY_ID,
-  DELETE_BY_ID;
+  DELETE_BY_ID
 }

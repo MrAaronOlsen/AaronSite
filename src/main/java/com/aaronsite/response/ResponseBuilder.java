@@ -62,8 +62,6 @@ public class ResponseBuilder {
         return InsertResponse.build(table, body);
       case UPDATE_BY_ID:
         return UpdateResponse.build(table, id, body);
-      case PATCH_BY_ID:
-        return UpdateResponse.build(table, id, body);
       case DELETE_BY_ID:
         return DeleteResponse.build(table, id);
       default:
