@@ -12,13 +12,16 @@ public enum ConfigArg {
   DB_SCHEMA(ConfigArgs.DB_SCHEMA),
 
   // Heroku Configs
-  HEROKU_DB_URL(ConfigArgs.DB_URL),
-  JDBC_DATABASE_URL(ConfigArgs.JDBC_DATABASE_URL),
+  JDBC_DATABASE_URL(ConfigArgs.JDBC_DATABASE_URL, DB_URL),
+  JDBC_DATABASE_USERNAME(ConfigArgs.JDBC_DATABASE_USERNAME, DB_USER),
+  JDBC_DATABASE_PASSWORD(ConfigArgs.JDBC_DATABASE_PASSWORD, DB_PW),
 
   // Default
   UNKNOWN(ConfigArgs.UNKNOWN);
 
   private String key;
+  private ConfigArg alias;
+
   private static Map<String, ConfigArg> map = new ConcurrentHashMap<>();
   static {
     for (ConfigArg value : ConfigArg.values()) {
@@ -28,13 +31,33 @@ public enum ConfigArg {
 
   ConfigArg(String key) {
     this.key = key;
+    this.alias = null;
+  }
+
+  ConfigArg(String key, ConfigArg alias) {
+    this.key = key;
+    this.alias = alias;
   }
 
   public static ConfigArg get(String arg) {
+    ConfigArg configArg = map.getOrDefault(arg, UNKNOWN);
+
+    if (configArg.hasAlias()) {
+      return configArg.getAlias();
+    }
+
     return map.getOrDefault(arg, UNKNOWN);
+  }
+
+  public boolean hasAlias() {
+    return this.alias != null;
   }
 
   public String getKey() {
     return key;
+  }
+
+  public ConfigArg getAlias() {
+    return alias;
   }
 }
