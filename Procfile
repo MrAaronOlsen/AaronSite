@@ -1,1 +1,1 @@
-web: java -jar build/libs/aaronsiteapi-1.0.jar -Dhttp.port=${PORT} ${JAVA_OPTS}
+web: java -jar build/libs/aaronsiteapi-1.0.jar ${JAVA_OPTS} JDBC_DATABASE_URL=""

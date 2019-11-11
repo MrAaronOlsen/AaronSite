@@ -3,6 +3,7 @@ package com.aaronsite.utils;
 import com.aaronsite.utils.constants.ConfigArgs;
 import com.aaronsite.utils.enums.ConfigArg;
 import com.aaronsite.utils.io.Logger;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.EnumMap;
 
@@ -26,13 +27,15 @@ public class ConfigProperties {
           if (configArg == ConfigArg.UNKNOWN) {
             Logger.warn(String.format("Skipping unknown config argument %s.", argKey));
           } else {
+            String envArg = System.getenv(configArg.getKey());
 
-            if (configArg == ConfigArg.JDBC_DATABASE_URL) {
-              add(ConfigArg.DB_URL, argValue);
+            if (StringUtils.isNotEmpty(envArg)) {
+              add(configArg, envArg);
+              Logger.out(String.format("Loading Env Arg Key: %s - Value: %s", argKey, envArg));
             } else {
               add(configArg, argValue);
+              Logger.out(String.format("Loading App Arg Key: %s - Value: %s", argKey, envArg));
             }
-            Logger.ok(String.format("Loaded argument %s: %s", argKey, argValue));
           }
         }
       } else {
