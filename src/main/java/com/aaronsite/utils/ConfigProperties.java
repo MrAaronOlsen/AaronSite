@@ -27,7 +27,7 @@ public class ConfigProperties {
             Logger.warn(String.format("Skipping unknown config argument %s.", argKey));
           } else {
 
-            if (configArg == ConfigArg.HEROKU_DB_URL) {
+            if (configArg == ConfigArg.JDBC_DATABASE_URL) {
               add(ConfigArg.DB_URL, argValue);
             } else {
               add(configArg, argValue);
