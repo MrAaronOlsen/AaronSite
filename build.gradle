@@ -7,6 +7,9 @@ repositories {
     mavenCentral()
 }
 
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
+
 dependencies {
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.8'
