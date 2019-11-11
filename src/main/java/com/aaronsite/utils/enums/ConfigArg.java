@@ -7,10 +7,15 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public enum ConfigArg {
   DB_URL(ConfigArgs.DB_URL),
-  HEROKU_DB_URL(ConfigArgs.DB_URL),
   DB_PW(ConfigArgs.DB_PW),
   DB_USER(ConfigArgs.DB_USER),
   DB_SCHEMA(ConfigArgs.DB_SCHEMA),
+
+  // Heroku Configs
+  HEROKU_DB_URL(ConfigArgs.DB_URL),
+  JDBC_DATABASE_URL(ConfigArgs.JDBC_DATABASE_URL),
+
+  // Default
   UNKNOWN(ConfigArgs.UNKNOWN);
 
   private String key;
