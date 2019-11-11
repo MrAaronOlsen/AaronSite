@@ -27,7 +27,7 @@ public class ConfigProperties {
           if (configArg == ConfigArg.UNKNOWN) {
             Logger.warn(String.format("Skipping unknown config argument %s.", argKey));
           } else {
-            String envArg = System.getenv("JDBC_DATABASE_URL");
+            String envArg = System.getenv(argKey);
 
             if (StringUtils.isNotEmpty(envArg)) {
               add(configArg, envArg);
