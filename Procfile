@@ -1,1 +1,1 @@
-web: java -cp target/src.main.java.com.aaronsite.server.StartUp -Dhttp.port=${PORT} ${JAVA_OPTS} -Ddb.default.driver=org.postgresql.Driver -Ddb.default.url=${DATABASE_URL}
+web: java -jar build/libs/aaronsiteapi-1.0.jar -Dhttp.port=${PORT} ${JAVA_OPTS}

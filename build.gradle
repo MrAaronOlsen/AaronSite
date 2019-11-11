@@ -1,11 +1,16 @@
-version '1.0'
+plugins {
+    id 'org.springframework.boot' version '2.2.1.RELEASE'
+}
 
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'io.spring.dependency-management'
 
 repositories {
     mavenCentral()
 }
+
+version '1.0'
 
 dependencies {
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
@@ -40,4 +45,8 @@ gradle.taskGraph.whenReady {
         if (taskGraph.hasTask(stage)) {
             test.enabled = false
         }
+}
+
+bootJar {
+    mainClassName = 'com.aaronsite.server.StartUp'
 }
