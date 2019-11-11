@@ -7,6 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public enum ConfigArg {
   DB_URL(ConfigArgs.DB_URL),
+  HEROKU_DB_URL(ConfigArgs.DB_URL),
   DB_PW(ConfigArgs.DB_PW),
   DB_USER(ConfigArgs.DB_USER),
   DB_SCHEMA(ConfigArgs.DB_SCHEMA),

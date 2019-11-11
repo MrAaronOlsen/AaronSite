@@ -26,7 +26,12 @@ public class ConfigProperties {
           if (configArg == ConfigArg.UNKNOWN) {
             Logger.warn(String.format("Skipping unknown config argument %s.", argKey));
           } else {
-            add(configArg, argValue);
+
+            if (configArg == ConfigArg.HEROKU_DB_URL) {
+              add(ConfigArg.DB_URL, argValue);
+            } else {
+              add(configArg, argValue);
+            }
             Logger.ok(String.format("Loaded argument %s: %s", argKey, argValue));
           }
         }
