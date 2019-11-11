@@ -1,1 +1,1 @@
-web: java -jar build/libs/aaronsiteapi-1.0.jar ${JAVA_OPTS} -Dserver.port=$PORT JDBC_DATABASE_URL="" JDBC_DATABASE_USERNAME="" JDBC_DATABASE_USERNAME="" DB_SCHEMA=prod
+web: java -jar build/libs/aaronsiteapi-1.0.jar ${JAVA_OPTS} -Dserver.port=$PORT JDBC_DATABASE_URL="" JDBC_DATABASE_USERNAME="" JDBC_DATABASE_PASSWORD="" DB_SCHEMA=prod
