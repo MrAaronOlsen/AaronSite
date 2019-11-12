@@ -9,11 +9,11 @@ import java.util.Map;
 
 import static com.aaronsite.server.controllers.MasterController.BASE_URL;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(BASE_URL)
 public class DeleteController extends MasterController {
 
-  @CrossOrigin(origins = "http://localhost:3000")
   @DeleteMapping("/{table}/{id}")
   public Response deleteOnTableById(
       @RequestHeader Map<String, String> headers,
