@@ -9,11 +9,11 @@ import java.util.Map;
 
 import static com.aaronsite.server.controllers.MasterController.BASE_URL;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(BASE_URL)
 public class InsertController extends MasterController {
 
-  @CrossOrigin(origins = "http://localhost:3000")
   @PostMapping("/{table}")
   public Response insertOnTable(
       @RequestHeader Map<String, String> headers,
