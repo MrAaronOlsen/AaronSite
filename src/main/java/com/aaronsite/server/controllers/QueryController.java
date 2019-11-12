@@ -9,7 +9,7 @@ import java.util.Map;
 
 import static com.aaronsite.server.controllers.MasterController.BASE_URL;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000, https://aaron-site-api.herokuapp.com/")
 @RestController
 @RequestMapping(BASE_URL)
 public class QueryController extends MasterController {
