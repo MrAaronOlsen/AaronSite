@@ -9,7 +9,7 @@ import java.util.Map;
 
 import static com.aaronsite.server.controllers.MasterController.BASE_URL;
 
-@CrossOrigin(origins = "https://aaron-site.herokuapp.com, http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "https://aaron-site.herokuapp.com"})
 @RestController
 @RequestMapping(BASE_URL)
 public class DeleteController extends MasterController {
