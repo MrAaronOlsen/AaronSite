@@ -7,20 +7,22 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public enum ConfigArg {
   DB_URL(ConfigArgs.DB_URL),
-  DB_PW(ConfigArgs.DB_PW),
+  DB_PW(ConfigArgs.DB_PW, true),
   DB_USER(ConfigArgs.DB_USER),
   DB_SCHEMA(ConfigArgs.DB_SCHEMA),
 
   // Heroku Configs
-  JDBC_DATABASE_URL(ConfigArgs.JDBC_DATABASE_URL, DB_URL),
-  JDBC_DATABASE_USERNAME(ConfigArgs.JDBC_DATABASE_USERNAME, DB_USER),
-  JDBC_DATABASE_PASSWORD(ConfigArgs.JDBC_DATABASE_PASSWORD, DB_PW),
+  JDBC_DATABASE_URL(ConfigArgs.JDBC_DATABASE_URL, DB_URL, true),
+  JDBC_DATABASE_USERNAME(ConfigArgs.JDBC_DATABASE_USERNAME, DB_USER, true),
+  JDBC_DATABASE_PASSWORD(ConfigArgs.JDBC_DATABASE_PASSWORD, DB_PW, true),
 
   // Default
   UNKNOWN(ConfigArgs.UNKNOWN);
 
   private String key;
   private ConfigArg alias;
+  private boolean hide;
+  private boolean system;
 
   private static Map<String, ConfigArg> map = new ConcurrentHashMap<>();
   static {
@@ -30,23 +32,35 @@ public enum ConfigArg {
   }
 
   ConfigArg(String key) {
-    this.key = key;
-    this.alias = null;
+    this(key, null, false, false);
   }
 
-  ConfigArg(String key, ConfigArg alias) {
+  ConfigArg(String key, boolean hide) {
+    this(key, null, hide, false);
+  }
+
+  ConfigArg(String key, ConfigArg alias, boolean system) {
+    this(key, alias, false, system);
+  }
+
+  ConfigArg(String key, ConfigArg alias, boolean hide, boolean system) {
     this.key = key;
     this.alias = alias;
+    this.hide = hide;
+    this.system = system;
   }
 
   public static ConfigArg get(String arg) {
     ConfigArg configArg = map.getOrDefault(arg, UNKNOWN);
+    return configArg.hasAlias() ? configArg.getAlias() : configArg;
+  }
 
-    if (configArg.hasAlias()) {
-      return configArg.getAlias();
-    }
+  public String print(String argValue) {
+    return isHide() ? "****" : argValue;
+  }
 
-    return map.getOrDefault(arg, UNKNOWN);
+  public String getValue(String value) {
+    return value;
   }
 
   public boolean hasAlias() {
@@ -59,5 +73,13 @@ public enum ConfigArg {
 
   public ConfigArg getAlias() {
     return alias;
+  }
+
+  public boolean isHide() {
+    return hide;
+  }
+
+  public boolean isSystem() {
+    return system;
   }
 }
