@@ -36,7 +36,7 @@ public class ConfigProperties {
         }
 
         add(configArg.getAlias(), argValue);
-        Logger.out(String.format("Loading Env Arg Key: %s - Value: %s", argKey, configArg.print(argValue)));
+        Logger.out(String.format("Loading Arg %s=%s", argKey, configArg.print(argValue)));
       }
     }
   }
