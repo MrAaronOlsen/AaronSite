@@ -3,6 +3,7 @@ package com.aaronsite.server.controllers;
 import com.aaronsite.response.Response;
 import com.aaronsite.response.ResponseBuilder;
 import com.aaronsite.utils.enums.RequestType;
+import org.bson.Document;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -44,5 +45,10 @@ public class QueryController extends MasterController {
     } catch (Throwable e) {
       return ResponseBuilder.handleError(e);
     }
+  }
+
+  @GetMapping("/keepalive")
+  public String keepAlive() {
+    return "I am Alive!";
   }
 }
