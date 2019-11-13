@@ -3,9 +3,9 @@ package com.aaronsite.utils;
 import com.aaronsite.utils.constants.ConfigArgs;
 import com.aaronsite.utils.enums.ConfigArg;
 import com.aaronsite.utils.io.Logger;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.EnumMap;
+import java.util.StringTokenizer;
 
 public class ConfigProperties {
   private static EnumMap<ConfigArg, String> argMap = new EnumMap<>(ConfigArg.class);
@@ -16,30 +16,27 @@ public class ConfigProperties {
     }
 
     for (String arg : args) {
-      if (arg.contains("=")) {
-        String[] parts = arg.split("=", 2);
+      StringTokenizer parts = new StringTokenizer(arg);
 
-        if (parts.length == 2) {
-          String argKey = parts[0];
-          String argValue = parts[1];
+      String argKey = parts.nextToken("=");
 
-          ConfigArg configArg = ConfigArg.get(argKey);
-          if (configArg == ConfigArg.UNKNOWN) {
-            Logger.warn(String.format("Skipping unknown config argument %s.", argKey));
-          } else {
-            String envArg = System.getenv(argKey);
-
-            if (StringUtils.isNotEmpty(envArg)) {
-              add(configArg, envArg);
-              Logger.out(String.format("Loading Env Arg Key: %s - Value: %s", argKey, envArg));
-            } else {
-              add(configArg, argValue);
-              Logger.out(String.format("Loading App Arg Key: %s - Value: %s", argKey, envArg));
-            }
-          }
-        }
+      ConfigArg configArg = ConfigArg.get(argKey);
+      if (configArg == ConfigArg.UNKNOWN) {
+        Logger.warn(String.format("Skipping unknown config argument %s.", argKey));
       } else {
-        Logger.warn(String.format("Skipping invalid argument %s.", arg));
+        String argValue;
+
+        if (configArg.isSystem()) {
+          argValue = System.getenv(argKey);
+        } else if (parts.hasMoreTokens()){
+          argValue = parts.nextToken();
+        } else {
+          Logger.warn(String.format("Skipping config argument with no value %s.", argKey));
+          return;
+        }
+
+        add(configArg, argValue);
+        Logger.out(String.format("Loading Env Arg Key: %s - Value: %s", argKey, configArg.print(argValue)));
       }
     }
   }
