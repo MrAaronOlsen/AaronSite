@@ -51,28 +51,23 @@ public enum ConfigArg {
   }
 
   public static ConfigArg get(String arg) {
-    ConfigArg configArg = map.getOrDefault(arg, UNKNOWN);
-    return configArg.hasAlias() ? configArg.getAlias() : configArg;
+    return map.getOrDefault(arg, UNKNOWN);
   }
 
   public String print(String argValue) {
     return isHide() ? "****" : argValue;
   }
 
-  public String getValue(String value) {
-    return value;
-  }
-
-  public boolean hasAlias() {
-    return this.alias != null;
-  }
-
   public String getKey() {
     return key;
   }
 
+  public String getValue(String value) {
+    return value;
+  }
+
   public ConfigArg getAlias() {
-    return alias;
+    return alias == null ? this : alias;
   }
 
   public boolean isHide() {
