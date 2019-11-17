@@ -13,6 +13,10 @@ public class DBQueryBuilder {
     queryMap = new HashMap<>();
   }
 
+  public DBQueryBuilder(String key, String value) {
+    queryMap = Collections.singletonMap(key, value);
+  }
+
   public DBQueryBuilder(String id) {
     queryMap = Collections.singletonMap(ID, id);
   }

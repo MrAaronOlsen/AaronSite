@@ -1,4 +1,4 @@
-package com.aaronsite.utils;
+package com.aaronsite.utils.system;
 
 import com.aaronsite.utils.constants.ConfigArgs;
 import com.aaronsite.utils.enums.ConfigArg;

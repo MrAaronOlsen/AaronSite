@@ -4,7 +4,8 @@ public class ResponseException extends ABException {
   public enum Code {
     INVALID_RESPONSE_TABLE("Table [%s] does not exist or is not supported."),
     INVALID_REQUEST_TYPE("Invalid request type %s."),
-    MALFORMED_REQUEST_BODY("Request body could not be converted to a valid record. ERROR: %s");
+    MALFORMED_REQUEST_BODY("Request body could not be converted to a valid record. ERROR: %s"),
+    MODEL_PROCESSING_ERROR("Failed to process model. ERROR: %s");
 
     private String message;
 

@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 public enum Table {
   // Production Tables
   POSTS("posts"),
+  USERS("users"),
 
   // Test Tables
   TEST_SIMPLE("test_simple", true),

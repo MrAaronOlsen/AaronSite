@@ -1,6 +1,6 @@
 package com.aaronsite.server;
 
-import com.aaronsite.utils.ConfigProperties;
+import com.aaronsite.utils.system.ConfigProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

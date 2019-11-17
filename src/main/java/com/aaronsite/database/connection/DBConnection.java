@@ -2,7 +2,7 @@ package com.aaronsite.database.connection;
 
 import com.aaronsite.database.operations.DBStatement;
 import com.aaronsite.utils.enums.ConfigArg;
-import com.aaronsite.utils.ConfigProperties;
+import com.aaronsite.utils.system.ConfigProperties;
 import com.aaronsite.utils.exceptions.DatabaseException;
 
 import java.sql.Connection;
