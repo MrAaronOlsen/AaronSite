@@ -6,7 +6,7 @@ import com.aaronsite.database.operations.DBTruncate;
 import com.aaronsite.models.Model;
 import com.aaronsite.testutils.dataseeder.DataSeeder;
 import com.aaronsite.utils.enums.ConfigArg;
-import com.aaronsite.utils.ConfigProperties;
+import com.aaronsite.utils.system.ConfigProperties;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.ABException;
 import com.aaronsite.utils.exceptions.DatabaseException;
