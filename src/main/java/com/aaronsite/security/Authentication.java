@@ -1,7 +1,7 @@
 package com.aaronsite.security;
 
 import com.aaronsite.database.connection.DBConnection;
-import com.aaronsite.database.statements.DBQueryStmtBuilder;
+import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.database.operations.DbQuery;
 import com.aaronsite.models.User;
@@ -74,7 +74,7 @@ public class Authentication {
   private static User getUser(String username) throws ABException {
     try (DBConnection conn = new DBConnection()) {
       DbQuery query = new DbQuery(conn, Table.USERS);
-      query.setQuery(new DBQueryStmtBuilder(User.USER_NAME, username));
+      query.setQuery(new DBWhereStmtBuilder(User.USER_NAME, username));
 
       DBResult result = query.execute();
 

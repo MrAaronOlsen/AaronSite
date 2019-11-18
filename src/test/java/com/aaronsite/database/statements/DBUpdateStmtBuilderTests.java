@@ -13,12 +13,11 @@ import java.util.function.Function;
 import static com.aaronsite.utils.enums.Table.TEST_SIMPLE;
 
 class DBUpdateStmtBuilderTests extends TestServer {
-  private Function<Table, String> TABLE = table -> getTestSchema() + "." + table;
 
   @Test
   void simpleUpdateSQL() throws ABException {
     try (DBConnection conn = new DBConnection()) {
-      String expectedSql = "UPDATE " + TABLE.apply(TEST_SIMPLE) + " SET one='1', two='2' WHERE id='1' RETURNING *";
+      String expectedSql = "UPDATE " + getTestSchema(TEST_SIMPLE) + " SET one='1', two='2' WHERE id='1' RETURNING *";
 
       DBRecord record = new DBRecord()
           .add("one", "1")
@@ -33,7 +32,7 @@ class DBUpdateStmtBuilderTests extends TestServer {
   @Test
   void unescapedInsertSQL() throws ABException {
     try (DBConnection conn = new DBConnection()) {
-      String expectedSql = "UPDATE " + TABLE.apply(TEST_SIMPLE) + " SET one='Isn''t', two='Line\n' WHERE id='1' RETURNING *";
+      String expectedSql = "UPDATE " + getTestSchema(TEST_SIMPLE) + " SET one='Isn''t', two='Line\n' WHERE id='1' RETURNING *";
 
       DBRecord record = new DBRecord()
           .add("one", "Isn't")
@@ -48,7 +47,7 @@ class DBUpdateStmtBuilderTests extends TestServer {
   @Test
   void htmlInsertSQL() throws ABException {
     try (DBConnection conn = new DBConnection()) {
-      String expectedSql = "UPDATE " + TABLE.apply(TEST_SIMPLE) + " SET html='<div>html</div>' WHERE id='1' RETURNING *";
+      String expectedSql = "UPDATE " + getTestSchema(TEST_SIMPLE) + " SET html='<div>html</div>' WHERE id='1' RETURNING *";
 
       DBRecord record = new DBRecord()
           .add("html", "<div>html</div>");

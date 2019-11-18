@@ -1,7 +1,7 @@
 package com.aaronsite.database.operations;
 
 import com.aaronsite.database.connection.DBConnection;
-import com.aaronsite.database.statements.DBQueryStmtBuilder;
+import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.TestSimple;
 import com.aaronsite.server.TestServer;
@@ -19,8 +19,8 @@ class DBUpdateTests extends TestServer {
       insert.setName("Testing 123");
 
       DBUpdate update = new DBUpdate(dbConn, Table.TEST_SIMPLE)
-          .addQueryId(insert.getId())
-          .addRecord(insert);
+          .setQuery(insert.getId())
+          .setRecord(insert);
 
       DBResult updateResult = update.execute();
 
@@ -50,8 +50,8 @@ class DBUpdateTests extends TestServer {
       insertRecord.setName("Testing 123");
 
       DBUpdate update = new DBUpdate(dbConn, Table.TEST_SIMPLE)
-          .addQuery(new DBQueryStmtBuilder().add("name", "Test"))
-          .addRecord(insertRecord);
+          .setQuery(new DBWhereStmtBuilder("name", "Test"))
+          .setRecord(insertRecord);
 
       DBResult updateResult = update.execute();
 
@@ -81,8 +81,8 @@ class DBUpdateTests extends TestServer {
       insertRecord.setName("Isn't it\n");
 
       DBUpdate update = new DBUpdate(dbConn, Table.TEST_SIMPLE)
-          .addQuery(new DBQueryStmtBuilder().add("name", "Test"))
-          .addRecord(insertRecord);
+          .setQuery(new DBWhereStmtBuilder("name", "Test"))
+          .setRecord(insertRecord);
 
       DBResult updateResult = update.execute();
 
@@ -109,8 +109,8 @@ class DBUpdateTests extends TestServer {
   void updateShouldReturnNoResultsOnBadQueryById() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
       DBUpdate update = new DBUpdate(dbConn, Table.TEST_SIMPLE)
-          .addQueryId("0")
-          .addRecord(new TestSimple().setName("testing"));
+          .setQuery("0")
+          .setRecord(new TestSimple().setName("testing"));
 
       DBResult updateResult = update.execute();
 
@@ -124,8 +124,8 @@ class DBUpdateTests extends TestServer {
   void updateShouldReturnNoResultsOnBadQueryByValue() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
       DBUpdate update = new DBUpdate(dbConn, Table.TEST_SIMPLE)
-          .addQuery(new DBQueryStmtBuilder().add("name", "bad"))
-          .addRecord(new TestSimple().setName("testing"));
+          .setQuery(new DBWhereStmtBuilder("name", "bad"))
+          .setRecord(new TestSimple().setName("testing"));
 
       DBResult updateResult = update.execute();
 

@@ -1,46 +1,57 @@
 package com.aaronsite.database.statements;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import com.aaronsite.database.connection.DBConnection;
+import com.aaronsite.database.metadata.ColumnMetadata;
+import com.aaronsite.database.metadata.TableMetadata;
+import com.aaronsite.utils.enums.Table;
+import com.aaronsite.utils.exceptions.DatabaseException;
 
-import static com.aaronsite.models.System.ID;
+import java.util.function.BiFunction;
 
 public class DBQueryStmtBuilder {
-  private Map<String, String> queryMap;
+  private static final String UPDATE = "UPDATE";
+  private static final String RETURNING_ALL = "RETURNING *";
+  private static final BiFunction<DBConnection, Table, String> TABLE = (c, t) -> c.getSchema() + "." + t;
 
-  public DBQueryStmtBuilder() {
-    queryMap = new HashMap<>();
+  private DBConnection dbConn;
+  private Table table;
+  private DBWhereStmtBuilder query;
+
+  public DBQueryStmtBuilder(DBConnection dbConn, Table table) {
+    this.dbConn = dbConn;
+    this.table = table;
   }
 
-  public DBQueryStmtBuilder(String key, String value) {
-    queryMap = Collections.singletonMap(key, value);
-  }
-
-  public DBQueryStmtBuilder(String id) {
-    queryMap = Collections.singletonMap(ID, id);
-  }
-
-  public DBQueryStmtBuilder(Map<String, String> params) {
-    queryMap = params;
-  }
-
-  public DBQueryStmtBuilder add(String name, String value) {
-    queryMap.put(name, value);
+  public DBQueryStmtBuilder setWhere(DBWhereStmtBuilder query) {
+    this.query = query;
     return this;
   }
 
-  public String build() {
-    if (queryMap == null || queryMap.isEmpty()) {
-      return "";
-    }
-
-    return "WHERE " + queryMap.entrySet().stream()
-        .map(set -> set.getKey() + "='" + set.getValue() + "'").reduce((con, acu) -> con + " AND " + acu).get();
+  public DBQueryStmtBuilder setIdQuery(String id) {
+    this.query = new DBWhereStmtBuilder(id);
+    return this;
   }
 
-  @Override
-  public String toString() {
-    return build();
+  public DBPreparedStmt build() throws DatabaseException {
+    String sqlStmt = "SELECT * FROM " + TABLE.apply(dbConn, table)
+        + " " + query + ";";
+
+    DBPreparedStmt prepStmt = dbConn.getPreparedStmt(sqlStmt);
+
+    TableMetadata tableMetadata = TableMetadata.getTableMetadata(dbConn, table);
+
+    for (int i = 0; i < query.size(); i++) {
+      ColumnMetadata column = tableMetadata.getColumn(query.getColumn(i));
+
+      if (column != null) {
+        if (ColumnMetadata.Type.INTEGER == column.getType()) {
+          prepStmt.set(i + 1, Integer.valueOf(query.getValue(i)));
+        } else {
+          prepStmt.set(i + 1, query.getValue(i));
+        }
+      }
+    }
+
+    return prepStmt;
   }
 }

@@ -2,39 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBInsertStmtBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBPreparedStmt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBUpdateStmtBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBInsertStmtBuilderTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBUpdateStmtBuilderTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBWhereStmtBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/metadata/TableMetadataTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBQueryStmtBuilderTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBWhereStmtBuilderTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/connection/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/connection/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/aaronsiteapi.main.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/metadata/ColumnMetadata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/metadata/ColumnMetadata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/metadata/TableMetadata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/metadata/TableMetadata.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBInsert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBQueryBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBQueryStmtBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/transaction/DBRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/transaction/DBResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBTruncate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBTruncate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DbQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DbQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/DeleteResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/DeleteResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/InsertResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/InsertResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBPreparedStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBPreparedStmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBQueryStmtBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBQueryStmtBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBUpdateStmtBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBUpdateStmtBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/UpdateResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/UpdateResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/TokenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/DatabaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/DatabaseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBDeleteTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBDeleteTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBInsertTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBInsertTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBQueryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBQueryTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBUpdateTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBUpdateTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/models/TestSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/models/TestSimple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBInsertStmtBuilderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBInsertStmtBuilderTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBUpdateStmtBuilderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBUpdateStmtBuilderTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/server/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/server/TestServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/testutils/dataseeder/DataSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/testutils/dataseeder/DataSeeder.java" afterDir="false" />
     </list>
@@ -78,8 +66,8 @@
       <list>
         <option value="Enum" />
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -135,7 +123,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DBUpdateTests.updateShouldWorkWithUnescapedCharacters">
+  <component name="RunManager" selected="JUnit.DBInsertTests">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -144,6 +132,25 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="PROGRAM_PARAMETERS" value="DB_URL=jdbc:postgresql://localhost:5432/aaron_site_dev DB_USER=wolverine DB_PASSWORD=Cuntmouth1021@ DB_SCHEMA=dev" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBInsertTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aaronsiteapi.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aaronsite.database.operations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aaronsite.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.operations.DBInsertTests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -167,18 +174,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBUpdateStmtBuilderTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBQueryTests.queryByIdReturnsSingleRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.aaronsite.database.statements.*" />
+          <option name="PATTERN" value="com.aaronsite.database.operations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.aaronsite.database.statements" />
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.statements.DBUpdateStmtBuilderTests" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.aaronsite.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.operations.DBQueryTests" />
+      <option name="METHOD_NAME" value="queryByIdReturnsSingleRecord" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -224,25 +231,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBUpdateTests.updateShouldWorkWithUnescapedCharacters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="aaronsiteapi.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.aaronsite.database.operations.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.aaronsite.database.operations" />
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.operations.DBUpdateTests" />
-      <option name="METHOD_NAME" value="updateShouldWorkWithUnescapedCharacters" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -273,19 +261,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.DBUpdateStmtBuilderTests" />
+      <item itemvalue="JUnit.DBQueryTests.queryByIdReturnsSingleRecord" />
       <item itemvalue="JUnit.DBQueryTests" />
-      <item itemvalue="JUnit.DBUpdateTests" />
       <item itemvalue="JUnit.DBUpdateTests.updateShouldReturnAResultOnPositiveIdQuery" />
-      <item itemvalue="JUnit.DBUpdateTests.updateShouldWorkWithUnescapedCharacters" />
+      <item itemvalue="JUnit.DBUpdateTests" />
+      <item itemvalue="JUnit.DBInsertTests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DBUpdateTests.updateShouldWorkWithUnescapedCharacters" />
+        <item itemvalue="JUnit.DBInsertTests" />
+        <item itemvalue="JUnit.DBQueryTests" />
         <item itemvalue="JUnit.DBUpdateTests" />
         <item itemvalue="JUnit.DBUpdateTests.updateShouldReturnAResultOnPositiveIdQuery" />
-        <item itemvalue="JUnit.DBQueryTests" />
-        <item itemvalue="JUnit.DBUpdateStmtBuilderTests" />
+        <item itemvalue="JUnit.DBQueryTests.queryByIdReturnsSingleRecord" />
       </list>
     </recent_temporary>
   </component>
@@ -319,19 +307,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/OAuthController.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBQueryStmtBuilder.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/AuthController.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="16" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBQueryStmtBuilder.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBUpdate.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="48" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBUpdateStmtBuilder.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="65" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,8 +1,10 @@
 package com.aaronsite.database.metadata;
 
 import com.aaronsite.database.connection.DBConnection;
+import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
 
+import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -12,13 +14,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import static com.aaronsite.utils.exceptions.DatabaseException.Code.FAILED_TO_GET_TABLE_METADATA;
 
 public class TableMetadata {
-  private static final Map<String, TableMetadata> tableCache = new ConcurrentHashMap<>();
+  private static final Map<Table, TableMetadata> tableCache = new ConcurrentHashMap<>();
 
   private DBConnection dbConn;
-  private String table;
+  private Table table;
   private Map<String, ColumnMetadata> columns = new HashMap<>();
 
-  public static TableMetadata getTableMetadata(DBConnection dbConn, String table) throws DatabaseException {
+  public static TableMetadata getTableMetadata(DBConnection dbConn, Table table) throws DatabaseException {
     if (tableCache.containsKey(table)) {
       return tableCache.get(table);
     }
@@ -29,7 +31,7 @@ public class TableMetadata {
     return tableMetadata;
   }
 
-  private TableMetadata(DBConnection dbConn, String table) throws DatabaseException {
+  private TableMetadata(DBConnection dbConn, Table table) throws DatabaseException {
     this.dbConn = dbConn;
     this.table = table;
 
@@ -40,17 +42,25 @@ public class TableMetadata {
     return columns;
   }
 
+  public ColumnMetadata getColumn(String column) {
+    return columns.get(column);
+  }
+
   private void build() throws DatabaseException {
     try {
-      ResultSetMetaData metaData = dbConn.getDbMetadata().getTables(null, null, table, null).getMetaData();
+      ResultSet metaData = dbConn.getDbMetadata().
+          getColumns(null, null, table.getName(), null);
 
-      for (int i = 1; i <= metaData.getColumnCount(); i++) {
+      while (metaData.next()) {
+        String name = metaData.getString("COLUMN_NAME");
+        String type = metaData.getString("DATA_TYPE");
+
         ColumnMetadata columnMetaData = new ColumnMetadata.Builder()
-            .setName(metaData.getColumnName(i))
-            .setType(metaData.getColumnTypeName(i))
+            .setName(name)
+            .setType(type)
             .build();
 
-        columns.put(columnMetaData.getName(), columnMetaData);
+        columns.put(name, columnMetaData);
       }
     } catch (SQLException e) {
       throw new DatabaseException(FAILED_TO_GET_TABLE_METADATA).sqlEx(e);

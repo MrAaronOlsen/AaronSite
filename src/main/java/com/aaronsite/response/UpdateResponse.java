@@ -24,8 +24,8 @@ class UpdateResponse {
 
     try (DBConnection dbConn = new DBConnection()) {
       DBUpdate update = new DBUpdate(dbConn, table)
-          .addQueryId(id)
-          .addRecord(model);
+          .setQuery(id)
+          .setRecord(model);
 
       DBResult result = update.execute();
 

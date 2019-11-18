@@ -1,7 +1,7 @@
 package com.aaronsite.database.operations;
 
 import com.aaronsite.database.connection.DBConnection;
-import com.aaronsite.database.statements.DBQueryStmtBuilder;
+import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.TestSimple;
 import com.aaronsite.server.TestServer;
@@ -38,7 +38,7 @@ class DBQueryTests extends TestServer {
     TestSimple budgetInsert = new TestSimple(insertRecord(new TestSimple().setName("test")));
 
     try (DBConnection dbConn = new DBConnection()) {
-      DbQuery dbQuery = new DbQuery(dbConn, Table.TEST_SIMPLE).setQuery(new DBQueryStmtBuilder().add(NAME, "test"));
+      DbQuery dbQuery = new DbQuery(dbConn, Table.TEST_SIMPLE).setQuery(new DBWhereStmtBuilder(NAME, "test"));
 
       DBResult result = dbQuery.execute();
       if (result.hasNext()) {
@@ -58,7 +58,7 @@ class DBQueryTests extends TestServer {
     insertRecord(new TestSimple().setName("test"));
 
     try (DBConnection dbConn = new DBConnection()) {
-      DbQuery dbQuery = new DbQuery(dbConn, Table.TEST_SIMPLE).setQuery(new DBQueryStmtBuilder().add(NAME, "test"));
+      DbQuery dbQuery = new DbQuery(dbConn, Table.TEST_SIMPLE).setQuery(new DBWhereStmtBuilder(NAME, "test"));
 
       DBResult result = dbQuery.execute();
 
@@ -87,7 +87,7 @@ class DBQueryTests extends TestServer {
   @Test
   void queryOnNonExistingValueReturnsNoResults() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
-      DbQuery dbQuery = new DbQuery(dbConn, Table.TEST_SIMPLE).setQuery(new DBQueryStmtBuilder().add("name", "bad"));
+      DbQuery dbQuery = new DbQuery(dbConn, Table.TEST_SIMPLE).setQuery(new DBWhereStmtBuilder("name", "bad"));
 
       DBResult result = dbQuery.execute();
 
