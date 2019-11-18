@@ -1,5 +1,7 @@
-package com.aaronsite.database.operations;
+package com.aaronsite.database.statements;
 
+import com.aaronsite.database.operations.DBOperation;
+import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.utils.exceptions.DatabaseException;
 
 import java.sql.Connection;

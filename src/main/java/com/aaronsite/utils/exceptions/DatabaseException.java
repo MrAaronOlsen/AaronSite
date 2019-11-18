@@ -9,6 +9,7 @@ public class DatabaseException extends ABException {
     // Initializer errors
     FAILED_TO_MAKE_CONNECTION("Failed to make connection."),
     FAILED_TO_CREATE_STATEMENT("Failed to create sql statement."),
+    FAILED_TO_SET_VALUE("Failed to set value at index %s."),
     FAILED_TO_GET_RESULT_SET("Failed to get result set."),
     FAILED_TO_GET_CONN_METADATA("Failed to get connection metadata."),
     FAILED_TO_GET_TABLE_METADATA("FAiled to get table metadata."),

@@ -1,4 +1,4 @@
-package com.aaronsite.database.operations;
+package com.aaronsite.database.transaction;
 
 import com.aaronsite.database.metadata.ResultMetadata;
 import com.aaronsite.utils.exceptions.DatabaseException;
@@ -12,7 +12,7 @@ public class DBResult {
   private ResultSet result;
   private ResultMetadata resultMetadata;
 
-  DBResult(ResultSet result) throws DatabaseException {
+  public DBResult(ResultSet result) throws DatabaseException {
     if (result != null) {
       this.result = result;
       this.resultMetadata = new ResultMetadata(result);

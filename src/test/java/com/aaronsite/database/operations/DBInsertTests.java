@@ -1,7 +1,8 @@
 package com.aaronsite.database.operations;
 
 import com.aaronsite.database.connection.DBConnection;
-import com.aaronsite.models.Model;
+import com.aaronsite.database.transaction.DBRecord;
+import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.TestSimple;
 import com.aaronsite.server.TestServer;
 import com.aaronsite.utils.enums.Table;
@@ -17,18 +18,20 @@ class DBInsertTests extends TestServer {
   @Test
   void insertingRecordReturnsResultWithRecord() throws DatabaseException {
     try (DBConnection conn = new DBConnection()) {
-      Model budget = new TestSimple().setName("Test");
+      TestSimple test = new TestSimple().setName("Test");
 
       DBInsert insert = new DBInsert(conn, Table.TEST_SIMPLE)
-          .addRecord(budget);
+          .addRecord(test);
 
       DBResult insertResult = insert.execute();
 
       if (insertResult.hasNext()) {
-        DBRecord insertRecordResult = insertResult.getNext();
-        Assertions.assertTrue(insertRecordResult.has("id"));
+        DBRecord newRecord = insertResult.getNext();
+
+        Assertions.assertTrue(newRecord.has("id"));
+        Assertions.assertEquals("Test", newRecord.get("name"));
       } else {
-        Assertions.fail("Insert should have returned a result.");
+        Assertions.fail("Insert should have returned a result with an id.");
       }
     }
   }
@@ -36,16 +39,42 @@ class DBInsertTests extends TestServer {
   @Test
   void insertingIntoInvalidTableThrowsException() throws DatabaseException {
     try (DBConnection conn = new DBConnection()) {
-      Model budget = new TestSimple().setName("Test");
+      TestSimple test = new TestSimple()
+          .setName("Test");
 
       DBInsert insert = new DBInsert(conn, Table.INVALID_TABLE)
-          .addRecord(budget);
+          .addRecord(test);
 
       try {
         insert.execute();
         Assertions.fail("Should have failed insert because table does not exist.");
       } catch (DatabaseException e) {
         Assertions.assertEquals(TABLE_DOES_NOT_EXIST, e.getCode());
+      }
+    }
+  }
+
+  @Test
+  void insertingStringWithUnEscapedCharacters() throws DatabaseException {
+    String stringLiteral = "I'm an unescaped line.\nAnd here's a new line.";
+
+    try (DBConnection conn = new DBConnection()) {
+      TestSimple test = new TestSimple()
+          .setName("Test")
+          .setText(stringLiteral);
+
+      DBInsert insert = new DBInsert(conn, Table.TEST_SIMPLE)
+          .addRecord(test);
+
+      DBResult result = insert.execute();
+
+      if (result.hasNext()) {
+        DBRecord newRecord = result.getNext();
+
+        Assertions.assertTrue(newRecord.has("id"));
+        Assertions.assertEquals(stringLiteral, newRecord.get("text"));
+      } else {
+        Assertions.fail("Insert should have returned a result with an id.");
       }
     }
   }

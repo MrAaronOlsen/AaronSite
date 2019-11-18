@@ -2,8 +2,8 @@ package com.aaronsite.response;
 
 import com.aaronsite.database.connection.DBConnection;
 import com.aaronsite.database.operations.DBInsert;
-import com.aaronsite.database.operations.DBRecord;
-import com.aaronsite.database.operations.DBResult;
+import com.aaronsite.database.transaction.DBRecord;
+import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.Model;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.ABException;
