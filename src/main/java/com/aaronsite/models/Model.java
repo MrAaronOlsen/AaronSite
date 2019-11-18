@@ -1,6 +1,6 @@
 package com.aaronsite.models;
 
-import com.aaronsite.database.operations.DBRecord;
+import com.aaronsite.database.transaction.DBRecord;
 import com.aaronsite.response.ResponseData;
 import com.aaronsite.security.Authentication;
 import com.aaronsite.utils.annotations.Column;

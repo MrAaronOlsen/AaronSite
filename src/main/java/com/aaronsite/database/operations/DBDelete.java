@@ -1,6 +1,9 @@
 package com.aaronsite.database.operations;
 
 import com.aaronsite.database.connection.DBConnection;
+import com.aaronsite.database.statements.DBQueryStmtBuilder;
+import com.aaronsite.database.statements.DBStatement;
+import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
 
@@ -9,7 +12,7 @@ import static com.aaronsite.models.System.ID;
 public class DBDelete implements DBOperation {
   private DBConnection dbConn;
   private Table table;
-  private DBQueryBuilder query;
+  private DBQueryStmtBuilder query;
 
   public DBDelete(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
@@ -17,7 +20,7 @@ public class DBDelete implements DBOperation {
   }
 
   public DBDelete setId(String id) {
-    this.query = new DBQueryBuilder().add(ID, id);
+    this.query = new DBQueryStmtBuilder().add(ID, id);
     return this;
   }
 

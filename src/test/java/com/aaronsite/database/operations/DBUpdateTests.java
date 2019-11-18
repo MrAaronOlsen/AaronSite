@@ -1,6 +1,8 @@
 package com.aaronsite.database.operations;
 
 import com.aaronsite.database.connection.DBConnection;
+import com.aaronsite.database.statements.DBQueryStmtBuilder;
+import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.TestSimple;
 import com.aaronsite.server.TestServer;
 import com.aaronsite.utils.enums.Table;
@@ -13,11 +15,42 @@ class DBUpdateTests extends TestServer {
   @Test
   void updateShouldReturnAResultOnPositiveIdQuery() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
+      TestSimple insert = new TestSimple(insertRecord(new TestSimple().setName("Test")));
+      insert.setName("Testing 123");
+
+      DBUpdate update = new DBUpdate(dbConn, Table.TEST_SIMPLE)
+          .addQueryId(insert.getId())
+          .addRecord(insert);
+
+      DBResult updateResult = update.execute();
+
+      if (!updateResult.hasNext()) {
+        Assertions.fail("Update should have returned a record.");
+      }
+
+      TestSimple updatedRecordOne = new TestSimple(updateResult.getNext());
+      Assertions.assertEquals("Testing 123", updatedRecordOne.getName());
+
+      DbQuery query = new DbQuery(dbConn, Table.TEST_SIMPLE).setIdQuery(insert.getId());
+      DBResult queryResult = query.execute();
+
+      if (!queryResult.hasNext()) {
+        Assertions.fail("Query Two should have returned a record.");
+      }
+
+      TestSimple updatedRecordTwo = new TestSimple(queryResult.getNext());
+      Assertions.assertEquals("Testing 123", updatedRecordTwo.getName());
+    }
+  }
+
+  @Test
+  void updateShouldReturnAResultOnPositiveValueQuery() throws ABException {
+    try (DBConnection dbConn = new DBConnection()) {
       TestSimple insertRecord = new TestSimple(insertRecord(new TestSimple().setName("Test")));
       insertRecord.setName("Testing 123");
 
       DBUpdate update = new DBUpdate(dbConn, Table.TEST_SIMPLE)
-          .addQueryId(insertRecord.getId())
+          .addQuery(new DBQueryStmtBuilder().add("name", "Test"))
           .addRecord(insertRecord);
 
       DBResult updateResult = update.execute();
@@ -42,13 +75,13 @@ class DBUpdateTests extends TestServer {
   }
 
   @Test
-  void updateShouldReturnAResultOnPositiveValueQuery() throws ABException {
+  void updateShouldWorkWithUnescapedCharacters() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
       TestSimple insertRecord = new TestSimple(insertRecord(new TestSimple().setName("Test")));
-      insertRecord.setName("Testing 123");
+      insertRecord.setName("Isn't it\n");
 
       DBUpdate update = new DBUpdate(dbConn, Table.TEST_SIMPLE)
-          .addQuery(new DBQueryBuilder().add("name", "Test"))
+          .addQuery(new DBQueryStmtBuilder().add("name", "Test"))
           .addRecord(insertRecord);
 
       DBResult updateResult = update.execute();
@@ -58,7 +91,7 @@ class DBUpdateTests extends TestServer {
       }
 
       TestSimple updatedRecordOne = new TestSimple(updateResult.getNext());
-      Assertions.assertEquals("Testing 123", updatedRecordOne.getName());
+      Assertions.assertEquals("Isn't it\n", updatedRecordOne.getName());
 
       DbQuery query = new DbQuery(dbConn, Table.TEST_SIMPLE).setIdQuery(insertRecord.getId());
       DBResult queryResult = query.execute();
@@ -68,7 +101,7 @@ class DBUpdateTests extends TestServer {
       }
 
       TestSimple updatedRecordTwo = new TestSimple(queryResult.getNext());
-      Assertions.assertEquals("Testing 123", updatedRecordTwo.getName());
+      Assertions.assertEquals("Isn't it\n", updatedRecordTwo.getName());
     }
   }
 
@@ -91,7 +124,7 @@ class DBUpdateTests extends TestServer {
   void updateShouldReturnNoResultsOnBadQueryByValue() throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
       DBUpdate update = new DBUpdate(dbConn, Table.TEST_SIMPLE)
-          .addQuery(new DBQueryBuilder().add("name", "bad"))
+          .addQuery(new DBQueryStmtBuilder().add("name", "bad"))
           .addRecord(new TestSimple().setName("testing"));
 
       DBResult updateResult = update.execute();

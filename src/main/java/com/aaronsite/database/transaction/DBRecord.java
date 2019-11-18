@@ -1,4 +1,4 @@
-package com.aaronsite.database.operations;
+package com.aaronsite.database.transaction;
 
 import com.aaronsite.database.metadata.ColumnMetadata;
 import com.aaronsite.database.metadata.ResultMetadata;
@@ -13,6 +13,7 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import static com.aaronsite.models.System.ID;
@@ -36,7 +37,7 @@ public class DBRecord {
     }
   }
 
-  DBRecord(ResultMetadata resultMetadata, ResultSet result) throws DatabaseException {
+  public DBRecord(ResultMetadata resultMetadata, ResultSet result) throws DatabaseException {
     try {
       for (ColumnMetadata column : resultMetadata.getColumns()) {
         String value = result.getString(column.getName());
@@ -52,6 +53,14 @@ public class DBRecord {
     return this;
   }
 
+  public DBRecord addNonNull(String column, String value) {
+    if (value != null) {
+      record.put(column, value);
+    }
+
+    return this;
+  }
+
   public String get(String column) {
     return record.get(column);
   }
@@ -60,26 +69,31 @@ public class DBRecord {
     return record.get(ID);
   }
 
+  public Set<String> getColumns() {
+    return record.keySet();
+  }
+
+  public Collection<String> getValues() {
+    return record.values();
+  }
+
+  public Set<Map.Entry<String, String>> getEntrySet() {
+    return record.entrySet();
+  }
+
   public boolean has(String column) {
     return record.containsKey(column);
   }
 
-  String getSqlInsert() {
-     return "(" + String.join(", ", record.keySet()) + ") VALUES(" + String.join(", ", safeValues(record.values())) + ")";
-  }
-
-  String getSqlUpdate() {
+  public String getSqlUpdate() {
     return "SET " + record.entrySet().stream()
         .filter(e -> e.getValue() != null)
         .map((e) -> e.getKey() + "=" + safeValue(e.getValue()))
         .reduce((e, a) -> e + ", " + a).orElse("");
   }
 
-  private Collection<String> safeValues(Collection<String> values) {
-    return values.stream().map(this::safeValue).collect(Collectors.toList());
-  }
   private String safeValue(String value) {
-    return "'" + value + "'";
+    return "quote_literal('" + value + "')";
   }
 
   public String toJson() {

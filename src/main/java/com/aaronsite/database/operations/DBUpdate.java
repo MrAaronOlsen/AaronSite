@@ -1,6 +1,11 @@
 package com.aaronsite.database.operations;
 
 import com.aaronsite.database.connection.DBConnection;
+import com.aaronsite.database.statements.DBPreparedStmt;
+import com.aaronsite.database.statements.DBQueryStmtBuilder;
+import com.aaronsite.database.statements.DBUpdateStmtBuilder;
+import com.aaronsite.database.transaction.DBRecord;
+import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.Model;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
@@ -11,20 +16,20 @@ public class DBUpdate implements DBOperation {
   private Table table;
   private DBConnection dbConn;
   private DBRecord record;
-  private DBQueryBuilder query;
+  private DBQueryStmtBuilder query;
 
   public DBUpdate(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
     this.table = table;
   }
 
-  public DBUpdate addQuery(DBQueryBuilder query) {
+  public DBUpdate addQuery(DBQueryStmtBuilder query) {
     this.query = query;
     return this;
   }
 
   public DBUpdate addQueryId(String id) {
-    this.query = new DBQueryBuilder().add(ID, id);
+    this.query = new DBQueryStmtBuilder().add(ID, id);
     return this;
   }
 
@@ -40,9 +45,11 @@ public class DBUpdate implements DBOperation {
 
   @Override
   public DBResult execute() throws DatabaseException {
-    DBStatement dbStmt = dbConn.getDbStmt()
-        .execute(this);
+    DBPreparedStmt dbStmt = new DBUpdateStmtBuilder(dbConn, table)
+        .setQuery(query)
+        .build(record);
 
+    dbStmt.execute();
     return dbStmt.getResult();
   }
 

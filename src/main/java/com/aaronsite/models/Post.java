@@ -1,11 +1,10 @@
 package com.aaronsite.models;
 
-import com.aaronsite.database.operations.DBRecord;
+import com.aaronsite.database.transaction.DBRecord;
 import com.aaronsite.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import static com.aaronsite.utils.enums.Table.POSTS;
-import static com.aaronsite.utils.enums.Table.TEST_SIMPLE;
 
 public class Post extends System implements Model {
   public static final String HEADER = "header";
@@ -45,8 +44,8 @@ public class Post extends System implements Model {
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
-        .add(HEADER, header)
-        .add(BODY, body);
+        .addNonNull(HEADER, header)
+        .addNonNull(BODY, body);
   }
 
   @Override

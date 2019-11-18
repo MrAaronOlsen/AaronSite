@@ -1,6 +1,6 @@
 package com.aaronsite.models;
 
-import com.aaronsite.database.operations.DBRecord;
+import com.aaronsite.database.transaction.DBRecord;
 import com.aaronsite.utils.annotations.Column;
 import com.aaronsite.utils.enums.ColumnType;
 import com.aaronsite.utils.enums.Table;
@@ -33,8 +33,8 @@ public class User extends System implements Model {
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
-        .add(USER_NAME, userName)
-        .add(USER_PW, userPw);
+        .addNonNull(USER_NAME, userName)
+        .addNonNull(USER_PW, userPw);
   }
 
   @Override

@@ -1,6 +1,10 @@
 package com.aaronsite.database.operations;
 
 import com.aaronsite.database.connection.DBConnection;
+import com.aaronsite.database.statements.DBInsertStmtBuilder;
+import com.aaronsite.database.statements.DBPreparedStmt;
+import com.aaronsite.database.transaction.DBRecord;
+import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.Model;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
@@ -27,14 +31,10 @@ public class DBInsert implements DBOperation {
 
   @Override
   public DBResult execute() throws DatabaseException {
-    DBStatement dbStmt = dbConn.getDbStmt()
-        .execute(this);
+    DBPreparedStmt stmt = new DBInsertStmtBuilder(dbConn, table)
+        .build(record);
 
-    return dbStmt.getResult();
-  }
-
-  @Override
-  public String toString() {
-    return  "INSERT INTO " + dbConn.getSchema() + "." + table + " " + record.getSqlInsert() + " RETURNING *;";
+    stmt.execute();
+    return stmt.getResult();
   }
 }

@@ -1,6 +1,7 @@
 package com.aaronsite.database.connection;
 
-import com.aaronsite.database.operations.DBStatement;
+import com.aaronsite.database.statements.DBStatement;
+import com.aaronsite.database.statements.DBPreparedStmt;
 import com.aaronsite.utils.enums.ConfigArg;
 import com.aaronsite.utils.system.ConfigProperties;
 import com.aaronsite.utils.exceptions.DatabaseException;
@@ -32,6 +33,10 @@ public class DBConnection implements AutoCloseable {
 
   public DBStatement getDbStmt() throws DatabaseException {
     return new DBStatement(conn);
+  }
+
+  public DBPreparedStmt getPreparedStmt(String sqlStmt) throws DatabaseException {
+    return new DBPreparedStmt(conn, sqlStmt);
   }
 
   public DatabaseMetaData getDbMetadata() throws DatabaseException {

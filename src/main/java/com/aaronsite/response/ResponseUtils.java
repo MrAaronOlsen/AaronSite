@@ -1,6 +1,6 @@
 package com.aaronsite.response;
 
-import com.aaronsite.database.operations.DBRecord;
+import com.aaronsite.database.transaction.DBRecord;
 import com.aaronsite.models.Model;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.ABException;

@@ -1,7 +1,7 @@
 package com.aaronsite.server;
 
 import com.aaronsite.database.connection.DBConnection;
-import com.aaronsite.database.operations.DBRecord;
+import com.aaronsite.database.transaction.DBRecord;
 import com.aaronsite.database.operations.DBTruncate;
 import com.aaronsite.models.Model;
 import com.aaronsite.testutils.dataseeder.DataSeeder;
@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 public abstract class TestServer {
-  private static AtomicInteger testIncrement = new AtomicInteger();
+  private static final AtomicInteger testIncrement = new AtomicInteger();
 
   @BeforeEach
   void truncate() throws DatabaseException {
@@ -52,6 +52,10 @@ public abstract class TestServer {
       DBTruncate dbTruncate = new DBTruncate(dbConn, Table.getTestTables());
       dbTruncate.execute();
     }
+  }
+
+  protected String getTestSchema() {
+    return ConfigProperties.getValue(ConfigArg.DB_SCHEMA);
   }
 
   protected DBRecord insertRecord(Model model) throws ABException {

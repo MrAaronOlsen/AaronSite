@@ -1,6 +1,5 @@
 package com.aaronsite.security;
 
-import com.aaronsite.database.operations.DBRecord;
 import com.aaronsite.models.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

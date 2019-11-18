@@ -1,6 +1,8 @@
 package com.aaronsite.database.operations;
 
 import com.aaronsite.database.connection.DBConnection;
+import com.aaronsite.database.transaction.DBRecord;
+import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.TestSimple;
 import com.aaronsite.server.TestServer;
 import com.aaronsite.utils.enums.Table;

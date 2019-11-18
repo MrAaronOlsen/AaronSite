@@ -1,6 +1,9 @@
 package com.aaronsite.database.operations;
 
 import com.aaronsite.database.connection.DBConnection;
+import com.aaronsite.database.statements.DBQueryStmtBuilder;
+import com.aaronsite.database.statements.DBStatement;
+import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
 
@@ -9,7 +12,7 @@ import static com.aaronsite.models.System.ID;
 public class DbQuery implements DBOperation {
   private Table table;
   private DBConnection dbConn;
-  private DBQueryBuilder query;
+  private DBQueryStmtBuilder query;
 
   public DbQuery(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
@@ -24,13 +27,13 @@ public class DbQuery implements DBOperation {
     return dbStmt.getResult();
   }
 
-  public DbQuery setQuery(DBQueryBuilder query) {
+  public DbQuery setQuery(DBQueryStmtBuilder query) {
     this.query = query;
     return this;
   }
 
   public DbQuery setIdQuery(String id) {
-    this.query = new DBQueryBuilder().add(ID, id);
+    this.query = new DBQueryStmtBuilder().add(ID, id);
     return this;
   }
 
