@@ -54,8 +54,8 @@ public abstract class TestServer {
     }
   }
 
-  protected String getTestSchema() {
-    return ConfigProperties.getValue(ConfigArg.DB_SCHEMA);
+  protected String getTestSchema(Table table) {
+    return ConfigProperties.getValue(ConfigArg.DB_SCHEMA) + "." + table;
   }
 
   protected DBRecord insertRecord(Model model) throws ABException {

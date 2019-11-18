@@ -52,8 +52,8 @@ public class DataSeeder {
   public static DBRecord updateRecord(Model model) throws ABException {
     try (DBConnection dbConn = new DBConnection()) {
       DBUpdate dbUpdate = new DBUpdate(dbConn, model.getTable())
-          .addQueryId(model.getId())
-          .addRecord(model);
+          .setQuery(model.getId())
+          .setRecord(model);
 
       DBResult result = dbUpdate.execute();
 

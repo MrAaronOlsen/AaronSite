@@ -1,8 +1,34 @@
 package com.aaronsite.database.metadata;
 
+import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class ColumnMetadata {
+  public enum Type {
+    STRING("12"),
+    INTEGER("4"),
+    UNKNOWN("");
+
+    private static final Map<String, Type> codeMap = Arrays.stream(Type.values()).collect(
+        Collectors.toUnmodifiableMap(Type::getCode, type -> type));
+
+    String code;
+
+    Type(String code) {
+      this.code = code;
+    }
+
+    public String getCode() {
+      return code;
+    }
+
+    public static Type getType(String code) {
+      return codeMap.getOrDefault(code, UNKNOWN);
+    }
+  }
   private String name;
-  private String type;
+  private Type type;
 
   private ColumnMetadata(Builder builder) {
     this.name = builder.name;
@@ -13,13 +39,13 @@ public class ColumnMetadata {
     return name;
   }
 
-  public String getType() {
+  public Type getType() {
     return type;
   }
 
   public static class Builder {
     private String name;
-    private String type;
+    private Type type;
 
     public Builder setName(String name) {
       this.name = name;
@@ -27,7 +53,7 @@ public class ColumnMetadata {
     }
 
     public Builder setType(String type) {
-      this.type = type;
+      this.type = Type.getType(type);
       return this;
     }
 

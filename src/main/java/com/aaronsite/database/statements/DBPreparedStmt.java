@@ -46,6 +46,14 @@ public class DBPreparedStmt {
     }
   }
 
+  void set(int i, int value) throws DatabaseException {
+    try {
+      stmt.setInt(i, value);
+    } catch (SQLException e) {
+      throw new DatabaseException(FAILED_TO_SET_VALUE, Integer.toString(i)).sqlEx(e);
+    }
+  }
+
   public DBResult getResult() throws DatabaseException {
     try {
       return new DBResult(stmt.getResultSet());
