@@ -43,9 +43,14 @@ public class ColumnMetadata {
     return type;
   }
 
+  public static ColumnMetadata unknownColumn(String name) {
+    return new ColumnMetadata.Builder()
+        .setName(name).build();
+  }
+
   public static class Builder {
     private String name;
-    private Type type;
+    private Type type = Type.UNKNOWN;
 
     public Builder setName(String name) {
       this.name = name;

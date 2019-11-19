@@ -1,10 +1,14 @@
 package com.aaronsite.utils.enums;
 
+import com.aaronsite.utils.exceptions.DatabaseException;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
+
+import static com.aaronsite.utils.exceptions.DatabaseException.Code.TABLE_DOES_NOT_EXIST;
 
 public enum Table {
   // Production Tables
@@ -37,8 +41,14 @@ public enum Table {
     this.test = false;
   }
 
-  public static Table get(String table) {
-    return nameMap.getOrDefault(table, INVALID_TABLE);
+  public static Table get(String tableS) throws DatabaseException {
+    Table table = nameMap.get(tableS);
+
+    if (table == INVALID_TABLE) {
+      throw new DatabaseException(TABLE_DOES_NOT_EXIST, tableS);
+    }
+
+    return table;
   }
 
   public String getName() {

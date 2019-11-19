@@ -1,10 +1,9 @@
 package com.aaronsite.database.connection;
 
-import com.aaronsite.database.statements.DBStatement;
 import com.aaronsite.database.statements.DBPreparedStmt;
 import com.aaronsite.utils.enums.ConfigArg;
-import com.aaronsite.utils.system.ConfigProperties;
 import com.aaronsite.utils.exceptions.DatabaseException;
+import com.aaronsite.utils.system.ConfigProperties;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -29,10 +28,6 @@ public class DBConnection implements AutoCloseable {
       throw new DatabaseException(FAILED_TO_MAKE_CONNECTION).sqlEx(e);
     }
 
-  }
-
-  public DBStatement getDbStmt() throws DatabaseException {
-    return new DBStatement(conn);
   }
 
   public DBPreparedStmt getPreparedStmt(String sqlStmt) throws DatabaseException {

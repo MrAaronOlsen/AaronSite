@@ -32,7 +32,8 @@ public class DBInsert implements DBOperation {
   @Override
   public DBResult execute() throws DatabaseException {
     DBPreparedStmt stmt = new DBInsertStmtBuilder(dbConn, table)
-        .build(record);
+        .setRecord(record)
+        .build();
 
     stmt.execute();
     return stmt.getResult();

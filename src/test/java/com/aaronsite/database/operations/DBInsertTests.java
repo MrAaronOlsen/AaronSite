@@ -10,7 +10,6 @@ import com.aaronsite.utils.exceptions.DatabaseException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.aaronsite.utils.exceptions.DatabaseException.Code.TABLE_DOES_NOT_EXIST;
 import static com.aaronsite.utils.exceptions.DatabaseException.Code.UNKNOWN_COLUMN;
 
 class DBInsertTests extends TestServer {
@@ -28,28 +27,10 @@ class DBInsertTests extends TestServer {
       if (insertResult.hasNext()) {
         DBRecord newRecord = insertResult.getNext();
 
-        Assertions.assertTrue(newRecord.has("id"));
+        Assertions.assertTrue(newRecord.contains("id"));
         Assertions.assertEquals("Test", newRecord.get("name"));
       } else {
         Assertions.fail("Insert should have returned a result with an id.");
-      }
-    }
-  }
-
-  @Test
-  void insertingIntoInvalidTableThrowsException() throws DatabaseException {
-    try (DBConnection conn = new DBConnection()) {
-      TestSimple test = new TestSimple()
-          .setName("Test");
-
-      DBInsert insert = new DBInsert(conn, Table.INVALID_TABLE)
-          .addRecord(test);
-
-      try {
-        insert.execute();
-        Assertions.fail("Should have failed insert because table does not exist.");
-      } catch (DatabaseException e) {
-        Assertions.assertEquals(TABLE_DOES_NOT_EXIST, e.getCode());
       }
     }
   }
@@ -71,7 +52,7 @@ class DBInsertTests extends TestServer {
       if (result.hasNext()) {
         DBRecord newRecord = result.getNext();
 
-        Assertions.assertTrue(newRecord.has("id"));
+        Assertions.assertTrue(newRecord.contains("id"));
         Assertions.assertEquals(stringLiteral, newRecord.get("text"));
       } else {
         Assertions.fail("Insert should have returned a result with an id.");

@@ -18,7 +18,7 @@ public class DatabaseException extends ABException {
     // Execution errors
     UNKNOWN_SQL_ERROR("An unknown sql error was encounter. SQL State: %s."),
     TABLE_DOES_NOT_EXIST("Table %s does not exist."),
-    UNKNOWN_COLUMN("An unknown column was encountered."),
+    UNKNOWN_COLUMN("An unknown column was encountered. %s"),
 
     // Result errors
     FAILED_TO_GET_NEXT_RESULT("Failed to get next result."),

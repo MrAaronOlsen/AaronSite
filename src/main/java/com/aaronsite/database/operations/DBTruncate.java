@@ -1,7 +1,8 @@
 package com.aaronsite.database.operations;
 
 import com.aaronsite.database.connection.DBConnection;
-import com.aaronsite.database.statements.DBStatement;
+import com.aaronsite.database.statements.DBPreparedStmt;
+import com.aaronsite.database.statements.DBTruncateStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
@@ -19,17 +20,9 @@ public class DBTruncate implements DBOperation {
 
   @Override
   public DBResult execute() throws DatabaseException {
-    DBStatement dbStmt = dbConn.getDbStmt()
-        .execute(this);
+    DBPreparedStmt dbStmt = new DBTruncateStmtBuilder(dbConn, tables).build();
 
+    dbStmt.execute();
     return dbStmt.getResult();
-  }
-
-  @Override
-  public String toString() {
-    String tableS = tables.stream().map(t -> dbConn.getSchema() + "." + t.getName())
-        .reduce((table, acu) -> table + ", " + acu).orElse("");
-
-    return "TRUNCATE " + tableS;
   }
 }

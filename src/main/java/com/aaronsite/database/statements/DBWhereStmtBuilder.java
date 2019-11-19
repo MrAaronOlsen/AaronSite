@@ -33,15 +33,15 @@ public class DBWhereStmtBuilder {
     return this;
   }
 
-  public int size() {
+  int size() {
     return columns.size();
   }
 
-  public String getColumn(int i) {
+  String getColumn(int i) {
     return columns.get(i);
   }
 
-  public String getValue(int i) {
+  String getValue(int i) {
     return values.get(i);
   }
 
