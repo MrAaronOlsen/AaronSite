@@ -2,8 +2,8 @@ package com.aaronsite.database.operations;
 
 import com.aaronsite.database.connection.DBConnection;
 import com.aaronsite.database.statements.DBPreparedStmt;
-import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.statements.DBUpdateStmtBuilder;
+import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBRecord;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.Model;
@@ -44,15 +44,11 @@ public class DBUpdate implements DBOperation {
   @Override
   public DBResult execute() throws DatabaseException {
     DBPreparedStmt dbStmt = new DBUpdateStmtBuilder(dbConn, table)
+        .setRecord(record)
         .setWhere(where)
-        .build(record);
+        .build();
 
     dbStmt.execute();
     return dbStmt.getResult();
-  }
-
-  @Override
-  public String toString() {
-    return "UPDATE " + dbConn.getSchema() + "." + table + " " + record.getSqlUpdate() + " " + where + " RETURNING *;";
   }
 }

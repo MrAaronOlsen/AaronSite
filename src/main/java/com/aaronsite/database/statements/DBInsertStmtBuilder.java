@@ -1,41 +1,45 @@
 package com.aaronsite.database.statements;
 
 import com.aaronsite.database.connection.DBConnection;
+import com.aaronsite.database.metadata.ColumnMetadata;
+import com.aaronsite.database.metadata.TableMetadata;
 import com.aaronsite.database.transaction.DBRecord;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
 
-import java.util.LinkedList;
-import java.util.Set;
-import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
-public class DBInsertStmtBuilder {
+public class DBInsertStmtBuilder extends DBStmtBuilder {
   private static final String INSERT_INTO = "INSERT INTO";
   private static final String RETURNING_ALL = "RETURNING *";
-  private static final BiFunction<DBConnection, Table, String> TABLE = (c, t) -> c.getSchema() + "." + t;
 
-  private DBConnection dbConn;
-  private Table table;
+  private DBRecord record;
 
   public DBInsertStmtBuilder(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
     this.table = table;
   }
 
-  public DBPreparedStmt build(DBRecord record) throws DatabaseException {
-    Set<String> columns = record.getColumns();
-    LinkedList<String> values = new LinkedList<>(record.getValues());
+  public DBInsertStmtBuilder setRecord(DBRecord record) {
+    this.record = record;
+    return this;
+  }
 
-    String fieldsSql = "(" + String.join(", ", columns) + ")";
-    String valuesSql = "VALUES(" + values.stream().map(value -> "?").collect(Collectors.joining(", ")) + ")";
+  public DBPreparedStmt build() throws DatabaseException {
+    String fieldsSql = "(" + String.join(", ", record.getColumns()) + ")";
+    String valuesSql = "VALUES(" + record.getValues().stream().map(value -> "?")
+        .collect(Collectors.joining(", ")) + ")";
 
-    String preparedStmt = String.format("%s %s %s %s %s", INSERT_INTO, TABLE.apply(dbConn, table), fieldsSql, valuesSql, RETURNING_ALL);
+    String preparedStmt = String.format("%s %s %s %s %s", INSERT_INTO, tableSchema(), fieldsSql, valuesSql, RETURNING_ALL);
 
     DBPreparedStmt prepStmt = dbConn.getPreparedStmt(preparedStmt);
+    DBStmtSetter stmtBuilder = new DBStmtSetter(prepStmt);
 
-    for (int i = 0; i < columns.size(); i++) {
-      prepStmt.set(i + 1, values.get(i));
+    TableMetadata tableMetadata = TableMetadata.getTableMetadata(dbConn, table);
+
+    for (int i = 0; i < record.size(); i++) {
+      ColumnMetadata column = tableMetadata.getColumn(record.getColumn(i));
+      stmtBuilder.setValue(column, record.getValue(i));
     }
 
     return prepStmt;

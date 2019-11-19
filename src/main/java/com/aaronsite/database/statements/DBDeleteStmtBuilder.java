@@ -6,28 +6,26 @@ import com.aaronsite.database.metadata.TableMetadata;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
 
-public class DBQueryStmtBuilder extends DBStmtBuilder {
-  private static final String SELECT_ALL = "SELECT * FROM";
+public class DBDeleteStmtBuilder extends DBStmtBuilder {
+  private static final String DELETE_FROM = "DELETE FROM";
+  private static final String RETURN_ID = "RETURNING id";
 
-  public DBQueryStmtBuilder(DBConnection dbConn, Table table) {
+  private DBWhereStmtBuilder where;
+
+  public DBDeleteStmtBuilder(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
     this.table = table;
   }
 
-  public DBQueryStmtBuilder setWhere(DBWhereStmtBuilder where) {
-    this.where = where;
-    return this;
-  }
-
-  public DBQueryStmtBuilder setIdQuery(String id) {
+  public DBDeleteStmtBuilder setId(String id) {
     this.where = new DBWhereStmtBuilder(id);
     return this;
   }
 
   public DBPreparedStmt build() throws DatabaseException {
-    String sqlStmt = String.format("%s %s %s", SELECT_ALL, tableSchema(), where);
+    String sql = String.format("%s %s %s %s", DELETE_FROM, tableSchema(), where, RETURN_ID);
 
-    DBPreparedStmt prepStmt = dbConn.getPreparedStmt(sqlStmt);
+    DBPreparedStmt prepStmt = dbConn.getPreparedStmt(sql);
 
     TableMetadata tableMetadata = TableMetadata.getTableMetadata(dbConn, table);
     DBStmtSetter stmtBuilder = new DBStmtSetter(prepStmt);

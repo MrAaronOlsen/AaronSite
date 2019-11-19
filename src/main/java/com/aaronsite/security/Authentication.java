@@ -1,9 +1,9 @@
 package com.aaronsite.security;
 
 import com.aaronsite.database.connection.DBConnection;
+import com.aaronsite.database.operations.DbQuery;
 import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
-import com.aaronsite.database.operations.DbQuery;
 import com.aaronsite.models.User;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.ABException;

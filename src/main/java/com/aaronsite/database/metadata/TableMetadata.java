@@ -5,7 +5,6 @@ import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
 
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,7 +42,7 @@ public class TableMetadata {
   }
 
   public ColumnMetadata getColumn(String column) {
-    return columns.get(column);
+    return columns.getOrDefault(column, ColumnMetadata.unknownColumn(column));
   }
 
   private void build() throws DatabaseException {

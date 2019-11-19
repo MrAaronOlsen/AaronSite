@@ -7,74 +7,53 @@ import com.aaronsite.database.transaction.DBRecord;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-import java.util.function.BiFunction;
-
-import static com.aaronsite.database.metadata.ColumnMetadata.Type.INTEGER;
-
-public class DBUpdateStmtBuilder {
+public class DBUpdateStmtBuilder extends DBStmtBuilder {
   private static final String UPDATE = "UPDATE";
+  private static final String SET = "SET";
   private static final String RETURNING_ALL = "RETURNING *";
-  private static final BiFunction<DBConnection, Table, String> TABLE = (c, t) -> c.getSchema() + "." + t;
 
-  private DBConnection dbConn;
-  private Table table;
-  private DBWhereStmtBuilder query;
+  private DBRecord record;
 
   public DBUpdateStmtBuilder(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
     this.table = table;
   }
 
+  public DBUpdateStmtBuilder setRecord(DBRecord record) {
+    this.record = record;
+    return this;
+  }
+
   public DBUpdateStmtBuilder setWhere(DBWhereStmtBuilder query) {
-    this.query = query;
+    this.where = query;
     return this;
   }
 
   public DBUpdateStmtBuilder setIdQuery(String id) {
-    this.query = new DBWhereStmtBuilder(id);
+    this.where = new DBWhereStmtBuilder(id);
     return this;
   }
 
-  public DBPreparedStmt build(DBRecord record) throws DatabaseException {
-    String sqlStmt = "UPDATE " + dbConn.getSchema() + "." + table + " SET " +
-        record.getEntrySet().stream()
-            .map((e) -> e.getKey() + "=" + "?")
-            .reduce((e, a) -> e + ", " + a).orElse("") +
-        " " + query + " RETURNING *;";
+  public DBPreparedStmt build() throws DatabaseException {
+    String params = record.getColumns().stream()
+        .map((col) -> col + "=" + "?")
+        .reduce((e, a) -> e + ", " + a).orElse("");
+
+    String sqlStmt = String.format("%s %s %s %s %s %s", UPDATE, tableSchema(), SET, params, where, RETURNING_ALL );
 
     DBPreparedStmt prepStmt = dbConn.getPreparedStmt(sqlStmt);
 
-    List<String> columns = new ArrayList<>(record.getColumns());
-    LinkedList<String> values = new LinkedList<>(record.getValues());
-
+    DBStmtSetter stmtBuilder = new DBStmtSetter(prepStmt);
     TableMetadata tableMetadata = TableMetadata.getTableMetadata(dbConn, table);
 
-    int i = 0;
-    while(i < columns.size()) {
-      ColumnMetadata column = tableMetadata.getColumn(columns.get(i));
-
-      if (column.getType() == INTEGER) {
-        prepStmt.set(i + 1, Integer.valueOf(values.get(i)));
-      } else {
-        prepStmt.set(i + 1, values.get(i));
-      }
-
-      i++;
+    for(int i = 0; i < record.size(); i++) {
+      ColumnMetadata column = tableMetadata.getColumn(record.getColumn(i));
+      stmtBuilder.setValue(column, record.getValue(i));
     }
 
-    for (int j = 0; j < query.size(); j++) {
-      ColumnMetadata column = tableMetadata.getColumn(query.getColumn(j));
-
-      if (column.getType() == INTEGER) {
-        prepStmt.set(j + i + 1, Integer.valueOf(query.getValue(j)));
-      } else {
-        prepStmt.set(j + i + 1, query.getValue(j));
-      }
-
+    for (int j = 0; j < where.size(); j++) {
+      ColumnMetadata column = tableMetadata.getColumn(where.getColumn(j));
+      stmtBuilder.setValue(column, where.getValue(j));
     }
 
     return prepStmt;

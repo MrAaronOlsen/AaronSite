@@ -44,8 +44,8 @@ public class Post extends System implements Model {
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
-        .addNonNull(HEADER, header)
-        .addNonNull(BODY, body);
+        .add(HEADER, header)
+        .add(BODY, body);
   }
 
   @Override

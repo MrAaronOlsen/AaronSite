@@ -33,8 +33,8 @@ public class User extends System implements Model {
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
-        .addNonNull(USER_NAME, userName)
-        .addNonNull(USER_PW, userPw);
+        .add(USER_NAME, userName)
+        .add(USER_PW, userPw);
   }
 
   @Override

@@ -40,8 +40,8 @@ public class TestSimple extends System implements Model {
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
-        .addNonNull(NAME, name)
-        .addNonNull(TEXT, text);
+        .add(NAME, name)
+        .add(TEXT, text);
   }
 
   @Override
