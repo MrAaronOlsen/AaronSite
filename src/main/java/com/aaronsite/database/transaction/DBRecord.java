@@ -3,6 +3,7 @@ package com.aaronsite.database.transaction;
 import com.aaronsite.database.metadata.ColumnMetadata;
 import com.aaronsite.database.metadata.ResultMetadata;
 import com.aaronsite.utils.exceptions.DatabaseException;
+import org.apache.commons.lang3.StringUtils;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,7 +35,6 @@ public class DBRecord {
     try {
       for (ColumnMetadata column : resultMetadata.getColumns()) {
         String value = result.getString(column.getName());
-
         add(column.getName(), value);
       }
     } catch (SQLException e) {
@@ -90,7 +90,9 @@ public class DBRecord {
     StringBuilder string = new StringBuilder();
 
     for (Map.Entry<String, String> entry : record.entrySet()) {
-      string.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+      if (StringUtils.isNotEmpty(entry.getValue())) {
+        string.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+      }
     }
 
     return string.toString();

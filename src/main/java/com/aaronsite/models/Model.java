@@ -25,7 +25,7 @@ public interface Model extends ResponseData {
     }
   }
 
-  static void process(Model model) throws IllegalAccessException {
+  static void processTypes(Model model) throws IllegalAccessException {
     Class<?> clazz = model.getClass();
 
     for (Field field : clazz.getDeclaredFields()) {

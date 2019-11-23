@@ -3,12 +3,15 @@ package com.aaronsite.models;
 import com.aaronsite.database.transaction.DBRecord;
 import com.aaronsite.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import static com.aaronsite.utils.enums.Table.POSTS;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Post extends System implements Model {
-  public static final String HEADER = "header";
-  public static final String BODY = "body";
+  static final String HEADER = "header";
+  static final String BODY = "body";
 
   private String header;
   private String body;
@@ -17,16 +20,18 @@ public class Post extends System implements Model {
     // Default Constructor
   }
 
-  public Post(DBRecord record) {
+  Post(DBRecord record) {
     this.id = record.getId();
     this.header = record.get(HEADER);
     this.body = record.get(BODY);
   }
 
+  @JsonDeserialize
   public String getHeader() {
     return header;
   }
 
+  @JsonDeserialize
   public String getBody() {
     return body;
   }

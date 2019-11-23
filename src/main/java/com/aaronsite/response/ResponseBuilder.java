@@ -57,7 +57,7 @@ public class ResponseBuilder {
       case QUERY:
         return QueryResponse.build(table, params);
       case QUERY_BY_ID:
-        return QueryResponse.build(table, id);
+        return QueryResponse.build(table, id, params);
       case INSERT:
         return InsertResponse.build(table, body);
       case UPDATE_BY_ID:

@@ -9,6 +9,10 @@ public class DBWhereStmtBuilder {
   private LinkedList<String> columns = new LinkedList<>();
   private LinkedList<String> values = new LinkedList<>();
 
+  public DBWhereStmtBuilder() {
+    // Default
+  }
+
   public DBWhereStmtBuilder(String key, String value) {
     columns.add(key);
     values.add(value);

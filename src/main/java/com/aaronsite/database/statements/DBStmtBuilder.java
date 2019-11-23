@@ -8,6 +8,7 @@ abstract class DBStmtBuilder {
   DBConnection dbConn;
   Table table;
   DBWhereStmtBuilder where;
+  DBSelectStmtBuilder select;
 
   String tableSchema() {
     return dbConn.getSchema() + "." + table;
