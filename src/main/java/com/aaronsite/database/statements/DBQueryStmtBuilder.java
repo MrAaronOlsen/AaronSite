@@ -7,11 +7,15 @@ import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
 
 public class DBQueryStmtBuilder extends DBStmtBuilder {
-  private static final String SELECT_ALL = "SELECT * FROM";
 
   public DBQueryStmtBuilder(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
     this.table = table;
+  }
+
+  public DBQueryStmtBuilder setSelect(DBSelectStmtBuilder select) {
+    this.select = select;
+    return this;
   }
 
   public DBQueryStmtBuilder setWhere(DBWhereStmtBuilder where) {
@@ -25,7 +29,15 @@ public class DBQueryStmtBuilder extends DBStmtBuilder {
   }
 
   public DBPreparedStmt build() throws DatabaseException {
-    String sqlStmt = String.format("%s %s %s", SELECT_ALL, tableSchema(), where);
+    if (select == null) {
+      select = new DBSelectStmtBuilder("*");
+    }
+
+    if (where == null) {
+      where = new DBWhereStmtBuilder();
+    }
+
+    String sqlStmt = String.format("%s %s %s", select, tableSchema(), where);
 
     DBPreparedStmt prepStmt = dbConn.getPreparedStmt(sqlStmt);
 

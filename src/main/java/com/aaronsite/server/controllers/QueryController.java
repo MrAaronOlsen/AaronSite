@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import static com.aaronsite.server.controllers.MasterController.BASE_URL;
@@ -40,12 +42,14 @@ public class QueryController extends MasterController {
   public Response queryOnTableById(
       @RequestHeader Map<String, String> headers,
       @PathVariable(value = "table") String table,
-      @PathVariable(value = "id") String id) {
+      @PathVariable(value = "id") String id,
+      @RequestParam Map<String, String> params) {
 
     try {
       return new ResponseBuilder(RequestType.QUERY_BY_ID)
           .setTable(table)
-          .setId(id).build();
+          .setId(id)
+          .setParams(params).build();
 
     } catch (Throwable e) {
       return ResponseBuilder.handleError(e);

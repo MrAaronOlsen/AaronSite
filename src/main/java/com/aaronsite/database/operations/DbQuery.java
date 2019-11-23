@@ -3,6 +3,7 @@ package com.aaronsite.database.operations;
 import com.aaronsite.database.connection.DBConnection;
 import com.aaronsite.database.statements.DBPreparedStmt;
 import com.aaronsite.database.statements.DBQueryStmtBuilder;
+import com.aaronsite.database.statements.DBSelectStmtBuilder;
 import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.utils.enums.Table;
@@ -12,6 +13,7 @@ public class DbQuery implements DBOperation {
   private Table table;
   private DBConnection dbConn;
   private DBWhereStmtBuilder where;
+  private DBSelectStmtBuilder select;
 
   public DbQuery(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
@@ -21,11 +23,18 @@ public class DbQuery implements DBOperation {
   @Override
   public DBResult execute() throws DatabaseException {
     DBPreparedStmt stmt = new DBQueryStmtBuilder(dbConn, table)
-        .setWhere(where).build();
+        .setSelect(select)
+        .setWhere(where)
+        .build();
 
     stmt.execute();
 
     return stmt.getResult();
+  }
+
+  public DbQuery setSelect(DBSelectStmtBuilder select) {
+    this.select = select;
+    return this;
   }
 
   public DbQuery setQuery(DBWhereStmtBuilder where) {

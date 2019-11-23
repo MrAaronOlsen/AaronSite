@@ -5,9 +5,12 @@ import com.aaronsite.utils.annotations.Column;
 import com.aaronsite.utils.enums.ColumnType;
 import com.aaronsite.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import static com.aaronsite.utils.enums.Table.USERS;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class User extends System implements Model {
   public static final String USER_NAME = "username";
   public static final String USER_PW = "passhash";
@@ -53,10 +56,12 @@ public class User extends System implements Model {
     return this;
   }
 
+  @JsonDeserialize
   public String getUserName() {
     return userName;
   }
 
+  @JsonDeserialize
   public String getUserPw() {
     return userPw;
   }

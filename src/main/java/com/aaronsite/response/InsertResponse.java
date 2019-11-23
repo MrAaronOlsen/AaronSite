@@ -26,7 +26,7 @@ class InsertResponse {
     Function<DBRecord, Model> dataBuilder = Model.getModel(table);
 
     try {
-      Model.process(model);
+      Model.processTypes(model);
     } catch (IllegalAccessException e) {
       throw new ResponseException(MODEL_PROCESSING_ERROR, e.getMessage());
     }
