@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBSelectStmtBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBSelectStmtBuilderTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBSortStmtBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBSortStmtBuilderTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DbQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DbQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBQueryStmtBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBQueryStmtBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBStmtBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBStmtBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBWhereStmtBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBWhereStmtBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/transaction/DBRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/transaction/DBRecord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/InsertResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/InsertResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/Table.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBQueryStmtBuilderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/statements/DBQueryStmtBuilderTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,11 +61,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JavaAutoRunManager">
-    <enabled-run-configurations>
-      <run-configuration type="JUnit" name="AllTests" />
-    </enabled-run-configurations>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -144,7 +133,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBQueryStmtBuilderTests.simpleColumnQueryWithMultiSelectSQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBQueryStmtBuilderTests.simpleColumnQueryWithMultiSelectAndMultiSortSQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
@@ -154,7 +143,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.aaronsite.database.statements" />
       <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.statements.DBQueryStmtBuilderTests" />
-      <option name="METHOD_NAME" value="simpleColumnQueryWithMultiSelectSQL" />
+      <option name="METHOD_NAME" value="simpleColumnQueryWithMultiSelectAndMultiSortSQL" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
       <option name="PARAMETERS" value="" />
@@ -163,7 +152,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBQueryStmtBuilderTests.simpleColumnQueryWithSelectSQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBQueryStmtBuilderTests.simpleColumnQueryWithMultiSelectSORTSQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
@@ -173,7 +162,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.aaronsite.database.statements" />
       <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.statements.DBQueryStmtBuilderTests" />
-      <option name="METHOD_NAME" value="simpleColumnQueryWithSelectSQL" />
+      <option name="METHOD_NAME" value="simpleColumnQueryWithMultiSelectSORTSQL" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
       <option name="PARAMETERS" value="" />
@@ -182,7 +171,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBQueryStmtBuilderTests.simpleIdQuerySql" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBSortStmtBuilderTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
@@ -191,26 +180,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.aaronsite.database.statements" />
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.statements.DBQueryStmtBuilderTests" />
-      <option name="METHOD_NAME" value="simpleIdQuerySql" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DBSelectStmtBuilderTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="aaronsiteapi.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.aaronsite.database.statements.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.aaronsite.database.statements" />
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.statements.DBSelectStmtBuilderTests" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.statements.DBSortStmtBuilderTests" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
@@ -220,7 +190,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBSelectStmtBuilderTests.multipleFieldsWithSpacesSQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBSortStmtBuilderTests.multipleASCDESCSortSQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
@@ -229,8 +199,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.aaronsite.database.statements" />
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.statements.DBSelectStmtBuilderTests" />
-      <option name="METHOD_NAME" value="multipleFieldsWithSpacesSQL" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.statements.DBSortStmtBuilderTests" />
+      <option name="METHOD_NAME" value="multipleASCDESCSortSQL" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBSortStmtBuilderTests.multipleDESCSortSQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aaronsiteapi.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aaronsite.database.statements.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aaronsite.database.statements" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.statements.DBSortStmtBuilderTests" />
+      <option name="METHOD_NAME" value="multipleDESCSortSQL" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test" />
       <option name="PARAMETERS" value="" />
@@ -270,19 +259,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.StartUp" />
-      <item itemvalue="JUnit.DBSelectStmtBuilderTests.multipleFieldsWithSpacesSQL" />
-      <item itemvalue="JUnit.DBSelectStmtBuilderTests" />
-      <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleIdQuerySql" />
-      <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleColumnQueryWithSelectSQL" />
-      <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleColumnQueryWithMultiSelectSQL" />
+      <item itemvalue="JUnit.DBSortStmtBuilderTests.multipleDESCSortSQL" />
+      <item itemvalue="JUnit.DBSortStmtBuilderTests.multipleASCDESCSortSQL" />
+      <item itemvalue="JUnit.DBSortStmtBuilderTests" />
+      <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleColumnQueryWithMultiSelectSORTSQL" />
+      <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleColumnQueryWithMultiSelectAndMultiSortSQL" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleColumnQueryWithMultiSelectSQL" />
-        <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleColumnQueryWithSelectSQL" />
-        <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleIdQuerySql" />
-        <item itemvalue="JUnit.DBSelectStmtBuilderTests" />
-        <item itemvalue="JUnit.DBSelectStmtBuilderTests.multipleFieldsWithSpacesSQL" />
+        <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleColumnQueryWithMultiSelectAndMultiSortSQL" />
+        <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleColumnQueryWithMultiSelectSORTSQL" />
+        <item itemvalue="JUnit.DBSortStmtBuilderTests" />
+        <item itemvalue="JUnit.DBSortStmtBuilderTests.multipleASCDESCSortSQL" />
+        <item itemvalue="JUnit.DBSortStmtBuilderTests.multipleDESCSortSQL" />
       </list>
     </recent_temporary>
   </component>
@@ -319,6 +308,16 @@
           <url>file://$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBDeleteTests.java</url>
           <line>20</line>
           <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

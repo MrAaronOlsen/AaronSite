@@ -9,6 +9,7 @@ abstract class DBStmtBuilder {
   Table table;
   DBWhereStmtBuilder where;
   DBSelectStmtBuilder select;
+  DBSortStmtBuilder sort;
 
   String tableSchema() {
     return dbConn.getSchema() + "." + table;
