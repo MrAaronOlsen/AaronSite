@@ -6,24 +6,30 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import static com.aaronsite.utils.enums.Table.POSTS;
+import static com.aaronsite.utils.enums.Table.PAGES;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Post extends System implements Model {
+public class Page extends System implements Model {
   static final String HEADER = "header";
+  static final String PREVIEW = "preview";
   static final String BODY = "body";
+  static final String SEQUENCE = "sequence";
 
   private String header;
+  private String preview;
   private String body;
+  private String sequence;
 
-  public Post() {
+  public Page() {
     // Default Constructor
   }
 
-  Post(DBRecord record) {
+  Page(DBRecord record) {
     this.id = record.getId();
     this.header = record.get(HEADER);
+    this.preview = record.get(PREVIEW);
     this.body = record.get(BODY);
+    this.sequence = record.get(SEQUENCE);
   }
 
   @JsonDeserialize
@@ -32,31 +38,33 @@ public class Post extends System implements Model {
   }
 
   @JsonDeserialize
+  public String getPreview() {
+    return preview;
+  }
+
+  @JsonDeserialize
   public String getBody() {
     return body;
   }
 
-  public Post setHeader(String value) {
-    this.header = value;
-    return this;
-  }
-
-  public Post setBody(String value) {
-    this.body = body;
-    return this;
+  @JsonDeserialize
+  public String getSequence() {
+    return sequence;
   }
 
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
         .add(HEADER, header)
-        .add(BODY, body);
+        .add(PREVIEW, preview)
+        .add(BODY, body)
+        .add(SEQUENCE, sequence);
   }
 
   @Override
   @JsonIgnore
   public Table getTable() {
-    return POSTS;
+    return PAGES;
   }
 
   @Override
@@ -64,6 +72,8 @@ public class Post extends System implements Model {
     return "Table: " + getTable() + "\n"
         + ID + ": " + id + "\n"
         + HEADER + ": " + header + "\n"
+        + PREVIEW + ": " + preview + "\n"
+        + SEQUENCE + ": " + sequence + "\n"
         + BODY + ": " + body;
   }
 }

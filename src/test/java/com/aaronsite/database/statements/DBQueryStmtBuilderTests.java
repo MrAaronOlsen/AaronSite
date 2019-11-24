@@ -59,4 +59,32 @@ class DBQueryStmtBuilderTests extends TestServer {
       Assertions.assertEquals(expectedSql, stmt.toString());
     }
   }
+
+  @Test
+  void simpleColumnQueryWithMultiSelectAndSortSQL() throws ABException {
+    try (DBConnection conn = new DBConnection()) {
+      String expectedSql = "SELECT name, id FROM " + getTestSchema(TEST_SIMPLE) + " WHERE name='1' ORDER BY name ASC";
+
+      DBPreparedStmt stmt = new DBQueryStmtBuilder(conn, TEST_SIMPLE)
+          .setSelect(new DBSelectStmtBuilder("name, id"))
+          .setWhere(new DBWhereStmtBuilder("name", "1"))
+          .setSort(new DBSortStmtBuilder("name")).build();
+
+      Assertions.assertEquals(expectedSql, stmt.toString());
+    }
+  }
+
+  @Test
+  void simpleColumnQueryWithMultiSelectAndMultiSortSQL() throws ABException {
+    try (DBConnection conn = new DBConnection()) {
+      String expectedSql = "SELECT name, id FROM " + getTestSchema(TEST_SIMPLE) + " WHERE name='1' ORDER BY name ASC, id DESC";
+
+      DBPreparedStmt stmt = new DBQueryStmtBuilder(conn, TEST_SIMPLE)
+          .setSelect(new DBSelectStmtBuilder("name, id"))
+          .setWhere(new DBWhereStmtBuilder("name", "1"))
+          .setSort(new DBSortStmtBuilder("name, -id")).build();
+
+      Assertions.assertEquals(expectedSql, stmt.toString());
+    }
+  }
 }

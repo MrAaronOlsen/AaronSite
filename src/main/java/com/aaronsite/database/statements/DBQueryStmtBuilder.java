@@ -23,6 +23,11 @@ public class DBQueryStmtBuilder extends DBStmtBuilder {
     return this;
   }
 
+  public DBQueryStmtBuilder setSort(DBSortStmtBuilder sort) {
+    this.sort = sort;
+    return this;
+  }
+
   public DBQueryStmtBuilder setIdQuery(String id) {
     this.where = new DBWhereStmtBuilder(id);
     return this;
@@ -37,7 +42,11 @@ public class DBQueryStmtBuilder extends DBStmtBuilder {
       where = new DBWhereStmtBuilder();
     }
 
-    String sqlStmt = String.format("%s %s %s", select, tableSchema(), where);
+    if (sort == null) {
+      sort = new DBSortStmtBuilder();
+    }
+
+    String sqlStmt = String.format("%s %s %s %s", select, tableSchema(), where, sort);
 
     DBPreparedStmt prepStmt = dbConn.getPreparedStmt(sqlStmt);
 

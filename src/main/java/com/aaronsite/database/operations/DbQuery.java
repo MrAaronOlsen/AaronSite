@@ -4,6 +4,7 @@ import com.aaronsite.database.connection.DBConnection;
 import com.aaronsite.database.statements.DBPreparedStmt;
 import com.aaronsite.database.statements.DBQueryStmtBuilder;
 import com.aaronsite.database.statements.DBSelectStmtBuilder;
+import com.aaronsite.database.statements.DBSortStmtBuilder;
 import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.utils.enums.Table;
@@ -14,6 +15,7 @@ public class DbQuery implements DBOperation {
   private DBConnection dbConn;
   private DBWhereStmtBuilder where;
   private DBSelectStmtBuilder select;
+  private DBSortStmtBuilder sort;
 
   public DbQuery(DBConnection dbConn, Table table) {
     this.dbConn = dbConn;
@@ -25,6 +27,7 @@ public class DbQuery implements DBOperation {
     DBPreparedStmt stmt = new DBQueryStmtBuilder(dbConn, table)
         .setSelect(select)
         .setWhere(where)
+        .setSort(sort)
         .build();
 
     stmt.execute();
@@ -39,6 +42,11 @@ public class DbQuery implements DBOperation {
 
   public DbQuery setQuery(DBWhereStmtBuilder where) {
     this.where = where;
+    return this;
+  }
+
+  public DbQuery setSort(DBSortStmtBuilder sort) {
+    this.sort = sort;
     return this;
   }
 
