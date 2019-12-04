@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/metadata/ColumnMetadata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/metadata/ColumnMetadata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBPreparedStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBPreparedStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBStmtSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBStmtSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DbQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DbQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -294,16 +292,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/InsertController.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
