@@ -11,14 +11,16 @@ import static com.aaronsite.utils.enums.Table.PAGES;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Page extends System implements Model {
   static final String HEADER = "header";
-  static final String PREVIEW = "preview";
-  static final String BODY = "body";
+  static final String CAPTION = "caption";
+  static final String SLUG = "slug";
   static final String SEQUENCE = "sequence";
+  static final String BLOCKS = "blocks";
 
   private String header;
-  private String preview;
-  private String body;
+  private String caption;
+  private String slug;
   private String sequence;
+  private String blocks;
 
   public Page() {
     // Default Constructor
@@ -27,9 +29,10 @@ public class Page extends System implements Model {
   Page(DBRecord record) {
     this.id = record.getId();
     this.header = record.get(HEADER);
-    this.preview = record.get(PREVIEW);
-    this.body = record.get(BODY);
+    this.caption = record.get(CAPTION);
+    this.slug = record.get(SLUG);
     this.sequence = record.get(SEQUENCE);
+    this.blocks = record.get(BLOCKS);
   }
 
   @JsonDeserialize
@@ -38,13 +41,13 @@ public class Page extends System implements Model {
   }
 
   @JsonDeserialize
-  public String getPreview() {
-    return preview;
+  public String getCaption() {
+    return caption;
   }
 
   @JsonDeserialize
-  public String getBody() {
-    return body;
+  public String getSlug() {
+    return slug;
   }
 
   @JsonDeserialize
@@ -52,13 +55,19 @@ public class Page extends System implements Model {
     return sequence;
   }
 
+  @JsonDeserialize
+  public String getBlocks() {
+    return blocks;
+  }
+
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
         .add(HEADER, header)
-        .add(PREVIEW, preview)
-        .add(BODY, body)
-        .add(SEQUENCE, sequence);
+        .add(CAPTION, caption)
+        .add(SLUG, slug)
+        .add(SEQUENCE, sequence)
+        .add(BLOCKS, blocks);
   }
 
   @Override
@@ -72,8 +81,9 @@ public class Page extends System implements Model {
     return "Table: " + getTable() + "\n"
         + ID + ": " + id + "\n"
         + HEADER + ": " + header + "\n"
-        + PREVIEW + ": " + preview + "\n"
+        + CAPTION + ": " + caption + "\n"
         + SEQUENCE + ": " + sequence + "\n"
-        + BODY + ": " + body;
+        + BLOCKS + ": " + blocks + "\n"
+        + SLUG + ": " + slug;
   }
 }
