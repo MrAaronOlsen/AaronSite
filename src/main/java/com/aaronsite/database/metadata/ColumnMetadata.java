@@ -8,6 +8,7 @@ public class ColumnMetadata {
   public enum Type {
     STRING("12"),
     INTEGER("4"),
+    JSON("1111"),
     UNKNOWN("");
 
     private static final Map<String, Type> codeMap = Arrays.stream(Type.values()).collect(
