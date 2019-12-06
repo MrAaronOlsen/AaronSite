@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 import static com.aaronsite.server.controllers.MasterController.BASE_URL;
+import static com.aaronsite.server.controllers.MasterController.DEV_URL;
+import static com.aaronsite.server.controllers.MasterController.PROD_URL;
 
-@CrossOrigin(origins = {"http://localhost:3000", "https://aaron-site.herokuapp.com"})
+@CrossOrigin(origins = {DEV_URL, PROD_URL})
 @RestController
 @RequestMapping(BASE_URL)
 public class QueryController extends MasterController {
