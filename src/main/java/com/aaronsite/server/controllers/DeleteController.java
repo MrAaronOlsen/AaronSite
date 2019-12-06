@@ -14,9 +14,10 @@ import java.util.Map;
 
 import static com.aaronsite.server.controllers.MasterController.BASE_URL;
 import static com.aaronsite.server.controllers.MasterController.DEV_URL;
-import static com.aaronsite.server.controllers.MasterController.PROD_URL;
+import static com.aaronsite.server.controllers.MasterController.PROD_URL_A;
+import static com.aaronsite.server.controllers.MasterController.PROD_URL_B;
 
-@CrossOrigin(origins = {DEV_URL, PROD_URL})
+@CrossOrigin(origins = {DEV_URL, PROD_URL_A, PROD_URL_B})
 @RestController
 @RequestMapping(BASE_URL)
 public class DeleteController extends MasterController {
