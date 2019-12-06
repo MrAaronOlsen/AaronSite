@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import static com.aaronsite.server.controllers.MasterController.BASE_URL;
+import static com.aaronsite.server.controllers.MasterController.DEV_URL;
+import static com.aaronsite.server.controllers.MasterController.PROD_URL;
 
-@CrossOrigin(origins = {"http://localhost:3000", "https://aaron-site.herokuapp.com"})
+@CrossOrigin(origins = {DEV_URL, PROD_URL})
 @RestController
 @RequestMapping(BASE_URL)
 public class AuthController {
