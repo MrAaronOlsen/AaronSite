@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/DeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/DeleteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/InsertController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/MasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/MasterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/UpdateController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
