@@ -35,9 +35,7 @@ public interface Model extends ResponseData {
         Column an = field.getAnnotation(Column.class);
 
         if (an.columnType() == ColumnType.ENCRYPTED) {
-          Authentication auth = new Authentication();
-          String coded = auth.encode((String) field.get(model));
-
+          String coded = Authentication.encode((String) field.get(model));
           field.set(model, coded);
         }
       }

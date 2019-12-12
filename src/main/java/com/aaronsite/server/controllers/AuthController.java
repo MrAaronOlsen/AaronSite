@@ -1,5 +1,6 @@
 package com.aaronsite.server.controllers;
 
+import com.aaronsite.models.AuthToken;
 import com.aaronsite.response.ErrorResponse;
 import com.aaronsite.response.ResponseData;
 import com.aaronsite.security.Authentication;
@@ -23,7 +24,7 @@ public class AuthController {
       @RequestHeader("Authorization") String authHeader) {
 
     try {
-      return Authentication.basicAuth(authHeader);
+      return new AuthToken(Authentication.basicAuth(authHeader));
     } catch (Throwable e) {
       return new ErrorResponse(e);
     }

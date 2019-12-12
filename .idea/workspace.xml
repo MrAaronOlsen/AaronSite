@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/AuthToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/aaronsiteapi.main.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBSortStmtBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBSortStmtBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBStmtSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBStmtSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/MasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/MasterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/testutils/dataseeder/DataSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/testutils/dataseeder/DataSeeder.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +69,10 @@
   </component>
   <component name="ProjectId" id="1RJ1zV1806XT6hmYPFX3F6DbeBk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -84,18 +95,6 @@
       <recent name="$PROJECT_DIR$/utils/src/main/java" />
       <recent name="$PROJECT_DIR$" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.StartUp">
     <configuration default="true" type="Applet">
@@ -266,6 +265,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -291,5 +302,27 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1238" height="141" key="GridCell.Tab.0.bottom" timestamp="1576116068301">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1238" height="141" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1576116068301" />
+    <state width="1238" height="141" key="GridCell.Tab.0.center" timestamp="1576116068300">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1238" height="141" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1576116068300" />
+    <state width="1238" height="141" key="GridCell.Tab.0.left" timestamp="1576116068300">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1238" height="141" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1576116068300" />
+    <state width="1238" height="141" key="GridCell.Tab.0.right" timestamp="1576116068301">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1238" height="141" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1576116068301" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1576115270718">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1576115270718" />
   </component>
 </project>
