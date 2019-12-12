@@ -28,7 +28,7 @@ public class Authentication {
     return encoder.encode(pw);
   }
 
-  public static User basicAuth(String authHeader) throws ABException {
+  public static String basicAuth(String authHeader) throws ABException {
     String encodedCredentials = authHeader.substring(6);
 
     byte[] decodedBytes;
@@ -65,7 +65,7 @@ public class Authentication {
     User user = getUser(username);
 
     if (encoder.matches(hashpass, user.getUserPw())) {
-      return user;
+      return TokenHandler.getToken(user);
     } else {
       throw new AuthException(USER_NOT_AUTHENTICATED);
     }

@@ -5,8 +5,4 @@ abstract class MasterController {
   static final String PROD_URL_A = "http://aaron-site.herokuapp.com";
   static final String PROD_URL_B = "http://www.aaron-olsen.com";
   static final String DEV_URL = "http://localhost:3000";
-
-  static String[] getCORSUrls() {
-    return new String[] {PROD_URL_A, PROD_URL_B, DEV_URL};
-  }
 }

@@ -3,7 +3,6 @@ package com.aaronsite.database.statements;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.stream.Collectors;
 
 public class DBSortStmtBuilder {
