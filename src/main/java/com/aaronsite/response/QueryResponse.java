@@ -53,7 +53,7 @@ class QueryResponse {
       DBResult result = query.execute();
 
       while (result.hasNext()) {
-        results.add(modelBuilder.apply(result.getNext()));
+        results.add(Model.serialize(modelBuilder.apply(result.getNext())));
       }
     }
 

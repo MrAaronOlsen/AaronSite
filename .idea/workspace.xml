@@ -2,33 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ExceptionCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/security/AuthenticationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/security/TokenHandlerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DBInsert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBQueryStmtBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBQueryStmtBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBWhereStmtBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBWhereStmtBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/transaction/DBRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/transaction/DBRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/InsertResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/InsertResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/TokenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/DeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/DeleteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/InsertController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/UpdateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/constants/ConfigArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/constants/ConfigArgs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/ConfigArg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/ConfigArg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ABException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ABException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/AuthException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/AuthException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/DatabaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/DatabaseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ModelException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ModelException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ResponseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ResponseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/AllTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBInsertTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBInsertTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/server/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/server/TestServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,42 +314,42 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="100" y="123" width="1080" height="577" key="DiffContextDialog/0.23.1280.777@0.23.1280.777" timestamp="1576196394844" />
-    <state width="1238" height="181" key="GridCell.Tab.0.bottom" timestamp="1576208693088">
+    <state width="1238" height="181" key="GridCell.Tab.0.bottom" timestamp="1576209692866">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="181" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1576208693088" />
-    <state width="1238" height="181" key="GridCell.Tab.0.center" timestamp="1576208693086">
+    <state width="1238" height="181" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1576209692866" />
+    <state width="1238" height="181" key="GridCell.Tab.0.center" timestamp="1576209692857">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="181" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1576208693086" />
-    <state width="1238" height="181" key="GridCell.Tab.0.left" timestamp="1576208693086">
+    <state width="1238" height="181" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1576209692857" />
+    <state width="1238" height="181" key="GridCell.Tab.0.left" timestamp="1576209692851">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="181" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1576208693086" />
-    <state width="1238" height="181" key="GridCell.Tab.0.right" timestamp="1576208693087">
+    <state width="1238" height="181" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1576209692851" />
+    <state width="1238" height="181" key="GridCell.Tab.0.right" timestamp="1576209692863">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="181" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1576208693087" />
-    <state width="1238" height="181" key="GridCell.Tab.1.bottom" timestamp="1576208692981">
+    <state width="1238" height="181" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1576209692863" />
+    <state width="1238" height="181" key="GridCell.Tab.1.bottom" timestamp="1576209692652">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="181" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1576208692981" />
-    <state width="1238" height="181" key="GridCell.Tab.1.center" timestamp="1576208692980">
+    <state width="1238" height="181" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1576209692652" />
+    <state width="1238" height="181" key="GridCell.Tab.1.center" timestamp="1576209692651">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="181" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1576208692980" />
-    <state width="1238" height="181" key="GridCell.Tab.1.left" timestamp="1576208692979">
+    <state width="1238" height="181" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1576209692651" />
+    <state width="1238" height="181" key="GridCell.Tab.1.left" timestamp="1576209692651">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="181" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1576208692979" />
-    <state width="1238" height="181" key="GridCell.Tab.1.right" timestamp="1576208692980">
+    <state width="1238" height="181" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1576209692651" />
+    <state width="1238" height="181" key="GridCell.Tab.1.right" timestamp="1576209692652">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="181" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1576208692980" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1576208315122">
+    <state width="1238" height="181" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1576209692652" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1576209263943">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1576208315122" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1576209263943" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -381,11 +358,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/com/aaronsite/security/AuthenticationTests.java</url>
           <line>45</line>
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/aaronsite/security/AuthenticationTests.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
