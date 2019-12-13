@@ -46,7 +46,7 @@ public class DBQueryStmtBuilder extends DBStmtBuilder {
       sort = new DBSortStmtBuilder();
     }
 
-    String sqlStmt = String.format("%s %s %s %s", select, tableSchema(), where, sort);
+    String sqlStmt = String.format("%s %s %s %s", select, tableSchema(), where, sort).trim();
 
     DBPreparedStmt prepStmt = dbConn.getPreparedStmt(sqlStmt);
 

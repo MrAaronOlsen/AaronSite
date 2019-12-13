@@ -6,6 +6,7 @@ import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.TestSimple;
 import com.aaronsite.server.TestServer;
 import com.aaronsite.utils.enums.Table;
+import com.aaronsite.utils.exceptions.ABException;
 import com.aaronsite.utils.exceptions.DatabaseException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,7 +16,7 @@ import static com.aaronsite.utils.exceptions.DatabaseException.Code.UNKNOWN_COLU
 class DBInsertTests extends TestServer {
 
   @Test
-  void insertingRecordReturnsResultWithRecord() throws DatabaseException {
+  void insertingRecordReturnsResultWithRecord() throws ABException {
     try (DBConnection conn = new DBConnection()) {
       TestSimple test = new TestSimple().setName("Test");
 
@@ -36,7 +37,7 @@ class DBInsertTests extends TestServer {
   }
 
   @Test
-  void insertingStringWithUnEscapedCharacters() throws DatabaseException {
+  void insertingStringWithUnEscapedCharacters() throws ABException {
     String stringLiteral = "I'm an unescaped line.\nAnd here's a new line.";
 
     try (DBConnection conn = new DBConnection()) {

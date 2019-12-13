@@ -6,8 +6,8 @@ import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.User;
 import com.aaronsite.utils.enums.Table;
-import com.aaronsite.utils.exceptions.ABException;
 import com.aaronsite.utils.exceptions.AuthException;
+import com.aaronsite.utils.exceptions.DatabaseException;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -28,7 +28,14 @@ public class Authentication {
     return encoder.encode(pw);
   }
 
-  public static String basicAuth(String authHeader) throws ABException {
+  public static void authenticate(String authHeader) throws AuthException, DatabaseException {
+    String token = authHeader.substring(7);
+
+    User authUser = new User(TokenHandler.parseToken(token));
+    fetchUser(authUser.getUserName());
+  }
+
+  public static String basicAuth(String authHeader) throws AuthException, DatabaseException {
     String encodedCredentials = authHeader.substring(6);
 
     byte[] decodedBytes;
@@ -62,16 +69,16 @@ public class Authentication {
       throw new AuthException(BASIC_AUTH_MISSING_PARTS);
     }
 
-    User user = getUser(username);
+    User user = fetchUser(username);
 
     if (encoder.matches(hashpass, user.getUserPw())) {
-      return TokenHandler.getToken(user);
+      return TokenHandler.buildToken(user);
     } else {
       throw new AuthException(USER_NOT_AUTHENTICATED);
     }
   }
 
-  private static User getUser(String username) throws ABException {
+  private static User fetchUser(String username) throws DatabaseException, AuthException {
     try (DBConnection conn = new DBConnection()) {
       DbQuery query = new DbQuery(conn, Table.USERS);
       query.setQuery(new DBWhereStmtBuilder(User.USER_NAME, username));

@@ -57,6 +57,6 @@ public class DBWhereStmtBuilder {
 
     return "WHERE " + columns.stream()
         .map(col -> col + "=?")
-        .reduce((con, acu) -> con + " AND " + acu).get();
+        .reduce((con, acu) -> con + " AND " + acu).get().trim();
   }
 }

@@ -1,8 +1,9 @@
 package com.aaronsite.utils.exceptions;
 
 public class ModelException extends ABException {
-  public enum Code {
-    INVALID_MODEL_TABLE("No model exists for table %s.");
+  public enum Code implements ExceptionCode {
+    INVALID_MODEL_TABLE("No model exists for table %s."),
+    MODEL_PROCESSING_ERROR("Failed to process model. ERROR: %s");
 
     private String message;
 
@@ -10,21 +11,18 @@ public class ModelException extends ABException {
       this.message = message;
     }
 
-    public String format(String... args) {
-      return String.format(message, args);
+    @Override
+    public String getMessage() {
+      return message;
+    }
+
+    @Override
+    public String getName() {
+      return null;
     }
   }
 
-  private ModelException.Code code;
-  private String[] args;
-
   public ModelException(ModelException.Code code, String... args) {
-    this.code = code;
-    this.args = args;
-  }
-
-  @Override
-  public String getMessage() {
-    return code.format(args);
+    super(code, args);
   }
 }
