@@ -28,13 +28,7 @@ public class DBInsert implements DBOperation {
   }
 
   public DBInsert addRecord(Model model) throws ModelException {
-    try {
-      Model.processTypes(model);
-    } catch (IllegalAccessException e) {
-      throw new ModelException(MODEL_PROCESSING_ERROR, e.getMessage());
-    }
-
-    this.record = model.buildRecord();
+    this.record = Model.deserialize(model).buildRecord();
     return this;
   }
 
