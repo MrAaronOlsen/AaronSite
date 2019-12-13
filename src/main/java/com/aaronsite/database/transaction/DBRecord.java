@@ -4,6 +4,7 @@ import com.aaronsite.database.metadata.ColumnMetadata;
 import com.aaronsite.database.metadata.ResultMetadata;
 import com.aaronsite.utils.exceptions.DatabaseException;
 import org.apache.commons.lang3.StringUtils;
+import org.bson.Document;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -51,6 +52,16 @@ public class DBRecord {
     }
 
     return this;
+  }
+
+  public Document asDoc() {
+    Document doc = new Document();
+
+    for (Map.Entry<String, String> entry : record.entrySet()) {
+      doc.append(entry.getKey(), entry.getValue());
+    }
+
+    return doc;
   }
 
   public String getId() {

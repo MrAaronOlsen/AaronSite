@@ -1,21 +1,28 @@
 package com.aaronsite.security;
 
 import com.aaronsite.models.User;
+import com.aaronsite.utils.enums.ConfigArg;
+import com.aaronsite.utils.system.ConfigProperties;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
-import org.bson.Document;
 
 import javax.crypto.SecretKey;
+import java.util.Base64;
 
 public class TokenHandler {
-  private static SecretKey secret = Keys.secretKeyFor(SignatureAlgorithm.HS512);
 
-  public static String getToken(User user) {
-    Document publicClaims = new Document("id", user.getId())
-        .append("username", user.getUserName())
-        .append("roles", "Admin");
-
-    return Jwts.builder().setClaims(publicClaims).signWith(secret).compact();
+  public static String buildToken(User user) {
+    return Jwts.builder().setClaims(user.buildRecord().asDoc()).signWith(getSecret()).compact();
   }
+
+  public static Claims parseToken(String token) {
+    return Jwts.parser().setSigningKey(getSecret()).parseClaimsJws(token).getBody();
+  }
+
+  private static SecretKey getSecret() {
+    return Keys.hmacShaKeyFor(Base64.getEncoder().encode(ConfigProperties.getValue(ConfigArg.API_KEY).getBytes()));
+  }
+
+
 }

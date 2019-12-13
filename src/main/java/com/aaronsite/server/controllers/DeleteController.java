@@ -2,6 +2,7 @@ package com.aaronsite.server.controllers;
 
 import com.aaronsite.response.Response;
 import com.aaronsite.response.ResponseBuilder;
+import com.aaronsite.security.Authentication;
 import com.aaronsite.utils.enums.RequestType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,11 +25,13 @@ public class DeleteController extends MasterController {
 
   @DeleteMapping("/{table}/{id}")
   public Response deleteOnTableById(
-      @RequestHeader Map<String, String> headers,
+      @RequestHeader("Authorization") String authHeader,
       @PathVariable(value = "table") String table,
       @PathVariable(value = "id") String id) {
 
     try {
+      Authentication.authenticate(authHeader);
+
       return new ResponseBuilder(RequestType.DELETE_BY_ID)
           .setTable(table)
           .setId(id).build();

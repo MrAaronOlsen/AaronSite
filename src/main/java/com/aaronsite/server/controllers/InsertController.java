@@ -2,6 +2,7 @@ package com.aaronsite.server.controllers;
 
 import com.aaronsite.response.Response;
 import com.aaronsite.response.ResponseBuilder;
+import com.aaronsite.security.Authentication;
 import com.aaronsite.utils.enums.RequestType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,11 +26,13 @@ public class InsertController extends MasterController {
 
   @PostMapping("/{table}")
   public Response insertOnTable(
-      @RequestHeader Map<String, String> headers,
+      @RequestHeader("Authorization") String authHeader,
       @PathVariable(value = "table") String table,
       @RequestBody String body) {
 
     try {
+      Authentication.authenticate(authHeader);
+
       return new ResponseBuilder(RequestType.INSERT)
           .setTable(table)
           .setBody(body).build();

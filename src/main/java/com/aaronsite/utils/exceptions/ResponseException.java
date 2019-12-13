@@ -1,11 +1,10 @@
 package com.aaronsite.utils.exceptions;
 
 public class ResponseException extends ABException {
-  public enum Code {
+  public enum Code implements ExceptionCode {
     INVALID_RESPONSE_TABLE("Table [%s] does not exist or is not supported."),
     INVALID_REQUEST_TYPE("Invalid request type %s."),
-    MALFORMED_REQUEST_BODY("Request body could not be converted to a valid record. ERROR: %s"),
-    MODEL_PROCESSING_ERROR("Failed to process model. ERROR: %s");
+    MALFORMED_REQUEST_BODY("Request body could not be converted to a valid record. ERROR: %s");
 
     private String message;
 
@@ -13,21 +12,18 @@ public class ResponseException extends ABException {
       this.message = message;
     }
 
-    public String format(String... args) {
-      return String.format(message, args);
+    @Override
+    public String getMessage() {
+      return message;
+    }
+
+    @Override
+    public String getName() {
+      return null;
     }
   }
 
-  private ResponseException.Code code;
-  private String[] args;
-
   public ResponseException(ResponseException.Code code, String... args) {
-    this.code = code;
-    this.args = args;
-  }
-
-  @Override
-  public String getMessage() {
-    return code.format(args);
+    super(code, args);
   }
 }

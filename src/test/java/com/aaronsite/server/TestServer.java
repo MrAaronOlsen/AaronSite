@@ -42,7 +42,8 @@ public abstract class TestServer {
         ConfigProperties.getSysArg(ConfigArg.DB_URL),
         ConfigProperties.getSysArg(ConfigArg.DB_USER),
         ConfigProperties.getSysArg(ConfigArg.DB_PW),
-        ConfigProperties.getSysArg(ConfigArg.DB_SCHEMA)
+        ConfigProperties.getSysArg(ConfigArg.DB_SCHEMA),
+        ConfigProperties.getSysArg(ConfigArg.API_KEY)
     );
   }
 

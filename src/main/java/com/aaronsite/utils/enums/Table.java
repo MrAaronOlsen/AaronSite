@@ -13,7 +13,7 @@ import static com.aaronsite.utils.exceptions.DatabaseException.Code.TABLE_DOES_N
 public enum Table {
   // Production Tables
   PAGES("pages"),
-  USERS("users"),
+  USERS("users", true),
 
   // Test Tables
   TEST_SIMPLE("test_simple", true),

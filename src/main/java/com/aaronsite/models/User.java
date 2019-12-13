@@ -7,6 +7,7 @@ import com.aaronsite.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import io.jsonwebtoken.Claims;
 
 import static com.aaronsite.utils.enums.Table.USERS;
 
@@ -31,6 +32,12 @@ public class User extends System implements Model {
     this.id = record.getId();
     this.userName = record.get(USER_NAME);
     this.userPw = record.get(USER_PW);
+  }
+
+  public User(Claims claims) {
+    this.id = claims.getId();
+    this.userName = claims.get(USER_NAME, String.class);
+    this.userPw = claims.get(USER_PW, String.class);
   }
 
   @Override
