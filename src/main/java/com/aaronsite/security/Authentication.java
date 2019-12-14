@@ -5,14 +5,17 @@ import com.aaronsite.database.operations.DbQuery;
 import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.User;
+import com.aaronsite.utils.enums.Role;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.AuthException;
 import com.aaronsite.utils.exceptions.DatabaseException;
 import org.apache.commons.lang3.StringUtils;
+import org.bson.Document;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import java.util.EnumSet;
 import java.util.StringTokenizer;
 
 import static com.aaronsite.utils.exceptions.AuthException.Code.BASIC_AUTH_DECODE_CHALLENGE;
@@ -20,6 +23,7 @@ import static com.aaronsite.utils.exceptions.AuthException.Code.BASIC_AUTH_MISSI
 import static com.aaronsite.utils.exceptions.AuthException.Code.BASIC_AUTH_PARSE_CHALLENGE;
 import static com.aaronsite.utils.exceptions.AuthException.Code.USER_DOES_NOT_EXIST;
 import static com.aaronsite.utils.exceptions.AuthException.Code.USER_NOT_AUTHENTICATED;
+import static com.aaronsite.utils.exceptions.AuthException.Code.USER_NOT_AUTHORIZED;
 
 public class Authentication {
   private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -28,11 +32,18 @@ public class Authentication {
     return encoder.encode(pw);
   }
 
-  public static void authenticate(String authHeader) throws AuthException, DatabaseException {
+  public static void authenticate(String authHeader, EnumSet<Role> authRoles) throws AuthException, DatabaseException {
     String token = authHeader.substring(7);
 
     User authUser = new User(TokenHandler.parseToken(token));
-    fetchUser(authUser.getUserName());
+    User dbUser = fetchUser(authUser.getUserName());
+
+    Document roles = dbUser.getRoles();
+    for (Role authRole : authRoles) {
+      if (!roles.getBoolean(authRole.getValue(), false)) {
+        throw new AuthException(USER_NOT_AUTHORIZED);
+      }
+    }
   }
 
   public static String basicAuth(String authHeader) throws AuthException, DatabaseException {
@@ -88,7 +99,7 @@ public class Authentication {
       if (result.hasNext()) {
         return new User(result.getNext());
       } else {
-        throw new AuthException(USER_DOES_NOT_EXIST);
+        throw new AuthException(USER_DOES_NOT_EXIST, username);
       }
     }
   }
