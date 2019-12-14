@@ -10,8 +10,6 @@ import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
 import com.aaronsite.utils.exceptions.ModelException;
 
-import static com.aaronsite.utils.exceptions.ModelException.Code.MODEL_PROCESSING_ERROR;
-
 public class DBInsert implements DBOperation {
   private Table table;
   private DBConnection dbConn;

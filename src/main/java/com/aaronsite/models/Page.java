@@ -5,6 +5,7 @@ import com.aaronsite.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.bson.Document;
 
 import static com.aaronsite.utils.enums.Table.PAGES;
 
@@ -56,8 +57,8 @@ public class Page extends System implements Model {
   }
 
   @JsonDeserialize
-  public String getBlocks() {
-    return blocks;
+  public Document getBlocks() {
+    return blocks == null ? null : Document.parse(blocks);
   }
 
   @Override

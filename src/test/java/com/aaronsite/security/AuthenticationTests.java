@@ -4,11 +4,14 @@ import com.aaronsite.models.User;
 import com.aaronsite.server.TestServer;
 import com.aaronsite.utils.exceptions.ABException;
 import com.aaronsite.utils.exceptions.AuthException;
+import org.bson.Document;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Base64;
+import java.util.EnumSet;
 
+import static com.aaronsite.utils.enums.Role.READ;
 import static com.aaronsite.utils.exceptions.AuthException.Code.USER_NOT_AUTHENTICATED;
 
 public class AuthenticationTests extends TestServer {
@@ -17,7 +20,8 @@ public class AuthenticationTests extends TestServer {
   void canAuthenticateAUser_Green() throws ABException {
     User user = new User()
         .setUserName("humbug")
-        .setUserPw("mom");
+        .setUserPw("mom")
+        .setRoles(new Document("read", true));
 
     insertRecord(user);
 
@@ -26,7 +30,7 @@ public class AuthenticationTests extends TestServer {
 
     String token = Authentication.basicAuth(credentials);
 
-    Authentication.authenticate("Bearer " + token);
+    Authentication.authenticate("Bearer " + token, EnumSet.of(READ));
   }
 
   @Test

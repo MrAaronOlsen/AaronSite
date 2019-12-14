@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.jsonwebtoken.Claims;
+import org.bson.Document;
 
 import static com.aaronsite.utils.enums.Table.USERS;
 
@@ -22,7 +23,7 @@ public class User extends System implements Model {
   @Column(columnType = ColumnType.ENCRYPTED)
   private String userPw;
 
-  private String[] roles;
+  private String roles;
 
   public User() {
     // Default Constructor
@@ -32,19 +33,22 @@ public class User extends System implements Model {
     this.id = record.getId();
     this.userName = record.get(USER_NAME);
     this.userPw = record.get(USER_PW);
+    this.roles = record.get(USER_ROLLS);
   }
 
   public User(Claims claims) {
     this.id = claims.getId();
     this.userName = claims.get(USER_NAME, String.class);
     this.userPw = claims.get(USER_PW, String.class);
+    this.roles = claims.get(USER_ROLLS, String.class);
   }
 
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
         .add(USER_NAME, userName)
-        .add(USER_PW, userPw);
+        .add(USER_PW, userPw)
+        .add(USER_ROLLS, roles);
   }
 
   @Override
@@ -63,6 +67,11 @@ public class User extends System implements Model {
     return this;
   }
 
+  public User setRoles(Document roles) {
+    this.roles = roles.toJson();
+    return this;
+  }
+
   @JsonDeserialize
   public String getUserName() {
     return userName;
@@ -71,5 +80,10 @@ public class User extends System implements Model {
   @JsonDeserialize
   public String getUserPw() {
     return userPw;
+  }
+
+  @JsonDeserialize
+  public Document getRoles() {
+    return roles == null ? null : Document.parse(roles);
   }
 }

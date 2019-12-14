@@ -1,5 +1,9 @@
 package com.aaronsite.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ErrorResponse implements ResponseData {
   private Throwable error;
 
@@ -7,6 +11,7 @@ public class ErrorResponse implements ResponseData {
     this.error = e;
   }
 
+  @JsonDeserialize
   public String getError() {
     return error.getMessage();
   }
