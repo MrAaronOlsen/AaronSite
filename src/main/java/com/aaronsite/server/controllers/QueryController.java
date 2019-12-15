@@ -46,6 +46,8 @@ public class QueryController extends MasterController {
         return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.FORBIDDEN);
       }
 
+      Logger.out("Starting Response");
+
       return new ResponseEntity<>(new ResponseBuilder(RequestType.QUERY)
           .setTable(table)
           .setParams(params).build(), HttpStatus.OK);
@@ -53,7 +55,6 @@ public class QueryController extends MasterController {
     } catch (Throwable e) {
       Logger.out("Really Bad Error: " + e);
       Logger.out("Really Bad Error: " + e.getCause());
-      Logger.out("Really Bad Error: " + e.getCause().getMessage());
 
       return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.BAD_REQUEST);
     }

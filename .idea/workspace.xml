@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -348,6 +350,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1238" height="271" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1576381789187" />
+    <state x="295" y="33" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576383328449">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="295" y="33" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1280.777@0.23.1280.777" timestamp="1576383328449" />
     <state x="298" y="173" width="683" height="476" key="find.popup" timestamp="1576376053389">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
