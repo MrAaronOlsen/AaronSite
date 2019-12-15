@@ -16,7 +16,7 @@ public enum ConfigArg {
   JDBC_DATABASE_URL(ConfigArgs.JDBC_DATABASE_URL, DB_URL, true),
   JDBC_DATABASE_USERNAME(ConfigArgs.JDBC_DATABASE_USERNAME, DB_USER, true),
   JDBC_DATABASE_PASSWORD(ConfigArgs.JDBC_DATABASE_PASSWORD, DB_PW, true, true),
-  HEROKU_API(ConfigArgs.HEROKU_API, API_KEY, true, true),
+  HEROKU_API(ConfigArgs.HEROKU_API, API_KEY, true),
 
   // Default
   UNKNOWN(ConfigArgs.UNKNOWN);
