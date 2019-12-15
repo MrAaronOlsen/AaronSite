@@ -19,6 +19,7 @@ import java.util.EnumSet;
 import java.util.StringTokenizer;
 
 import static com.aaronsite.utils.exceptions.AuthException.Code.BASIC_AUTH_DECODE_CHALLENGE;
+import static com.aaronsite.utils.exceptions.AuthException.Code.BASIC_AUTH_MISSING_HEADER;
 import static com.aaronsite.utils.exceptions.AuthException.Code.BASIC_AUTH_MISSING_PARTS;
 import static com.aaronsite.utils.exceptions.AuthException.Code.BASIC_AUTH_PARSE_CHALLENGE;
 import static com.aaronsite.utils.exceptions.AuthException.Code.USER_DOES_NOT_EXIST;
@@ -47,6 +48,10 @@ public class Authentication {
   }
 
   public static String basicAuth(String authHeader) throws AuthException, DatabaseException {
+    if (StringUtils.isEmpty(authHeader)) {
+      throw new AuthException(BASIC_AUTH_MISSING_HEADER);
+    }
+
     String encodedCredentials = authHeader.substring(6);
 
     byte[] decodedBytes;
