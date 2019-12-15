@@ -50,7 +50,7 @@ public class Authentication {
 
 //    if (roles == null || roles.isEmpty()) {
 //      throw new AuthException(USER_NOT_AUTHORIZED);
-    }
+//    }
 
 //    for (Role authRole : authRoles) {
 //      Logger.out("Checking Role: " + authRole.getValue());
