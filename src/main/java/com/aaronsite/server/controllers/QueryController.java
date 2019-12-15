@@ -63,7 +63,7 @@ public class QueryController extends MasterController {
       try {
         Authentication.authenticate(authHeader, EnumSet.of(READ));
       } catch (AuthException e) {
-        Logger.err(e.getMessage());
+        Logger.out("Error: " + e.getMessage());
         return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.FORBIDDEN);
       }
 
@@ -73,7 +73,7 @@ public class QueryController extends MasterController {
           .setParams(params).build(), HttpStatus.OK);
 
     } catch (Throwable e) {
-      Logger.err(e.getMessage());
+      Logger.out("Error: " + e.getMessage());
       return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.BAD_REQUEST);
     }
   }
