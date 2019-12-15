@@ -42,7 +42,7 @@ public class QueryController extends MasterController {
         Authentication.authenticate(authHeader, EnumSet.of(READ));
       } catch (AuthException e) {
         Logger.out("Auth Error: " + e.getMessage());
-        Logger.out("Auth Error: " + ArrayUtils.toString(e.getStackTrace()));
+
         return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.FORBIDDEN);
       }
 
@@ -51,8 +51,10 @@ public class QueryController extends MasterController {
           .setParams(params).build(), HttpStatus.OK);
 
     } catch (Throwable e) {
-      Logger.out("Really Bad Error: " + e.getMessage());
-      Logger.out("Really Bad Error: " + ArrayUtils.toString(e.getStackTrace()));
+      Logger.out("Really Bad Error: " + e);
+      Logger.out("Really Bad Error: " + e.getCause());
+      Logger.out("Really Bad Error: " + e.getCause().getMessage());
+
       return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.BAD_REQUEST);
     }
   }
