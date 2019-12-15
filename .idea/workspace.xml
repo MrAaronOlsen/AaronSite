@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/AuthResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/AuthToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/AuthToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/TokenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/TokenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/RequestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/RequestType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/AuthException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/AuthException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/ConfigArg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/ConfigArg.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,10 +313,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="476" y="221" width="714" height="579" key="#xdebugger.evaluate/0.23.1280.777@0.23.1280.777" timestamp="1576376856312" />
-    <state x="100" y="123" width="1080" height="577" key="DiffContextDialog" timestamp="1576196394844">
+    <state x="100" y="123" width="1080" height="577" key="DiffContextDialog" timestamp="1576379754756">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="100" y="123" width="1080" height="577" key="DiffContextDialog/0.23.1280.777@0.23.1280.777" timestamp="1576196394844" />
+    <state x="100" y="123" width="1080" height="577" key="DiffContextDialog/0.23.1280.777@0.23.1280.777" timestamp="1576379754756" />
     <state width="1238" height="133" key="GridCell.Tab.0.bottom" timestamp="1576377027162">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -359,10 +353,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="298" y="173" width="683" height="476" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1576376053389" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1576377703692">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1576380577088">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1576377703692" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1576380577088" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
