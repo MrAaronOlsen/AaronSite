@@ -17,12 +17,16 @@ class DBStmtSetter {
 
     switch (column.getType()) {
       case INTEGER:
-        stmt.set(index, Integer.valueOf(value));
+        stmt.setInteger(index, value);
         break;
       case STRING:
-        stmt.set(index, value);
+        stmt.setString(index, value);
         break;
-      default: throw new DatabaseException(UNKNOWN_COLUMN, column.getName());
+      case JSON:
+        stmt.setJson(index, value);
+        break;
+      default:
+        throw new DatabaseException(UNKNOWN_COLUMN, column.getName());
     }
 
     index++;

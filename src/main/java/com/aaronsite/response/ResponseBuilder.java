@@ -64,6 +64,8 @@ public class ResponseBuilder {
         return UpdateResponse.build(table, id, body);
       case DELETE_BY_ID:
         return DeleteResponse.build(table, id);
+      case BASIC_AUTH:
+        return AuthResponse.build(header);
       default:
         throw new ResponseException(ResponseException.Code.INVALID_REQUEST_TYPE, requestType.name());
     }

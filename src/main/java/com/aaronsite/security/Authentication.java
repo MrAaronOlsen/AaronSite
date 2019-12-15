@@ -5,21 +5,26 @@ import com.aaronsite.database.operations.DbQuery;
 import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.User;
+import com.aaronsite.utils.enums.Role;
 import com.aaronsite.utils.enums.Table;
-import com.aaronsite.utils.exceptions.ABException;
 import com.aaronsite.utils.exceptions.AuthException;
+import com.aaronsite.utils.exceptions.DatabaseException;
 import org.apache.commons.lang3.StringUtils;
+import org.bson.Document;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import java.util.EnumSet;
 import java.util.StringTokenizer;
 
 import static com.aaronsite.utils.exceptions.AuthException.Code.BASIC_AUTH_DECODE_CHALLENGE;
+import static com.aaronsite.utils.exceptions.AuthException.Code.BASIC_AUTH_MISSING_HEADER;
 import static com.aaronsite.utils.exceptions.AuthException.Code.BASIC_AUTH_MISSING_PARTS;
 import static com.aaronsite.utils.exceptions.AuthException.Code.BASIC_AUTH_PARSE_CHALLENGE;
 import static com.aaronsite.utils.exceptions.AuthException.Code.USER_DOES_NOT_EXIST;
 import static com.aaronsite.utils.exceptions.AuthException.Code.USER_NOT_AUTHENTICATED;
+import static com.aaronsite.utils.exceptions.AuthException.Code.USER_NOT_AUTHORIZED;
 
 public class Authentication {
   private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -28,7 +33,25 @@ public class Authentication {
     return encoder.encode(pw);
   }
 
-  public static User basicAuth(String authHeader) throws ABException {
+  public static void authenticate(String authHeader, EnumSet<Role> authRoles) throws AuthException, DatabaseException {
+    String token = authHeader.substring(7);
+
+    User authUser = new User(TokenHandler.parseToken(token));
+    User dbUser = fetchUser(authUser.getUserName());
+
+    Document roles = dbUser.getRoles();
+    for (Role authRole : authRoles) {
+      if (!roles.getBoolean(authRole.getValue(), false)) {
+        throw new AuthException(USER_NOT_AUTHORIZED);
+      }
+    }
+  }
+
+  public static String basicAuth(String authHeader) throws AuthException, DatabaseException {
+    if (StringUtils.isEmpty(authHeader)) {
+      throw new AuthException(BASIC_AUTH_MISSING_HEADER);
+    }
+
     String encodedCredentials = authHeader.substring(6);
 
     byte[] decodedBytes;
@@ -62,16 +85,16 @@ public class Authentication {
       throw new AuthException(BASIC_AUTH_MISSING_PARTS);
     }
 
-    User user = getUser(username);
+    User user = fetchUser(username);
 
     if (encoder.matches(hashpass, user.getUserPw())) {
-      return user;
+      return TokenHandler.buildToken(user);
     } else {
       throw new AuthException(USER_NOT_AUTHENTICATED);
     }
   }
 
-  private static User getUser(String username) throws ABException {
+  private static User fetchUser(String username) throws DatabaseException, AuthException {
     try (DBConnection conn = new DBConnection()) {
       DbQuery query = new DbQuery(conn, Table.USERS);
       query.setQuery(new DBWhereStmtBuilder(User.USER_NAME, username));
@@ -81,7 +104,7 @@ public class Authentication {
       if (result.hasNext()) {
         return new User(result.getNext());
       } else {
-        throw new AuthException(USER_DOES_NOT_EXIST);
+        throw new AuthException(USER_DOES_NOT_EXIST, username);
       }
     }
   }

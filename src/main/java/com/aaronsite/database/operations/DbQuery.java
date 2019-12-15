@@ -9,6 +9,7 @@ import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
+import com.aaronsite.utils.io.Logger;
 
 public class DbQuery implements DBOperation {
   private Table table;
@@ -29,6 +30,8 @@ public class DbQuery implements DBOperation {
         .setWhere(where)
         .setSort(sort)
         .build();
+
+    Logger.out("Executing Query: " + stmt.toString());
 
     stmt.execute();
 

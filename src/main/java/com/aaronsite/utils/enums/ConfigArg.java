@@ -10,6 +10,7 @@ public enum ConfigArg {
   DB_PW(ConfigArgs.DB_PW, true),
   DB_USER(ConfigArgs.DB_USER),
   DB_SCHEMA(ConfigArgs.DB_SCHEMA),
+  API_KEY(ConfigArgs.API_KEY, true),
 
   // Heroku Configs
   JDBC_DATABASE_URL(ConfigArgs.JDBC_DATABASE_URL, DB_URL, true),
