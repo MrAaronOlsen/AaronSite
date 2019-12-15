@@ -44,15 +44,21 @@ public class Authentication {
     User authUser = new User(TokenHandler.parseToken(token));
     User dbUser = fetchUser(authUser.getUserName());
 
+    Logger.out(dbUser.toString());
+
     Document roles = dbUser.getRoles();
 
     if (roles == null || roles.isEmpty()) {
+      Logger.out("Empty Roles");
       throw new AuthException(USER_NOT_AUTHORIZED);
     }
 
     for (Role authRole : authRoles) {
+      Logger.out("Checking Role: " + authRole.getValue());
 
       if (!roles.getBoolean(authRole.getValue(), false)) {
+        Logger.out("Failed Role Check: " + authRole.getValue());
+
         throw new AuthException(USER_NOT_AUTHORIZED);
       }
     }
