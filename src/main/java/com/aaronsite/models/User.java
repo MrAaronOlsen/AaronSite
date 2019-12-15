@@ -86,4 +86,12 @@ public class User extends System implements Model {
   public Document getRoles() {
     return roles == null ? null : Document.parse(roles);
   }
+
+  @Override
+  public String toString() {
+    return "User{" +
+        "userName='" + userName + '\'' +
+        ", roles='" + roles + '\'' +
+        '}';
+  }
 }

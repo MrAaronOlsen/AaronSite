@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/QueryResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/QueryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,6 +309,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="100" y="123" width="1080" height="577" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1280.777@0.23.1280.777" timestamp="1576207828500" />
+    <state x="380" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1576384410349">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="380" y="119" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777@0.23.1280.777" timestamp="1576384410349" />
     <state x="476" y="221" width="714" height="579" key="#xdebugger.evaluate" timestamp="1576376856312">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
