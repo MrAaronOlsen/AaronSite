@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/security/Authentication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -360,10 +360,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="298" y="173" width="683" height="476" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1576376053389" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1576382069293">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1576386096336">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1576382069293" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1576386096336" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

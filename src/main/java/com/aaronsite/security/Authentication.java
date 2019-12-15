@@ -49,8 +49,8 @@ public class Authentication {
     Document roles = dbUser.getRoles();
 
     if (roles == null || roles.isEmpty()) {
-      Logger.out("Empty Roles");
-      throw new AuthException(USER_NOT_AUTHORIZED);
+      return;
+//      throw new AuthException(USER_NOT_AUTHORIZED);
     }
 
     for (Role authRole : authRoles) {
