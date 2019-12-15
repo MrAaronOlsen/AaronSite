@@ -54,7 +54,6 @@ public class ResponseBuilder {
   }
 
   public Response build() throws ABException {
-    Logger.out("Finding Response Builder: " + requestType.name());
 
     switch (requestType) {
       case QUERY:
