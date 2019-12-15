@@ -13,7 +13,10 @@ import java.util.Base64;
 public class TokenHandler {
 
   public static String buildToken(User user) {
-    return Jwts.builder().setClaims(user.buildRecord().asDoc()).signWith(getSecret()).compact();
+    return Jwts.builder()
+        .setClaims(user.buildRecord().asDoc())
+        .setId(user.getId())
+        .signWith(getSecret()).compact();
   }
 
   public static Claims parseToken(String token) {
