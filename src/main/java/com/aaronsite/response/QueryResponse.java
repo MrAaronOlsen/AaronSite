@@ -22,7 +22,6 @@ class QueryResponse {
   private static final String SORTS = "sort";
 
   static Response build(Table table, Map<String, String> params) throws ABException {
-    Logger.out("Building Query Response: " + table.getName() + " " + params);
     return new Response(executeQuery(table, parseSelectParams(params), parseSortParams(params), new DBWhereStmtBuilder(params)));
   }
 
@@ -42,8 +41,6 @@ class QueryResponse {
                                                  DBSelectStmtBuilder select,
                                                  DBSortStmtBuilder sort,
                                                  DBWhereStmtBuilder where) throws ABException {
-
-    Logger.out("Executing Query: " + table.getName());
 
     List<ResponseData> results = new LinkedList<>();
     Function<DBRecord, Model> modelBuilder = Model.getModel(table);

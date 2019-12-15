@@ -35,16 +35,22 @@ public class Authentication {
   }
 
   public static void authenticate(String authHeader, EnumSet<Role> authRoles) throws AuthException, DatabaseException {
+    if (authRoles.isEmpty()) {
+      return;
+    }
+
     String token = authHeader.substring(7);
 
     User authUser = new User(TokenHandler.parseToken(token));
     User dbUser = fetchUser(authUser.getUserName());
 
-    Logger.out("Checking Roles...");
-
     Document roles = dbUser.getRoles();
+
+    if (roles == null || roles.isEmpty()) {
+      throw new AuthException(USER_NOT_AUTHORIZED);
+    }
+
     for (Role authRole : authRoles) {
-      Logger.out("Checking Role: " + authRole.getValue());
 
       if (!roles.getBoolean(authRole.getValue(), false)) {
         throw new AuthException(USER_NOT_AUTHORIZED);

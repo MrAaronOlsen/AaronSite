@@ -41,21 +41,14 @@ public class QueryController extends MasterController {
       try {
         Authentication.authenticate(authHeader, EnumSet.of(READ));
       } catch (AuthException e) {
-        Logger.out("Auth Error: " + e.getMessage());
-
         return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.FORBIDDEN);
       }
-
-      Logger.out("Starting Response");
 
       return new ResponseEntity<>(new ResponseBuilder(RequestType.QUERY)
           .setTable(table)
           .setParams(params).build(), HttpStatus.OK);
 
     } catch (Throwable e) {
-      Logger.out("Really Bad Error: " + e);
-      Logger.out("Really Bad Error: " + e.getCause());
-
       return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.BAD_REQUEST);
     }
   }
