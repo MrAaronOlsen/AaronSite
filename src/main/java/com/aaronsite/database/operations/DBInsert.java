@@ -8,6 +8,7 @@ import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.Model;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.DatabaseException;
+import com.aaronsite.utils.exceptions.ModelException;
 
 public class DBInsert implements DBOperation {
   private Table table;
@@ -24,8 +25,8 @@ public class DBInsert implements DBOperation {
     return this;
   }
 
-  public DBInsert addRecord(Model model) {
-    this.record = model.buildRecord();
+  public DBInsert addRecord(Model model) throws ModelException {
+    this.record = Model.deserialize(model).buildRecord();
     return this;
   }
 

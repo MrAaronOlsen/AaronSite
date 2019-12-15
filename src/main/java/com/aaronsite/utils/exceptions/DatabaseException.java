@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.sql.SQLException;
 
 public class DatabaseException extends ABException {
-  public enum Code {
+  public enum Code implements ExceptionCode {
     // Initializer errors
     FAILED_TO_MAKE_CONNECTION("Failed to make connection."),
     FAILED_TO_CREATE_STATEMENT("Failed to create sql statement."),
@@ -31,19 +31,22 @@ public class DatabaseException extends ABException {
       this.message = message;
     }
 
-    public String format(String... args) {
-      return String.format(message, args);
+    @Override
+    public String getMessage() {
+      return message;
+    }
+
+    @Override
+    public String getName() {
+      return this.name();
     }
   }
 
-  private Code code;
-  private String[] args;
   private String sqlStmt;
   private SQLException sqlEx;
 
-  public DatabaseException(Code code, String... args) {
-    this.code = code;
-    this.args = args;
+  public DatabaseException(DatabaseException.Code code, String... args) {
+    super(code, args);
   }
 
   public DatabaseException sqlStmt(String sqlStm) {
@@ -56,17 +59,15 @@ public class DatabaseException extends ABException {
     return this;
   }
 
-  public Code getCode() {
-    return code;
-  }
-
   public SQLException getSqlEx() {
     return sqlEx;
   }
 
   @Override
   public String getMessage() {
-    String message = "\nCODE: " + code.name() + " | ERROR: " + code.format(args);
+    String formattedMessage = super.getMessage();
+
+    String message = "\nCODE: " + getCode().getName() + " | ERROR: " + formattedMessage;
     if (StringUtils.isNotEmpty(sqlStmt)) {
       message += "\nSQL Stmt: " + sqlStmt;
     }

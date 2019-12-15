@@ -8,7 +8,9 @@ import org.junit.runner.RunWith;
 @SelectPackages( {
     "com.aaronsite.database.metadata",
     "com.aaronsite.database.operations",
-    "com.aaronsite.database.statements"
+    "com.aaronsite.database.statements",
+    "com.aaronsite.security",
+
 } )
 
 public class AllTests {

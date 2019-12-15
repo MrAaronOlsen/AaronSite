@@ -2,6 +2,7 @@ package com.aaronsite.database.statements;
 
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.utils.exceptions.DatabaseException;
+import org.postgresql.util.PGobject;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -38,7 +39,7 @@ public class DBPreparedStmt {
     return this;
   }
 
-  void set(int i, String value) throws DatabaseException {
+  void setString(int i, String value) throws DatabaseException {
     try {
       stmt.setString(i, value);
     } catch (SQLException e) {
@@ -46,9 +47,21 @@ public class DBPreparedStmt {
     }
   }
 
-  void set(int i, int value) throws DatabaseException {
+  void setInteger(int i, String value) throws DatabaseException {
     try {
-      stmt.setInt(i, value);
+      stmt.setInt(i, Integer.parseInt(value));
+    } catch (SQLException e) {
+      throw new DatabaseException(FAILED_TO_SET_VALUE, Integer.toString(i)).sqlEx(e);
+    }
+  }
+
+  void setJson(int i, String value) throws DatabaseException {
+    try {
+      PGobject json = new PGobject();
+      json.setType("json");
+      json.setValue(value);
+
+      stmt.setObject(i, json);
     } catch (SQLException e) {
       throw new DatabaseException(FAILED_TO_SET_VALUE, Integer.toString(i)).sqlEx(e);
     }

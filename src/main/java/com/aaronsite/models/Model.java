@@ -13,6 +13,7 @@ import java.lang.reflect.Field;
 import java.util.function.Function;
 
 import static com.aaronsite.utils.exceptions.ModelException.Code.INVALID_MODEL_TABLE;
+import static com.aaronsite.utils.exceptions.ModelException.Code.MODEL_PROCESSING_ERROR;
 
 public interface Model extends ResponseData {
 
@@ -25,23 +26,49 @@ public interface Model extends ResponseData {
     }
   }
 
-  static void processTypes(Model model) throws IllegalAccessException {
+  static Model deserialize(Model model) throws ModelException {
     Class<?> clazz = model.getClass();
 
-    for (Field field : clazz.getDeclaredFields()) {
-      field.setAccessible(true);
+    try {
+      for (Field field : clazz.getDeclaredFields()) {
+        field.setAccessible(true);
 
-      if (field.isAnnotationPresent(Column.class)) {
-        Column an = field.getAnnotation(Column.class);
+        if (field.isAnnotationPresent(Column.class)) {
+          Column an = field.getAnnotation(Column.class);
 
-        if (an.columnType() == ColumnType.ENCRYPTED) {
-          Authentication auth = new Authentication();
-          String coded = auth.encode((String) field.get(model));
-
-          field.set(model, coded);
+          if (an.columnType() == ColumnType.ENCRYPTED) {
+            String coded = Authentication.encode((String) field.get(model));
+            field.set(model, coded);
+          }
         }
       }
+    } catch (IllegalAccessException e) {
+      throw new ModelException(MODEL_PROCESSING_ERROR, e.getMessage());
     }
+
+    return model;
+  }
+
+  static Model serialize(Model model) throws ModelException {
+    Class<?> clazz = model.getClass();
+
+    try {
+      for (Field field : clazz.getDeclaredFields()) {
+        field.setAccessible(true);
+
+        if (field.isAnnotationPresent(Column.class)) {
+          Column an = field.getAnnotation(Column.class);
+
+          if (an.columnType() == ColumnType.ENCRYPTED) {
+            field.set(model, "*****");
+          }
+        }
+      }
+    } catch (IllegalAccessException e) {
+      throw new ModelException(MODEL_PROCESSING_ERROR, e.getMessage());
+    }
+
+    return model;
   }
 
   String getId();
