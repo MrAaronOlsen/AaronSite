@@ -39,28 +39,26 @@ public class Authentication {
       return;
     }
 
-//    String token = authHeader.substring(7);
-//
-//    User authUser = new User(TokenHandler.parseToken(token));
-//    User dbUser = fetchUser(authUser.getUserName());
-//
-//    Logger.out(dbUser.toString());
-//
-//    Document roles = dbUser.getRoles();
+    String token = authHeader.substring(7);
 
-//    if (roles == null || roles.isEmpty()) {
-//      throw new AuthException(USER_NOT_AUTHORIZED);
-//    }
+    User authUser = new User(TokenHandler.parseToken(token));
+    User dbUser = fetchUser(authUser.getUserName());
 
-//    for (Role authRole : authRoles) {
-//      Logger.out("Checking Role: " + authRole.getValue());
-//
-//      if (!roles.getBoolean(authRole.getValue(), false)) {
-//        Logger.out("Failed Role Check: " + authRole.getValue());
-//
-//        throw new AuthException(USER_NOT_AUTHORIZED);
-//      }
-//    }
+    Logger.out(dbUser.toString());
+
+    Document roles = dbUser.getRoles();
+
+    if (roles == null || roles.isEmpty()) {
+      throw new AuthException(USER_NOT_AUTHORIZED);
+    }
+
+    for (Role authRole : authRoles) {
+      if (!roles.getBoolean(authRole.getValue(), false)) {
+        Logger.out("Failed Role Check: " + authRole.getValue());
+
+        throw new AuthException(USER_NOT_AUTHORIZED);
+      }
+    }
   }
 
   public static String basicAuth(String authHeader) throws AuthException, DatabaseException {
