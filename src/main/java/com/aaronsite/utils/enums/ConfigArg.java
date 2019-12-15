@@ -10,12 +10,13 @@ public enum ConfigArg {
   DB_PW(ConfigArgs.DB_PW, true),
   DB_USER(ConfigArgs.DB_USER),
   DB_SCHEMA(ConfigArgs.DB_SCHEMA),
-  API_KEY(ConfigArgs.API_KEY, null, true, true),
+  API_KEY(ConfigArgs.API_KEY, true),
 
   // Heroku Configs
   JDBC_DATABASE_URL(ConfigArgs.JDBC_DATABASE_URL, DB_URL, true),
   JDBC_DATABASE_USERNAME(ConfigArgs.JDBC_DATABASE_USERNAME, DB_USER, true),
   JDBC_DATABASE_PASSWORD(ConfigArgs.JDBC_DATABASE_PASSWORD, DB_PW, true, true),
+  HEROKU_API(ConfigArgs.HEROKU_API, API_KEY, true, true),
 
   // Default
   UNKNOWN(ConfigArgs.UNKNOWN);
