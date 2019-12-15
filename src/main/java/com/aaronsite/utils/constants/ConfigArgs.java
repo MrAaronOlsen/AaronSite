@@ -12,6 +12,7 @@ public class ConfigArgs {
   public static final String JDBC_DATABASE_URL = "JDBC_DATABASE_URL";
   public static final String JDBC_DATABASE_USERNAME = "JDBC_DATABASE_USERNAME";
   public static final String JDBC_DATABASE_PASSWORD = "JDBC_DATABASE_PASSWORD";
+  public static final String HEROKU_API = "HEROKU_API";
 
 
 }

@@ -59,7 +59,7 @@ public class Authentication {
       if (!roles.getBoolean(authRole.getValue(), false)) {
         Logger.out("Failed Role Check: " + authRole.getValue());
 
-        throw new AuthException(USER_NOT_AUTHORIZED);
+//        throw new AuthException(USER_NOT_AUTHORIZED);
       }
     }
   }
