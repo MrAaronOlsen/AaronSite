@@ -6,6 +6,7 @@ import com.aaronsite.security.Authentication;
 import com.aaronsite.utils.enums.RequestType;
 import com.aaronsite.utils.exceptions.AuthException;
 import com.aaronsite.utils.io.Logger;
+import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -40,6 +41,8 @@ public class QueryController extends MasterController {
       try {
         Authentication.authenticate(authHeader, EnumSet.of(READ));
       } catch (AuthException e) {
+        Logger.out("Auth Error: " + e.getMessage());
+        Logger.out("Auth Error: " + ArrayUtils.toString(e.getStackTrace()));
         return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.FORBIDDEN);
       }
 
@@ -48,6 +51,8 @@ public class QueryController extends MasterController {
           .setParams(params).build(), HttpStatus.OK);
 
     } catch (Throwable e) {
+      Logger.out("Really Bad Error: " + e.getMessage());
+      Logger.out("Really Bad Error: " + ArrayUtils.toString(e.getStackTrace()));
       return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.BAD_REQUEST);
     }
   }
@@ -63,7 +68,6 @@ public class QueryController extends MasterController {
       try {
         Authentication.authenticate(authHeader, EnumSet.of(READ));
       } catch (AuthException e) {
-        Logger.out("Error: " + e.getMessage());
         return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.FORBIDDEN);
       }
 
@@ -73,7 +77,6 @@ public class QueryController extends MasterController {
           .setParams(params).build(), HttpStatus.OK);
 
     } catch (Throwable e) {
-      Logger.out("Error: " + e.getMessage());
       return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.BAD_REQUEST);
     }
   }
