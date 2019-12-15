@@ -4,6 +4,7 @@ import com.aaronsite.utils.enums.RequestType;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.ABException;
 import com.aaronsite.utils.exceptions.ResponseException;
+import com.aaronsite.utils.io.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,8 @@ public class ResponseBuilder {
   }
 
   public Response build() throws ABException {
+    Logger.out("Finding Response Builder: " + requestType.name());
+
     switch (requestType) {
       case QUERY:
         return QueryResponse.build(table, params);
