@@ -70,6 +70,25 @@ public class Page extends System implements Model {
     return mode;
   }
 
+  public Page setHeader(String header) {
+    this.header = header;
+    return this;
+  }
+
+  public Page setCaption(String caption) {
+    this.caption = caption;
+    return this;
+  }
+
+  public Page setSlug(String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  public void setBlocks(Document blocks) {
+    this.blocks = blocks.toJson();
+  }
+
   public Page setMode(PageMode mode) {
     this.mode = mode.getValue();
     return this;

@@ -23,7 +23,9 @@ public class DatabaseException extends ABException {
     // Result errors
     FAILED_TO_GET_NEXT_RESULT("Failed to get next result."),
     FAILED_TO_BUILD_RESULT_METADATA("Failed to build result metadata."),
-    FAILED_TO_BUILD_RESULT_DATA("Failed to build result data.");
+    FAILED_TO_BUILD_RESULT_DATA("Failed to build result data."),
+    INVALID_MODEL_INVOCATION("Model %s does not have a DBRecord Constructor."),
+    DO_COUNT_NOT_SET("Cannot call getCount on result unless doCount is set on Query.");
 
     private String message;
 
