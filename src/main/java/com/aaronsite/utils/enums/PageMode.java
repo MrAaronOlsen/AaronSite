@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 public enum PageMode {
   PUBLISHED("published"),
   CHECKED_OUT("checked_out"),
+  ARCHIVED("archived"),
   INVALID("invalid");
 
   private String value;

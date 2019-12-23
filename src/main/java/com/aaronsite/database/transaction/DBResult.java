@@ -6,6 +6,8 @@ import com.aaronsite.utils.exceptions.DatabaseException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.aaronsite.utils.exceptions.DatabaseException.Code.DO_COUNT_NOT_SET;
 import static com.aaronsite.utils.exceptions.DatabaseException.Code.FAILED_TO_GET_NEXT_RESULT;
@@ -50,6 +52,20 @@ public class DBResult {
     } catch (Exception e) {
       throw new DatabaseException(INVALID_MODEL_INVOCATION, model.toGenericString());
     }
+  }
+
+  public List<DBRecord> getList() throws DatabaseException {
+    if (resultMetadata == null) {
+      resultMetadata = new ResultMetadata(result);
+    }
+
+    List<DBRecord> results = new ArrayList<>();
+
+    while (hasNext()) {
+      results.add(getNext());
+    }
+
+    return results;
   }
 
   public void setCount(int count) {
