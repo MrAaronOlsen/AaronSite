@@ -4,7 +4,6 @@ import com.aaronsite.utils.enums.RequestType;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.ABException;
 import com.aaronsite.utils.exceptions.ResponseException;
-import com.aaronsite.utils.io.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,6 +67,8 @@ public class ResponseBuilder {
         return DeleteResponse.build(table, id);
       case BASIC_AUTH:
         return AuthResponse.build(header);
+      case ACTION:
+        return ActionResponse.build(body);
       default:
         throw new ResponseException(ResponseException.Code.INVALID_REQUEST_TYPE, requestType.name());
     }

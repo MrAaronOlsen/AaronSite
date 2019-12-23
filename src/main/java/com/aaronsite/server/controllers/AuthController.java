@@ -28,7 +28,7 @@ public class AuthController {
       @RequestHeader() Map<String, String> header) {
 
     try {
-      return new ResponseEntity<>(new ResponseBuilder(RequestType.BASIC_AUTH)
+       return new ResponseEntity<>(new ResponseBuilder(RequestType.BASIC_AUTH)
           .setHeader(header)
           .build(), HttpStatus.OK);
 

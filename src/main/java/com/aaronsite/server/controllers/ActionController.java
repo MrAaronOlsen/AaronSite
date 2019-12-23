@@ -28,10 +28,9 @@ import static com.aaronsite.utils.enums.Role.INSERT;
 @RequestMapping(BASE_URL)
 public class ActionController extends MasterController {
 
-  @PostMapping("/{table}")
-  public ResponseEntity<Response> insertOnTable(
+  @PostMapping("/action")
+  public ResponseEntity<Response> executeAction(
       @RequestHeader("Authorization") String authHeader,
-      @PathVariable(value = "table") String table,
       @RequestBody String body) {
 
     try {
@@ -41,9 +40,9 @@ public class ActionController extends MasterController {
         return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.FORBIDDEN);
       }
 
-      return new ResponseEntity<>(new ResponseBuilder(RequestType.INSERT)
-          .setTable(table)
-          .setBody(body).build(), HttpStatus.OK);
+      return new ResponseEntity<>(new ResponseBuilder(RequestType.ACTION)
+          .setBody(body)
+          .build(), HttpStatus.OK);
 
     } catch (Throwable e) {
       return new ResponseEntity<>(ResponseBuilder.handleError(e), HttpStatus.BAD_REQUEST);

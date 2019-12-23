@@ -2,16 +2,19 @@ package com.aaronsite.actions.checkoutpage;
 
 import com.aaronsite.actions.Action;
 import com.aaronsite.database.connection.DBConnection;
-import com.aaronsite.database.operations.DBInsert;
+import com.aaronsite.database.operations.DBDelete;
+import com.aaronsite.database.operations.DBUpdate;
 import com.aaronsite.database.operations.DbQuery;
+import com.aaronsite.database.statements.DBWhereStmtBuilder;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.Page;
-import com.aaronsite.utils.enums.PageMode;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.ABException;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.bson.Document;
+
+import static com.aaronsite.utils.enums.PageMode.PUBLISHED;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CheckInPage implements Action {
@@ -27,18 +30,28 @@ public class CheckInPage implements Action {
           .execute();
 
       if (queryResult.hasNext()) {
-        Page pageToCopy = new Page(queryResult.getNext())
-            .setMode(PageMode.CHECKED_OUT);
+        Page pageToCheckIn = new Page(queryResult.getNext())
+            .setMode(PUBLISHED);
 
-        DBResult insertResult = new DBInsert(conn, Table.PAGES)
-            .addRecord(pageToCopy.buildRecord())
+        DBWhereStmtBuilder where = new DBWhereStmtBuilder()
+            .add(Page.HEADER, pageToCheckIn.getHeader())
+            .add(Page.MODE, PUBLISHED.getValue());
+
+        DBResult updateResult = new DBUpdate(conn, Table.PAGES)
+            .setQuery(where)
+            .setRecord(pageToCheckIn)
             .execute();
 
-        if (insertResult.hasNext()) {
-          id = insertResult.getNext().getId();
+        if (updateResult.hasNext()) {
+          id = updateResult.getNext().getId();
+
+          new DBDelete(conn, Table.PAGES)
+              .setId(pageToCheckIn.getId())
+              .execute();
         }
       }
     }
+
     return this;
   }
 
