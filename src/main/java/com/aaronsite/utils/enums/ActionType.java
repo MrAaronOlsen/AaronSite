@@ -5,7 +5,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public enum ActionType {
+  PUBLISH("publish"),
   CHECK_OUT("check_out"),
+  CHECK_IN("check_in"),
   INVALID("invalid");
 
   private String value;
