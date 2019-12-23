@@ -5,8 +5,6 @@ import com.aaronsite.response.ResponseBuilder;
 import com.aaronsite.security.Authentication;
 import com.aaronsite.utils.enums.RequestType;
 import com.aaronsite.utils.exceptions.AuthException;
-import com.aaronsite.utils.io.Logger;
-import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

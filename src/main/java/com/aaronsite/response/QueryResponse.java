@@ -10,7 +10,6 @@ import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.Model;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.ABException;
-import com.aaronsite.utils.io.Logger;
 
 import java.util.LinkedList;
 import java.util.List;
