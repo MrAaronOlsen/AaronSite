@@ -8,12 +8,21 @@ public class DBSelectStmtBuilder {
 
   private String fields;
 
+  public DBSelectStmtBuilder() {
+    // Default
+  }
+
   public DBSelectStmtBuilder(String fields) {
     if (StringUtils.isEmpty(fields)) {
       fields = "*";
     }
 
     this.fields = normalize(fields);
+  }
+
+  public DBSelectStmtBuilder asCount() {
+    fields = "COUNT(*)";
+    return this;
   }
 
   private String normalize(String fields) {

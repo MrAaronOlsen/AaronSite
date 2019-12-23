@@ -1,6 +1,6 @@
 package com.aaronsite.response;
 
-import com.aaronsite.actions.checkoutpage.CheckOutPage;
+import com.aaronsite.actions.CheckOutPage;
 import com.aaronsite.utils.enums.ActionType;
 import com.aaronsite.utils.exceptions.ABException;
 import com.aaronsite.utils.exceptions.ResponseException;

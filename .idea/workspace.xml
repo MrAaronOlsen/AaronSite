@@ -2,21 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/actions/CheckOutTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/PublishPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ActionException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/checkoutpage/CheckInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/checkoutpage/CheckInPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/checkoutpage/CheckOutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/checkoutpage/CheckOutPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/checkoutpage/CheckInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/CheckInPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/checkoutpage/CheckOutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/CheckOutPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DbQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/operations/DbQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBSelectStmtBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/statements/DBSelectStmtBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/transaction/DBResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/database/transaction/DBResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/models/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ActionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ActionResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ResponseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/ActionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/server/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/ActionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/ActionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/PageMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/PageMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/RequestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/RequestType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ResponseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ResponseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/DatabaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/DatabaseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/actions/CheckOutTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/actions/CheckOutTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBQueryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/database/operations/DBQueryTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,11 +88,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.aaronsite.utils.exceptions" />
       <recent name="com.aaronsite.actions.checkoutpage" />
       <recent name="com.aaronsite.utils.enums" />
       <recent name="com.aaronsite.server.controllers" />
       <recent name="com.aaronsite.database.statements" />
-      <recent name="com.aaronsite.utils.exceptions" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
@@ -101,7 +100,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StartUp">
+  <component name="RunManager" selected="JUnit.DBQueryTests.getCountWithoutDoCountThrowsException">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -128,16 +127,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBQueryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.aaronsite.*" />
+          <option name="PATTERN" value="com.aaronsite.database.operations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.aaronsite" />
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.AllTests" />
+      <option name="PACKAGE_NAME" value="com.aaronsite.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.operations.DBQueryTests" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test -DAPI_KEY=f9c8dce0-0eee-4fee-8ecd-a4b00703b699" />
@@ -147,17 +146,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthenticationTests.canAuthenticateAUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBQueryTests.getCountWithoutDoCountThrowsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.aaronsite.security.*" />
+          <option name="PATTERN" value="com.aaronsite.database.operations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.aaronsite.security" />
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.security.AuthenticationTests" />
-      <option name="METHOD_NAME" value="canAuthenticateAUser" />
+      <option name="PACKAGE_NAME" value="com.aaronsite.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.operations.DBQueryTests" />
+      <option name="METHOD_NAME" value="getCountWithoutDoCountThrowsException" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test -DAPI_KEY=f9c8dce0-0eee-4fee-8ecd-a4b00703b699" />
       <option name="PARAMETERS" value="" />
@@ -166,17 +165,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthenticationTests.canAuthenticateAUser_Green" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBQueryTests.queryWithCountMultiple" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.aaronsite.security.*" />
+          <option name="PATTERN" value="com.aaronsite.database.operations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.aaronsite.security" />
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.security.AuthenticationTests" />
-      <option name="METHOD_NAME" value="canAuthenticateAUser_Green" />
+      <option name="PACKAGE_NAME" value="com.aaronsite.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.operations.DBQueryTests" />
+      <option name="METHOD_NAME" value="queryWithCountMultiple" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test -DAPI_KEY=f9c8dce0-0eee-4fee-8ecd-a4b00703b699" />
       <option name="PARAMETERS" value="" />
@@ -185,17 +184,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthenticationTests.canAuthenticateAUser_Red" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBQueryTests.queryWithCountNone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.aaronsite.security.*" />
+          <option name="PATTERN" value="com.aaronsite.database.operations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.aaronsite.security" />
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.security.AuthenticationTests" />
-      <option name="METHOD_NAME" value="canAuthenticateAUser_Red" />
+      <option name="PACKAGE_NAME" value="com.aaronsite.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.operations.DBQueryTests" />
+      <option name="METHOD_NAME" value="queryWithCountNone" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test -DAPI_KEY=f9c8dce0-0eee-4fee-8ecd-a4b00703b699" />
       <option name="PARAMETERS" value="" />
@@ -204,17 +203,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBQueryStmtBuilderTests.simpleIdQuerySql" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBQueryTests.queryWithCountSingle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.aaronsite.database.statements.*" />
+          <option name="PATTERN" value="com.aaronsite.database.operations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.aaronsite.database.statements" />
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.statements.DBQueryStmtBuilderTests" />
-      <option name="METHOD_NAME" value="simpleIdQuerySql" />
+      <option name="PACKAGE_NAME" value="com.aaronsite.database.operations" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.database.operations.DBQueryTests" />
+      <option name="METHOD_NAME" value="queryWithCountSingle" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test -DAPI_KEY=f9c8dce0-0eee-4fee-8ecd-a4b00703b699" />
       <option name="PARAMETERS" value="" />
@@ -254,19 +253,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.StartUp" />
-      <item itemvalue="JUnit.AuthenticationTests.canAuthenticateAUser" />
-      <item itemvalue="JUnit.AuthenticationTests.canAuthenticateAUser_Red" />
-      <item itemvalue="JUnit.AllTests" />
-      <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleIdQuerySql" />
-      <item itemvalue="JUnit.AuthenticationTests.canAuthenticateAUser_Green" />
+      <item itemvalue="JUnit.DBQueryTests.queryWithCountNone" />
+      <item itemvalue="JUnit.DBQueryTests.queryWithCountSingle" />
+      <item itemvalue="JUnit.DBQueryTests.queryWithCountMultiple" />
+      <item itemvalue="JUnit.DBQueryTests" />
+      <item itemvalue="JUnit.DBQueryTests.getCountWithoutDoCountThrowsException" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AuthenticationTests.canAuthenticateAUser_Green" />
-        <item itemvalue="JUnit.AllTests" />
-        <item itemvalue="JUnit.DBQueryStmtBuilderTests.simpleIdQuerySql" />
-        <item itemvalue="JUnit.AuthenticationTests.canAuthenticateAUser_Red" />
-        <item itemvalue="JUnit.AuthenticationTests.canAuthenticateAUser" />
+        <item itemvalue="JUnit.DBQueryTests.getCountWithoutDoCountThrowsException" />
+        <item itemvalue="JUnit.DBQueryTests" />
+        <item itemvalue="JUnit.DBQueryTests.queryWithCountMultiple" />
+        <item itemvalue="JUnit.DBQueryTests.queryWithCountSingle" />
+        <item itemvalue="JUnit.DBQueryTests.queryWithCountNone" />
       </list>
     </recent_temporary>
   </component>
@@ -325,46 +324,46 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="380" y="119" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777@0.23.1280.777" timestamp="1576987870574" />
-    <state x="516" y="221" width="714" height="579" key="#xdebugger.evaluate" timestamp="1576387305472">
+    <state x="566" y="221" width="714" height="579" key="#xdebugger.evaluate" timestamp="1577116963379">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="516" y="221" width="714" height="579" key="#xdebugger.evaluate/0.23.1280.777@0.23.1280.777" timestamp="1576387305472" />
+    <state x="566" y="221" width="714" height="579" key="#xdebugger.evaluate/0.23.1280.777@0.23.1280.777" timestamp="1577116963379" />
     <state x="100" y="123" width="1080" height="577" key="DiffContextDialog" timestamp="1576379754756">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="100" y="123" width="1080" height="577" key="DiffContextDialog/0.23.1280.777@0.23.1280.777" timestamp="1576379754756" />
-    <state width="1238" height="131" key="GridCell.Tab.0.bottom" timestamp="1577070633106">
+    <state width="1238" height="145" key="GridCell.Tab.0.bottom" timestamp="1577117881327">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="131" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1577070633106" />
-    <state width="1238" height="131" key="GridCell.Tab.0.center" timestamp="1577070633105">
+    <state width="1238" height="145" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1577117881327" />
+    <state width="1238" height="145" key="GridCell.Tab.0.center" timestamp="1577117881326">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="131" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1577070633105" />
-    <state width="1238" height="131" key="GridCell.Tab.0.left" timestamp="1577070633105">
+    <state width="1238" height="145" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1577117881326" />
+    <state width="1238" height="145" key="GridCell.Tab.0.left" timestamp="1577117881325">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="131" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1577070633105" />
-    <state width="1238" height="131" key="GridCell.Tab.0.right" timestamp="1577070633105">
+    <state width="1238" height="145" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1577117881325" />
+    <state width="1238" height="145" key="GridCell.Tab.0.right" timestamp="1577117881327">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="131" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1577070633105" />
-    <state width="1238" height="131" key="GridCell.Tab.1.bottom" timestamp="1577070633107">
+    <state width="1238" height="145" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1577117881327" />
+    <state width="1238" height="216" key="GridCell.Tab.1.bottom" timestamp="1577117161930">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="131" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1577070633107" />
-    <state width="1238" height="131" key="GridCell.Tab.1.center" timestamp="1577070633106">
+    <state width="1238" height="216" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1577117161930" />
+    <state width="1238" height="216" key="GridCell.Tab.1.center" timestamp="1577117161929">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="131" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1577070633106" />
-    <state width="1238" height="131" key="GridCell.Tab.1.left" timestamp="1577070633106">
+    <state width="1238" height="216" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1577117161929" />
+    <state width="1238" height="216" key="GridCell.Tab.1.left" timestamp="1577117161928">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="131" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1577070633106" />
-    <state width="1238" height="131" key="GridCell.Tab.1.right" timestamp="1577070633107">
+    <state width="1238" height="216" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1577117161928" />
+    <state width="1238" height="216" key="GridCell.Tab.1.right" timestamp="1577117161929">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="131" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1577070633107" />
+    <state width="1238" height="216" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1577117161929" />
     <state x="295" y="33" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576383328449">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -377,9 +376,9 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="298" y="173" width="683" height="476" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1576376053389" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1576727291432">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1577114056340">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1576727291432" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1577114056340" />
   </component>
 </project>
