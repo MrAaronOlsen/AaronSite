@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
     "com.aaronsite.database.operations",
     "com.aaronsite.database.statements",
     "com.aaronsite.security",
+    "com.aaronsite.actions"
 
 } )
 
