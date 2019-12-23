@@ -1,6 +1,8 @@
 package com.aaronsite.response;
 
+import com.aaronsite.actions.CheckInPage;
 import com.aaronsite.actions.CheckOutPage;
+import com.aaronsite.actions.PublishPage;
 import com.aaronsite.utils.enums.ActionType;
 import com.aaronsite.utils.exceptions.ABException;
 import com.aaronsite.utils.exceptions.ResponseException;
@@ -23,8 +25,14 @@ public class ActionResponse {
     ActionType action = ActionType.get(doc.getString("action"));
 
     switch (action) {
+      case PUBLISH:
+        results.add(new PublishPage().execute(doc));
+        break;
       case CHECK_OUT:
         results.add(new CheckOutPage().execute(doc));
+        break;
+      case CHECK_IN:
+        results.add(new CheckInPage().execute(doc));
         break;
       default:
         throw new ResponseException(UNKNOWN_ACTION, doc.getString("action"));
