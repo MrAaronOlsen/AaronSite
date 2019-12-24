@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306d8f05-00d8-4bdb-aadf-1393fd908168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/UnpublishPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/triggers/PageTriggers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/triggers/TableTriggers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/TriggerException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/aaronsite/actions/UnpublishPageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/PublishPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/actions/PublishPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ActionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/ActionResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/DeleteResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/DeleteResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/UpdateResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/response/UpdateResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/ActionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/ActionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/PageMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/enums/PageMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ActionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ActionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ResponseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronsite/utils/exceptions/ResponseException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +88,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StartUp">
+  <component name="RunManager" selected="JUnit.AllTests">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -203,18 +191,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PublishPageTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UnpublishPageTests.canUnpublishAPublishedRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aaronsiteapi.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.aaronsite.actions.UnpublishPage" />
+          <option name="PATTERN" value="com.aaronsite.actions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.aaronsite.actions" />
-      <option name="MAIN_CLASS_NAME" value="com.aaronsite.actions.PublishPageTests" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.aaronsite.actions.UnpublishPageTests" />
+      <option name="METHOD_NAME" value="canUnpublishAPublishedRecord" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -DDB_URL=jdbc:postgresql://localhost:5432/aaron_site_test -DDB_USER=wolverine -DDB_PASSWORD=Cuntmouth1021@ -DDB_SCHEMA=test -DAPI_KEY=f9c8dce0-0eee-4fee-8ecd-a4b00703b699" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -253,19 +241,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.StartUp" />
-      <item itemvalue="JUnit.PublishPageTests" />
       <item itemvalue="JUnit.CheckInTests.canNotCheckInPageNotCheckedOut" />
       <item itemvalue="JUnit.CheckInTests.canCheckInCheckedOutPage" />
       <item itemvalue="JUnit.CheckInTests.cannotCheckInIfSlugIsModified" />
       <item itemvalue="JUnit.AllTests" />
+      <item itemvalue="JUnit.UnpublishPageTests.canUnpublishAPublishedRecord" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AllTests" />
+        <item itemvalue="JUnit.UnpublishPageTests.canUnpublishAPublishedRecord" />
         <item itemvalue="JUnit.CheckInTests.cannotCheckInIfSlugIsModified" />
         <item itemvalue="JUnit.CheckInTests.canCheckInCheckedOutPage" />
         <item itemvalue="JUnit.CheckInTests.canNotCheckInPageNotCheckedOut" />
-        <item itemvalue="JUnit.PublishPageTests" />
       </list>
     </recent_temporary>
   </component>
@@ -336,38 +324,38 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="100" y="123" width="1080" height="577" key="DiffContextDialog/0.23.1280.777@0.23.1280.777" timestamp="1576379754756" />
-    <state width="1238" height="203" key="GridCell.Tab.0.bottom" timestamp="1577153747572">
+    <state width="1238" height="145" key="GridCell.Tab.0.bottom" timestamp="1577154225949">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="203" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1577153747572" />
-    <state width="1238" height="203" key="GridCell.Tab.0.center" timestamp="1577153747570">
+    <state width="1238" height="145" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1577154225949" />
+    <state width="1238" height="145" key="GridCell.Tab.0.center" timestamp="1577154225948">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="203" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1577153747570" />
-    <state width="1238" height="203" key="GridCell.Tab.0.left" timestamp="1577153747570">
+    <state width="1238" height="145" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1577154225948" />
+    <state width="1238" height="145" key="GridCell.Tab.0.left" timestamp="1577154225948">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="203" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1577153747570" />
-    <state width="1238" height="203" key="GridCell.Tab.0.right" timestamp="1577153747572">
+    <state width="1238" height="145" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1577154225948" />
+    <state width="1238" height="145" key="GridCell.Tab.0.right" timestamp="1577154225949">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="203" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1577153747572" />
-    <state width="1238" height="203" key="GridCell.Tab.1.bottom" timestamp="1577153747362">
+    <state width="1238" height="145" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1577154225949" />
+    <state width="1238" height="203" key="GridCell.Tab.1.bottom" timestamp="1577154057809">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="203" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1577153747362" />
-    <state width="1238" height="203" key="GridCell.Tab.1.center" timestamp="1577153747361">
+    <state width="1238" height="203" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1577154057809" />
+    <state width="1238" height="203" key="GridCell.Tab.1.center" timestamp="1577154057808">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="203" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1577153747361" />
-    <state width="1238" height="203" key="GridCell.Tab.1.left" timestamp="1577153747361">
+    <state width="1238" height="203" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1577154057808" />
+    <state width="1238" height="203" key="GridCell.Tab.1.left" timestamp="1577154057808">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="203" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1577153747361" />
-    <state width="1238" height="203" key="GridCell.Tab.1.right" timestamp="1577153747362">
+    <state width="1238" height="203" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1577154057808" />
+    <state width="1238" height="203" key="GridCell.Tab.1.right" timestamp="1577154057809">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="203" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1577153747362" />
+    <state width="1238" height="203" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1577154057809" />
     <state x="295" y="33" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576383328449">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
