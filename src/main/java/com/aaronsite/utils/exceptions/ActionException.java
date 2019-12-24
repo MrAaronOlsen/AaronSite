@@ -2,6 +2,7 @@ package com.aaronsite.utils.exceptions;
 
 public class ActionException extends ABException {
   public enum Code implements ExceptionCode {
+    UNKNOWN_ACTION("Action %s is unknown."),
     PAGE_ALREADY_CHECKED_OUT("Cannot check out an already checked out page."),
     CANNOT_CHECK_IN_PAGE_NOT_CHECKED_OUT("Cannot check in a page not already checked out."),
     FOUND_MULTIPLE_PUBLISHED_PAGES("Cannot check in page %s because multiple published pages were found."),
