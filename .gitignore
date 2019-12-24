@@ -1,3 +1,5 @@
-#build
-out
+build
+.gradle
 .idea
+out
+.DS_Store
