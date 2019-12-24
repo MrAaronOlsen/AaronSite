@@ -9,6 +9,7 @@ import com.aaronsite.utils.enums.Role;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.AuthException;
 import com.aaronsite.utils.exceptions.DatabaseException;
+import com.aaronsite.utils.io.Logger;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.Document;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,14 +35,27 @@ public class Authentication {
   }
 
   public static void authenticate(String authHeader, EnumSet<Role> authRoles) throws AuthException, DatabaseException {
+    if (authRoles.isEmpty()) {
+      return;
+    }
+
     String token = authHeader.substring(7);
 
     User authUser = new User(TokenHandler.parseToken(token));
     User dbUser = fetchUser(authUser.getUserName());
 
+    Logger.out(dbUser.toString());
+
     Document roles = dbUser.getRoles();
+
+    if (roles == null || roles.isEmpty()) {
+      throw new AuthException(USER_NOT_AUTHORIZED);
+    }
+
     for (Role authRole : authRoles) {
       if (!roles.getBoolean(authRole.getValue(), false)) {
+        Logger.out("Failed Role Check: " + authRole.getValue());
+
         throw new AuthException(USER_NOT_AUTHORIZED);
       }
     }

@@ -53,6 +53,7 @@ public class ResponseBuilder {
   }
 
   public Response build() throws ABException {
+
     switch (requestType) {
       case QUERY:
         return QueryResponse.build(table, params);
@@ -66,6 +67,8 @@ public class ResponseBuilder {
         return DeleteResponse.build(table, id);
       case BASIC_AUTH:
         return AuthResponse.build(header);
+      case ACTION:
+        return ActionResponse.build(body);
       default:
         throw new ResponseException(ResponseException.Code.INVALID_REQUEST_TYPE, requestType.name());
     }

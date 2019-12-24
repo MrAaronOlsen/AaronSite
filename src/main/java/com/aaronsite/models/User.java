@@ -4,6 +4,7 @@ import com.aaronsite.database.transaction.DBRecord;
 import com.aaronsite.utils.annotations.Column;
 import com.aaronsite.utils.enums.ColumnType;
 import com.aaronsite.utils.enums.Table;
+import com.aaronsite.utils.io.Logger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -30,6 +31,8 @@ public class User extends System implements Model {
   }
 
   public User(DBRecord record) {
+    Logger.out("Building User from Record: " + record);
+
     this.id = record.getId();
     this.userName = record.get(USER_NAME);
     this.userPw = record.get(USER_PW);
@@ -85,5 +88,13 @@ public class User extends System implements Model {
   @JsonDeserialize
   public Document getRoles() {
     return roles == null ? null : Document.parse(roles);
+  }
+
+  @Override
+  public String toString() {
+    return "User{" +
+        "userName='" + userName + '\'' +
+        ", roles='" + roles + '\'' +
+        '}';
   }
 }

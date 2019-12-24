@@ -6,5 +6,6 @@ public enum RequestType {
   INSERT,
   UPDATE_BY_ID,
   DELETE_BY_ID,
-  BASIC_AUTH;
+  BASIC_AUTH,
+  ACTION;
 }

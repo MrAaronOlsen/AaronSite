@@ -1,6 +1,7 @@
 package com.aaronsite.models;
 
 import com.aaronsite.database.transaction.DBRecord;
+import com.aaronsite.utils.enums.PageMode;
 import com.aaronsite.utils.enums.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -11,29 +12,32 @@ import static com.aaronsite.utils.enums.Table.PAGES;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Page extends System implements Model {
-  static final String HEADER = "header";
-  static final String CAPTION = "caption";
-  static final String SLUG = "slug";
-  static final String SEQUENCE = "sequence";
-  static final String BLOCKS = "blocks";
+  public static final String HEADER = "header";
+  public static final String CAPTION = "caption";
+  public static final String SLUG = "slug";
+  public static final String SEQUENCE = "sequence";
+  public static final String BLOCKS = "blocks";
+  public static final String MODE = "mode";
 
   private String header;
   private String caption;
   private String slug;
   private String sequence;
   private String blocks;
+  private String mode;
 
   public Page() {
     // Default Constructor
   }
 
-  Page(DBRecord record) {
+  public Page(DBRecord record) {
     this.id = record.getId();
     this.header = record.get(HEADER);
     this.caption = record.get(CAPTION);
     this.slug = record.get(SLUG);
     this.sequence = record.get(SEQUENCE);
     this.blocks = record.get(BLOCKS);
+    this.mode = record.get(MODE);
   }
 
   @JsonDeserialize
@@ -61,6 +65,35 @@ public class Page extends System implements Model {
     return blocks == null ? null : Document.parse(blocks);
   }
 
+  @JsonDeserialize
+  public String getMode() {
+    return mode;
+  }
+
+  public Page setHeader(String header) {
+    this.header = header;
+    return this;
+  }
+
+  public Page setCaption(String caption) {
+    this.caption = caption;
+    return this;
+  }
+
+  public Page setSlug(String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  public void setBlocks(Document blocks) {
+    this.blocks = blocks.toJson();
+  }
+
+  public Page setMode(PageMode mode) {
+    this.mode = mode.getValue();
+    return this;
+  }
+
   @Override
   public DBRecord buildRecord() {
     return new DBRecord()
@@ -68,7 +101,8 @@ public class Page extends System implements Model {
         .add(CAPTION, caption)
         .add(SLUG, slug)
         .add(SEQUENCE, sequence)
-        .add(BLOCKS, blocks);
+        .add(BLOCKS, blocks)
+        .add(MODE, mode);
   }
 
   @Override
@@ -79,12 +113,13 @@ public class Page extends System implements Model {
 
   @Override
   public String toString() {
-    return "Table: " + getTable() + "\n"
-        + ID + ": " + id + "\n"
-        + HEADER + ": " + header + "\n"
-        + CAPTION + ": " + caption + "\n"
-        + SEQUENCE + ": " + sequence + "\n"
-        + BLOCKS + ": " + blocks + "\n"
-        + SLUG + ": " + slug;
+    return "Page{" +
+        "header='" + header + '\'' +
+        ", caption='" + caption + '\'' +
+        ", slug='" + slug + '\'' +
+        ", sequence='" + sequence + '\'' +
+        ", blocks='" + blocks + '\'' +
+        ", mode='" + mode + '\'' +
+        '}';
   }
 }

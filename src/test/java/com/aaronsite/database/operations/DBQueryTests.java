@@ -7,10 +7,12 @@ import com.aaronsite.models.TestSimple;
 import com.aaronsite.server.TestServer;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.ABException;
+import com.aaronsite.utils.exceptions.DatabaseException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static com.aaronsite.models.TestSimple.NAME;
+import static com.aaronsite.utils.exceptions.DatabaseException.Code.DO_COUNT_NOT_SET;
 
 class DBQueryTests extends TestServer {
 
@@ -68,6 +70,65 @@ class DBQueryTests extends TestServer {
       }
 
       Assertions.assertEquals(2, count);
+    }
+  }
+
+  @Test
+  void queryWithCountNone() throws ABException {
+
+    try (DBConnection dbConn = new DBConnection()) {
+      DbQuery dbQuery = new DbQuery(dbConn, Table.TEST_SIMPLE)
+          .setQuery(new DBWhereStmtBuilder(NAME, "test"))
+          .doCount();
+
+      DBResult result = dbQuery.execute();
+      Assertions.assertEquals(0, result.getCount());
+    }
+  }
+
+  @Test
+  void queryWithCountSingle() throws ABException {
+    insertRecord(new TestSimple().setName("test"));
+
+    try (DBConnection dbConn = new DBConnection()) {
+      DbQuery dbQuery = new DbQuery(dbConn, Table.TEST_SIMPLE)
+          .setQuery(new DBWhereStmtBuilder(NAME, "test"))
+          .doCount();
+
+      DBResult result = dbQuery.execute();
+      Assertions.assertEquals(1, result.getCount());
+    }
+  }
+
+  @Test
+  void queryWithCountMultiple() throws ABException {
+    insertRecord(new TestSimple().setName("test"));
+    insertRecord(new TestSimple().setName("test"));
+
+    try (DBConnection dbConn = new DBConnection()) {
+      DbQuery dbQuery = new DbQuery(dbConn, Table.TEST_SIMPLE)
+          .setQuery(new DBWhereStmtBuilder(NAME, "test"))
+          .doCount();
+
+      DBResult result = dbQuery.execute();
+      Assertions.assertEquals(2, result.getCount());
+    }
+  }
+
+  @Test
+  void getCountWithoutDoCountThrowsException() throws ABException {
+    try (DBConnection dbConn = new DBConnection()) {
+      DbQuery dbQuery = new DbQuery(dbConn, Table.TEST_SIMPLE)
+          .setQuery(new DBWhereStmtBuilder(NAME, "test"));
+
+      DBResult result = dbQuery.execute();
+
+      try {
+        result.getCount();
+        Assertions.fail("Should have thrown an exception.");
+      } catch (DatabaseException e) {
+        Assertions.assertEquals(e.getCode(), DO_COUNT_NOT_SET);
+      }
     }
   }
 
