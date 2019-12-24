@@ -2,9 +2,11 @@ package com.aaronsite.response;
 
 import com.aaronsite.database.connection.DBConnection;
 import com.aaronsite.database.operations.DBDelete;
+import com.aaronsite.database.operations.DbQuery;
 import com.aaronsite.database.transaction.DBRecord;
 import com.aaronsite.database.transaction.DBResult;
 import com.aaronsite.models.Model;
+import com.aaronsite.triggers.TableTriggers;
 import com.aaronsite.utils.enums.Table;
 import com.aaronsite.utils.exceptions.ABException;
 
@@ -23,6 +25,17 @@ class DeleteResponse {
     Function<DBRecord, Model> dataBuilder = Model.getModel(table);
 
     try (DBConnection dbConn = new DBConnection()) {
+      TableTriggers triggers = TableTriggers.get(table);
+      if (triggers != null) {
+        DBResult result = new DbQuery(dbConn, table)
+            .setIdQuery(id)
+            .execute();
+
+        if (result.hasNext()) {
+          triggers.preDelete(dataBuilder.apply(result.getNext()));
+        }
+      }
+
       DBDelete delete = new DBDelete(dbConn, table).setId(id);
       DBResult result = delete.execute();
 

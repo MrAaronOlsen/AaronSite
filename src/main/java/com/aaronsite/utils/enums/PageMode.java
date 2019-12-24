@@ -8,6 +8,7 @@ public enum PageMode {
   PUBLISHED("published"),
   CHECKED_OUT("checked_out"),
   ARCHIVED("archived"),
+  NONE("none"),
   INVALID("invalid");
 
   private String value;
@@ -24,6 +25,10 @@ public enum PageMode {
   }
 
   public static PageMode get(String mode) {
+    if (mode == null) {
+      return NONE;
+    }
+
     return MAP.getOrDefault(mode, INVALID);
   }
 }

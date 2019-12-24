@@ -1,10 +1,9 @@
 package com.aaronsite.utils.exceptions;
 
-public class ResponseException extends ABException {
+public class TriggerException extends ABException {
   public enum Code implements ExceptionCode {
-    INVALID_RESPONSE_TABLE("Table [%s] does not exist or is not supported."),
-    INVALID_REQUEST_TYPE("Invalid request type %s."),
-    MALFORMED_REQUEST_BODY("Request body could not be converted to a valid record. ERROR: %s");
+    CANNOT_UPDATE_PUBLISHED_PAGE("Cannot update a published page. Check page out first."),
+    CANNOT_DELETE_PUBLISHED_PAGE("Cannot delete a published page. Unpublish page first.");
 
     private String message;
 
@@ -23,7 +22,7 @@ public class ResponseException extends ABException {
     }
   }
 
-  public ResponseException(ResponseException.Code code, String... args) {
+  public TriggerException(TriggerException.Code code, String... args) {
     super(code, args);
   }
 }

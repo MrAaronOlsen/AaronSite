@@ -10,6 +10,7 @@ import com.aaronsite.models.Page;
 import com.aaronsite.utils.enums.PageMode;
 import com.aaronsite.utils.exceptions.ABException;
 import com.aaronsite.utils.exceptions.ActionException;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.Document;
 
@@ -65,6 +66,7 @@ public class PublishPage implements Action {
     return this;
   }
 
+  @JsonDeserialize
   public String getId() {
     return id;
   }
