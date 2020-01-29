@@ -56,9 +56,9 @@ public class CheckInPage implements Action {
             .execute();
 
         if (publishedQuery.getCount() == 0) {
-          throw new ActionException(FOUND_NO_PUBLISHED_PAGES);
+          throw new ActionException(FOUND_NO_PUBLISHED_PAGES, pageToCheckIn.getSlug());
         } else if (publishedQuery.getCount() > 1) {
-          throw new ActionException(FOUND_MULTIPLE_PUBLISHED_PAGES);
+          throw new ActionException(FOUND_MULTIPLE_PUBLISHED_PAGES, pageToCheckIn.getSlug());
         }
 
         // Now update existing record with changes from checked out version.

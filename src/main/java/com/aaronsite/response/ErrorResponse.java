@@ -5,14 +5,14 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ErrorResponse implements ResponseData {
-  private Throwable error;
+  private String error;
 
   public ErrorResponse(Throwable e) {
-    this.error = e;
+    this.error = e.getMessage();
   }
 
   @JsonDeserialize
   public String getError() {
-    return error.getMessage();
+    return error;
   }
 }
