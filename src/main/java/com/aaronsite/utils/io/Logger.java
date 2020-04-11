@@ -38,4 +38,8 @@ public class Logger {
   public static void ok(String message) {
     System.out.println(Color.ANSI_GREEN.code + message + Color.ANSI_RESET.code);
   }
+
+  public static void line() {
+    System.out.println();
+  }
 }
